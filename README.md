@@ -9,6 +9,30 @@ https://restcountries.eu/rest/v2/alpha/gb <br>
     <li>Country -> ISO 3166-1 alpha-2 -> API call</li>
     <li>Fix searchbar</li>
 </ul>
-
+<br>
+<br>
+<b>Demands:</b>
+<ul>
+    <li>Search bar</li>
+    <li>Countries Clickable when clicked show outline of the country and an information modal*</li>
+    <li>Don't show outline when hovering over a country</li>
+    <li>Multiple mapstyles with an option to show terrain</li>
+    <li>Add customized markers on venue locations. User can add marker without having to google for the LatLng</li>
+    <li>A fancy visualization of the sales</li>
+</ul>
+<br>
+<b>Info modal:</b>
+<ul>
+    <li>Flag</li>
+    <li>Name</li>
+    <li>Capital</li>
+    <li>Region</li>
+    <li>Population</li>
+    <li>Demonym</li>
+    <li>Timezones</li>
+    <li>Currency</li>
+    <li>Languages</li>
+    <li>Sales</li>
+</ul>    
 
  
