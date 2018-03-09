@@ -10,7 +10,6 @@ https://restcountries.eu/rest/v2/alpha/gb <br>
     <li>Fix searchbar</li>
 </ul>
 <br>
-<br>
 <b>Demands:</b>
 <ul>
     <li>Search bar</li>
@@ -19,6 +18,7 @@ https://restcountries.eu/rest/v2/alpha/gb <br>
     <li>Multiple mapstyles with an option to show terrain</li>
     <li>Add customized markers on venue locations. User can add marker without having to google for the LatLng</li>
     <li>A fancy visualization of the sales</li>
+    <li>Responsive with support for touchscreen</li>
 </ul>
 <br>
 <b>Info modal:</b>
