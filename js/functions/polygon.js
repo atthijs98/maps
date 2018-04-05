@@ -578,9 +578,98 @@ function converte(countryName) {
     }
 
     var url = "https://restcountries.eu/rest/v2/alpha/" + code;
-    console.log(url);
+    //console.log(url);
+    var callback = httpGet(url);
     return code;
+
 }
+
+function httpGet(url) {
+    if (window.XMLHttpRequest)
+    {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange=function()
+    {
+        if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            var data = xmlhttp.responseText;
+            var result = JSON.parse(data);
+            //console.log(result);
+
+            var englishName = result["name"];
+            var nativeName = result["nativeName"];
+            var capital = result["capital"];
+            var currencies = result["currencies"]; //array
+            var demonym = result["demonym"];
+            var flag = result["flag"];
+            var gini = result["gini"];
+            var languages = result["languages"]; //array
+            var population = result["population"];
+            var region = result["region"];
+            var subregion = result["subregion"];
+            var regionalBlocs = result["regionalBlocs"]; //array
+            var timezones = result["timezones"]; //array
+
+            for (var i = 0; i < currencies.length; i++) {
+                var currencySymbol = currencies[i]["symbol"];
+                var currencyName = currencies[i]["name"];
+            }
+
+            for (var j = 0; j < languages.length; j++) {
+                var language = languages[j]["name"];
+                var nativeLanguage = languages[j]["nativeName"];
+            }
+
+            for (var k = 0; k < regionalBlocs.length; k++) {
+                var regionaleBloc = regionalBlocs[k];
+            }
+
+            for (var l = 0; l < timezones.length; l++) {
+                var timezone = timezones[l];
+            }
+
+            console.log(result);
+            //console.log(result["languages"]);
+            //console.log(languages[j]["name"]);
+
+
+            var div = document.createElement("div");
+            div.innerHTML = "<div class='row'>" +
+                                "<div class='col s3 offset-s9'>" +
+                                    "<div class='card'>" +
+                                        "<div class='card-content'>" +
+                                            "<span class='card-title center-align'>" + englishName + "</span>" +
+                                            "<p class='center-align'>"+nativeName+ " ("+languages[0]["name"]+")" + "</p><br>" +
+                                            "<div class='card-image'>" +
+                                                "<img class='responsive-img' style='border: grey 1px solid' src='"+flag+"'>" +
+                                            "</div>" +
+                                            "<ul>" +
+                                                "<li><p>Capital: "+capital+"</p></li>" +
+                                                "<div class='divider'></div>" +
+                                                "<li><p>Population: "+population+"</p></li>" +
+                                                "<div class='divider'></div>" +
+                                                "<li><p>Languages: "+language+" ("+nativeLanguage+"),<br>"+"</p></li>" +
+                                                "<div class='divider'></div>" +
+                                            "</ul>" +
+                                        "</div>" +
+                                    "</div>" +
+                                "</div>"+
+                            "</div>";
+            document.body.appendChild(div);
+
+        }
+    };
+
+    xmlhttp.open("GET", url, false );
+    xmlhttp.send();
+}
+
+
 
 function constructNewCoordinates(polygon) {
     var newCoordinates = [];
