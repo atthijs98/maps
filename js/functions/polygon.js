@@ -1,4 +1,3 @@
-
 function drawMap(data) {
 
     var rows = data['rows'];
@@ -25,17 +24,17 @@ function drawMap(data) {
                 fillOpacity: 0,
                 name: rows[i][0]
             });
-            google.maps.event.addListener(country, 'mouseover', function() {
+            google.maps.event.addListener(country, 'mouseover', function () {
                 this.setOptions({fillOpacity: 0.4});
             });
-            google.maps.event.addListener(country, 'mouseout', function() {
+            google.maps.event.addListener(country, 'mouseout', function () {
                 this.setOptions({fillOpacity: 0});
             });
-            google.maps.event.addListener(country, 'click', function() {
+            google.maps.event.addListener(country, 'click', function () {
                 var countryName = this.name;
                 var code = converte(countryName);
-
             });
+
 
             country.setMap(map);
         }
@@ -585,90 +584,99 @@ function converte(countryName) {
 }
 
 function httpGet(url) {
-    if (window.XMLHttpRequest)
-    {// code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp=new XMLHttpRequest();
+    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
     }
-    else
-    {// code for IE6, IE5
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    else {// code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    xmlhttp.onreadystatechange=function()
-    {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-        {
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var data = xmlhttp.responseText;
             var result = JSON.parse(data);
-            //console.log(result);
-
-            var englishName = result["name"];
-            var nativeName = result["nativeName"];
-            var capital = result["capital"];
-            var currencies = result["currencies"]; //array
-            var demonym = result["demonym"];
-            var flag = result["flag"];
-            var gini = result["gini"];
-            var languages = result["languages"]; //array
-            var population = result["population"];
-            var region = result["region"];
-            var subregion = result["subregion"];
-            var regionalBlocs = result["regionalBlocs"]; //array
-            var timezones = result["timezones"]; //array
-
-            for (var i = 0; i < currencies.length; i++) {
-                var currencySymbol = currencies[i]["symbol"];
-                var currencyName = currencies[i]["name"];
-            }
-
-            for (var j = 0; j < languages.length; j++) {
-                var language = languages[j]["name"];
-                var nativeLanguage = languages[j]["nativeName"];
-            }
-
-            for (var k = 0; k < regionalBlocs.length; k++) {
-                var regionaleBloc = regionalBlocs[k];
-            }
-
-            for (var l = 0; l < timezones.length; l++) {
-                var timezone = timezones[l];
-            }
-
-            console.log(result);
-            //console.log(result["languages"]);
-            //console.log(languages[j]["name"]);
-
-
-            var div = document.createElement("div");
-            div.innerHTML = "<div class='row'>" +
-                                "<div class='col s3 offset-s9'>" +
-                                    "<div class='card'>" +
-                                        "<div class='card-content'>" +
-                                            "<span class='card-title center-align'>" + englishName + "</span>" +
-                                            "<p class='center-align'>"+nativeName+ " ("+languages[0]["name"]+")" + "</p><br>" +
-                                            "<div class='card-image'>" +
-                                                "<img class='responsive-img' style='border: grey 1px solid' src='"+flag+"'>" +
-                                            "</div>" +
-                                            "<ul>" +
-                                                "<li><p>Capital: "+capital+"</p></li>" +
-                                                "<div class='divider'></div>" +
-                                                "<li><p>Population: "+population+"</p></li>" +
-                                                "<div class='divider'></div>" +
-                                                "<li><p>Languages: "+language+" ("+nativeLanguage+"),<br>"+"</p></li>" +
-                                                "<div class='divider'></div>" +
-                                            "</ul>" +
-                                        "</div>" +
-                                    "</div>" +
-                                "</div>"+
-                            "</div>";
-            document.body.appendChild(div);
+            var rows = modal(result);
 
         }
     };
 
-    xmlhttp.open("GET", url, false );
+    xmlhttp.open("GET", url, false);
     xmlhttp.send();
 }
 
+function modal(result) {
+    var englishName = result["name"];
+    var nativeName = result["nativeName"];
+    var capital = result["capital"];
+    var demonym = result["demonym"];
+    var flag = result["flag"];
+    var gini = result["gini"];
+    var population = result["population"];
+    var region = result["region"];
+    var subregion = result["subregion"];
+    var languages = result["languages"];
+
+    console.log(result);
+    var index = arrow(gini);
+
+    var div = document.createElement("div");
+    div.setAttribute("class", "modal");
+    div.setAttribute("id", "modal1");
+    div.innerHTML = "<div class='modal-content'>" +
+        "<h4>" + englishName + "</h4>" +
+        "<h6>" + nativeName +  "</h6>" +
+        "<img class='responsive-img' style='border: grey 1px solid' src='" + flag + "'>" +
+        "<ul>" +
+        "<li><p>Capital: " + capital + "</p></li>" +
+        "<div class='divider'></div>" +
+        "<li><p>Population: " + population + "</p></li>" +
+        "<div class='divider'></div>" +
+        "<li><p>Languages: " + languageEnglish + " (" + languageNative + "),<br>" + "</p></li>" +
+        "<div class='divider'></div>" +
+        "<li><p>Demonym: " + demonym + "</p></li>" +
+        "<div class='divider'></div>" +
+        "<li><p>Region: " + region + " (" + subregion + "),<br>" + "</p></li>" +
+        "<div class='divider'></div>" +
+        "<li><p>Regional Blocs: " + + "</p></li>" +
+        "<div class='divider'></div>" +
+        "<li><p>Timezones: " +  + "</p></li>" +
+        "<div class='divider'></div>" +
+        "<li><p>Currency: " +  + " (" +  + ")" + "</p></li>" +
+        "<div class='divider'></div>" +
+        index +
+        "</ul>" +
+        "</div>" +
+        "<div class='modal-footer'>" +
+        "<a href='#!' class='modal-action modal-close waves-effect waves-green btn-flat'>Agree</a>" +
+        "</div>" +
+        "</div>";
+    document.body.appendChild(div);
+    $('#modal1').open();
+
+
+}
+
+function arrow(gini) {
+    if (gini < 30) {
+        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #00cd00'>arrow_upward</i>" + gini + "</p></li>";
+    } else if (gini >= 30 && gini < 35) {
+        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #30ff30'>arrow_upward</i>" + gini + "</p></li>";
+    } else if (gini >= 35 && gini < 40) {
+        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #9aff9a'>arrow_upward</i>" + gini + "</p></li>";
+    } else if (gini >= 40 && gini < 45) {
+        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #ffcdff'>arrow_downward</i>" + gini + "</p></li>";
+    } else if (gini >= 45 && gini < 50) {
+        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #ff6666'>arrow_downward</i>" + gini + "</p></li>";
+    } else if (gini >= 50 && gini < 55) {
+        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #ff1212'>arrow_downward</i>" + gini + "</p></li>";
+    } else if (gini >= 55 && gini < 60) {
+        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #cd0000'>arrow_downward</i>" + gini + "</p></li>";
+    } else if (gini >= 60 && gini <= 66) {
+        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #9a0000'>arrow_downward</i>" + gini + "</p></li>";
+    } else {
+        gini = "<li><p>Income Equality Index: " + gini + "</p></li>";
+    }
+    return gini;
+}
 
 
 function constructNewCoordinates(polygon) {
