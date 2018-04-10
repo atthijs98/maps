@@ -1,0 +1,1658 @@
+[
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Afghanistan",
+    "Country Code": "AFG",
+    "2015 [YR2015]": 19215562178.9798,
+    "2016 [YR2016]": 19469022207.6357,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Albania",
+    "Country Code": "ALB",
+    "2015 [YR2015]": 11335264966.561,
+    "2016 [YR2016]": 11863865978.0942,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Algeria",
+    "Country Code": "DZA",
+    "2015 [YR2015]": 165874330876.321,
+    "2016 [YR2016]": 159049096745.249,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Angola",
+    "Country Code": "AGO",
+    "2015 [YR2015]": 102962245246.708,
+    "2016 [YR2016]": 95335111741.2025,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Antigua and Barbuda",
+    "Country Code": "ATG",
+    "2015 [YR2015]": 1364863037.03704,
+    "2016 [YR2016]": 1460144703.7037,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Argentina",
+    "Country Code": "ARG",
+    "2015 [YR2015]": 584711485367.267,
+    "2016 [YR2016]": 545476103427.247,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Armenia",
+    "Country Code": "ARM",
+    "2015 [YR2015]": 10553337672.9872,
+    "2016 [YR2016]": 10572298341.5618,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Australia",
+    "Country Code": "AUS",
+    "2015 [YR2015]": 1345383143356.35,
+    "2016 [YR2016]": 1204616439828.41,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Austria",
+    "Country Code": "AUT",
+    "2015 [YR2015]": 382065930307.978,
+    "2016 [YR2016]": 390799991147.468,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Azerbaijan",
+    "Country Code": "AZE",
+    "2015 [YR2015]": 53074370486.0433,
+    "2016 [YR2016]": 37847715736.0406,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Bangladesh",
+    "Country Code": "BGD",
+    "2015 [YR2015]": 195078665827.565,
+    "2016 [YR2016]": 221415162445.648,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Belarus",
+    "Country Code": "BLR",
+    "2015 [YR2015]": 56454734396.5842,
+    "2016 [YR2016]": 47407217531.162,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Belgium",
+    "Country Code": "BEL",
+    "2015 [YR2015]": 455200045095.643,
+    "2016 [YR2016]": 467955709817.539,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Belize",
+    "Country Code": "BLZ",
+    "2015 [YR2015]": 1742545900,
+    "2016 [YR2016]": 1741100000,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Benin",
+    "Country Code": "BEN",
+    "2015 [YR2015]": 8290986804.45245,
+    "2016 [YR2016]": 8583031398.21675,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Bermuda",
+    "Country Code": "BMU",
+    "2015 [YR2015]": "..",
+    "2016 [YR2016]": "..",
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Bhutan",
+    "Country Code": "BTN",
+    "2015 [YR2015]": 2059258652.94668,
+    "2016 [YR2016]": 2212638830.39439,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Bolivia",
+    "Country Code": "BOL",
+    "2015 [YR2015]": 33000198263.3864,
+    "2016 [YR2016]": 33806395513.7482,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Bosnia and Herz.",
+    "Country Code": "BIH",
+    "2015 [YR2015]": 16209702863.6235,
+    "2016 [YR2016]": 16910277133.6463,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Botswana",
+    "Country Code": "BWA",
+    "2015 [YR2015]": 14430573505.3797,
+    "2016 [YR2016]": 15581137273.7728,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Brazil",
+    "Country Code": "BRA",
+    "2015 [YR2015]": 1803652649613.75,
+    "2016 [YR2016]": 1796186586414.45,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Brunei",
+    "Country Code": "BRN",
+    "2015 [YR2015]": 12930394937.8137,
+    "2016 [YR2016]": 11400653731.9916,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Bulgaria",
+    "Country Code": "BGR",
+    "2015 [YR2015]": 50199117547.0415,
+    "2016 [YR2016]": 53237882472.7108,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Burkina Faso",
+    "Country Code": "BFA",
+    "2015 [YR2015]": 10419303761.3524,
+    "2016 [YR2016]": 11693235542.0671,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Burundi",
+    "Country Code": "BDI",
+    "2015 [YR2015]": 3066681386.73841,
+    "2016 [YR2016]": 3007029030.4001,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Cambodia",
+    "Country Code": "KHM",
+    "2015 [YR2015]": 18049954289.4229,
+    "2016 [YR2016]": 20016747754.0192,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Cameroon",
+    "Country Code": "CMR",
+    "2015 [YR2015]": 30916218544.4404,
+    "2016 [YR2016]": 32217497470.489,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Canada",
+    "Country Code": "CAN",
+    "2015 [YR2015]": 1552807652015.37,
+    "2016 [YR2016]": 1529760492201.35,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Central African Rep.",
+    "Country Code": "CAF",
+    "2015 [YR2015]": 1583776759.97697,
+    "2016 [YR2016]": 1756124677.19671,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Chad",
+    "Country Code": "TCD",
+    "2015 [YR2015]": 10888798113.7866,
+    "2016 [YR2016]": 9600761473.78738,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Chile",
+    "Country Code": "CHL",
+    "2015 [YR2015]": 242517905161.664,
+    "2016 [YR2016]": 247027912574.35,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "China",
+    "Country Code": "CHN",
+    "2015 [YR2015]": 11064666282625.5,
+    "2016 [YR2016]": 11199145157649.2,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Colombia",
+    "Country Code": "COL",
+    "2015 [YR2015]": 291519596338.693,
+    "2016 [YR2016]": 282462551366.878,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Congo",
+    "Country Code": "COD",
+    "2015 [YR2015]": 36188521106.9294,
+    "2016 [YR2016]": 31930856401.9163,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Congo (Brazzaville)",
+    "Country Code": "COG",
+    "2015 [YR2015]": 8553154580.39951,
+    "2016 [YR2016]": 7833508878.9666,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Costa Rica",
+    "Country Code": "CRI",
+    "2015 [YR2015]": 54840103850.265,
+    "2016 [YR2016]": 57435507212.256,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Ivory Coast",
+    "Country Code": "CIV",
+    "2015 [YR2015]": 33145096414.0731,
+    "2016 [YR2016]": 36372613022.942,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Croatia",
+    "Country Code": "HRV",
+    "2015 [YR2015]": 48921877447.764,
+    "2016 [YR2016]": 50714957390.5378,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Cuba",
+    "Country Code": "CUB",
+    "2015 [YR2015]": 87132800000,
+    "2016 [YR2016]": "..",
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Cyprus",
+    "Country Code": "CYP",
+    "2015 [YR2015]": 19676167239.6584,
+    "2016 [YR2016]": 20047013274.3363,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Czech Rep.",
+    "Country Code": "CZE",
+    "2015 [YR2015]": 186829940545.759,
+    "2016 [YR2016]": 195305084919.138,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Denmark",
+    "Country Code": "DNK",
+    "2015 [YR2015]": 301298464861.385,
+    "2016 [YR2016]": 306899653409.601,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Djibouti",
+    "Country Code": "DJI",
+    "2015 [YR2015]": 1727000000,
+    "2016 [YR2016]": "..",
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Dominican Rep.",
+    "Country Code": "DOM",
+    "2015 [YR2015]": 68102618092.1031,
+    "2016 [YR2016]": 71583553487.5646,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Ecuador",
+    "Country Code": "ECU",
+    "2015 [YR2015]": 99290381000,
+    "2016 [YR2016]": 98613972000,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Egypt",
+    "Country Code": "EGY",
+    "2015 [YR2015]": 332698041030.807,
+    "2016 [YR2016]": 332791045963.807,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "El Salvador",
+    "Country Code": "SLV",
+    "2015 [YR2015]": 26052340000,
+    "2016 [YR2016]": 26797470000,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Equatorial Guinea",
+    "Country Code": "GNQ",
+    "2015 [YR2015]": 12597210657.5048,
+    "2016 [YR2016]": 10684804794.0361,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Eritrea",
+    "Country Code": "ERI",
+    "2015 [YR2015]": "..",
+    "2016 [YR2016]": "..",
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Estonia",
+    "Country Code": "EST",
+    "2015 [YR2015]": 22566956982.229,
+    "2016 [YR2016]": 23337907618.5174,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Ethiopia",
+    "Country Code": "ETH",
+    "2015 [YR2015]": 64464547915.2698,
+    "2016 [YR2016]": 72374224249.3997,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Finland",
+    "Country Code": "FIN",
+    "2015 [YR2015]": 232439324529.645,
+    "2016 [YR2016]": 238502900311.9,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "France",
+    "Country Code": "FRA",
+    "2015 [YR2015]": 2433562015516.21,
+    "2016 [YR2016]": 2465453975282.24,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Gabon",
+    "Country Code": "GAB",
+    "2015 [YR2015]": 14262032470.9041,
+    "2016 [YR2016]": 14213558130.1817,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Gambia",
+    "Country Code": "GMB",
+    "2015 [YR2015]": 907652509.516259,
+    "2016 [YR2016]": 964599178.129102,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Georgia",
+    "Country Code": "GEO",
+    "2015 [YR2015]": 13993546732.4726,
+    "2016 [YR2016]": 14378016729.1587,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Germany",
+    "Country Code": "DEU",
+    "2015 [YR2015]": 3375611100742.22,
+    "2016 [YR2016]": 3477796274496.8,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Ghana",
+    "Country Code": "GHA",
+    "2015 [YR2015]": 37543361203.5609,
+    "2016 [YR2016]": 42689783733.873,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Greece",
+    "Country Code": "GRC",
+    "2015 [YR2015]": 195541761243.144,
+    "2016 [YR2016]": 192690813126.86,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Greenland",
+    "Country Code": "GRL",
+    "2015 [YR2015]": 2220380802.33059,
+    "2016 [YR2016]": "..",
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Grenada",
+    "Country Code": "GRD",
+    "2015 [YR2015]": 997007925.925926,
+    "2016 [YR2016]": 1056188592.59259,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Guatemala",
+    "Country Code": "GTM",
+    "2015 [YR2015]": 63767597193.9175,
+    "2016 [YR2016]": 68763255963.8943,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Guinea",
+    "Country Code": "GIN",
+    "2015 [YR2015]": 8767143622.83101,
+    "2016 [YR2016]": 8200248003.02206,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Guinea Bissau",
+    "Country Code": "GNB",
+    "2015 [YR2015]": 1036130506.53639,
+    "2016 [YR2016]": 1164944509.94419,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Guyana",
+    "Country Code": "GUY",
+    "2015 [YR2015]": 3197225181.59806,
+    "2016 [YR2016]": 3502397094.43099,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Haiti",
+    "Country Code": "HTI",
+    "2015 [YR2015]": 8724656126.49849,
+    "2016 [YR2016]": 8022638721.92013,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Honduras",
+    "Country Code": "HND",
+    "2015 [YR2015]": 20844284855.0025,
+    "2016 [YR2016]": 21516938909.5686,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Hungary",
+    "Country Code": "HUN",
+    "2015 [YR2015]": 122879042001.915,
+    "2016 [YR2016]": 125816640420.569,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Iceland",
+    "Country Code": "ISL",
+    "2015 [YR2015]": 16783714958.4498,
+    "2016 [YR2016]": 20047413006.3471,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "India",
+    "Country Code": "IND",
+    "2015 [YR2015]": 2089865410867.82,
+    "2016 [YR2016]": 2263792499341.01,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Indonesia",
+    "Country Code": "IDN",
+    "2015 [YR2015]": 861256351277.359,
+    "2016 [YR2016]": 932259177765.307,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Iran",
+    "Country Code": "IRN",
+    "2015 [YR2015]": 385874474398.59,
+    "2016 [YR2016]": 418976679728.567,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Iraq",
+    "Country Code": "IRQ",
+    "2015 [YR2015]": 179640210726.448,
+    "2016 [YR2016]": 171489001692.047,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Ireland",
+    "Country Code": "IRL",
+    "2015 [YR2015]": 290617006703.972,
+    "2016 [YR2016]": 304819020500.641,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Israel",
+    "Country Code": "ISR",
+    "2015 [YR2015]": 299096404728.826,
+    "2016 [YR2016]": 317744784695.1,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Italy",
+    "Country Code": "ITA",
+    "2015 [YR2015]": 1832347450961.51,
+    "2016 [YR2016]": 1858913163927.72,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Jamaica",
+    "Country Code": "JAM",
+    "2015 [YR2015]": 14186886642.6685,
+    "2016 [YR2016]": 14056908749.3505,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Japan",
+    "Country Code": "JPN",
+    "2015 [YR2015]": 4383076298081.86,
+    "2016 [YR2016]": 4940158776617.16,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Jordan",
+    "Country Code": "JOR",
+    "2015 [YR2015]": 37517410281.6901,
+    "2016 [YR2016]": 38654727746.4789,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Kazakhstan",
+    "Country Code": "KAZ",
+    "2015 [YR2015]": 184388432148.715,
+    "2016 [YR2016]": 137278320084.171,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Kenya",
+    "Country Code": "KEN",
+    "2015 [YR2015]": 63767539356.6051,
+    "2016 [YR2016]": 70529014778.3251,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Kiribati",
+    "Country Code": "KIR",
+    "2015 [YR2015]": 169140538.696106,
+    "2016 [YR2016]": 181551484.895269,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "N. Korea",
+    "Country Code": "PRK",
+    "2015 [YR2015]": "..",
+    "2016 [YR2016]": "..",
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "S. Korea",
+    "Country Code": "KOR",
+    "2015 [YR2015]": 1382764027113.82,
+    "2016 [YR2016]": 1411245589976.63,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Kosovo",
+    "Country Code": "XKX",
+    "2015 [YR2015]": 6440501275.36875,
+    "2016 [YR2016]": 6649888888.88889,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Kuwait",
+    "Country Code": "KWT",
+    "2015 [YR2015]": 114567298105.683,
+    "2016 [YR2016]": 110875579086.698,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Kyrgyzstan",
+    "Country Code": "KGZ",
+    "2015 [YR2015]": 6678178340.45121,
+    "2016 [YR2016]": 6551287937.62632,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Laos",
+    "Country Code": "LAO",
+    "2015 [YR2015]": 14390391264.2607,
+    "2016 [YR2016]": 15805707154.2329,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Latvia",
+    "Country Code": "LVA",
+    "2015 [YR2015]": 27009231911.4428,
+    "2016 [YR2016]": 27572698481.8766,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Lebanon",
+    "Country Code": "LBN",
+    "2015 [YR2015]": 49459296463.2836,
+    "2016 [YR2016]": 49598825982.1559,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Lesotho",
+    "Country Code": "LSO",
+    "2015 [YR2015]": 2505886024.6573,
+    "2016 [YR2016]": 2291321667.48246,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Liberia",
+    "Country Code": "LBR",
+    "2015 [YR2015]": 2034000000,
+    "2016 [YR2016]": 2101000000,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Libya",
+    "Country Code": "LBY",
+    "2015 [YR2015]": "..",
+    "2016 [YR2016]": "..",
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Lithuania",
+    "Country Code": "LTU",
+    "2015 [YR2015]": 41402022148.2053,
+    "2016 [YR2016]": 42738875963.3703,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Luxembourg",
+    "Country Code": "LUX",
+    "2015 [YR2015]": 57784495265.4378,
+    "2016 [YR2016]": 58631324559.4484,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Macedonia",
+    "Country Code": "MKD",
+    "2015 [YR2015]": 10051659161.1733,
+    "2016 [YR2016]": 10899583154.6499,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Madagascar",
+    "Country Code": "MDG",
+    "2015 [YR2015]": 9744243420.48073,
+    "2016 [YR2016]": 10001193420.1518,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Malawi",
+    "Country Code": "MWI",
+    "2015 [YR2015]": 6373201160.03248,
+    "2016 [YR2016]": 5433038646.51677,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Malaysia",
+    "Country Code": "MYS",
+    "2015 [YR2015]": 296434003328.639,
+    "2016 [YR2016]": 296535930381.12,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Maldives",
+    "Country Code": "MDV",
+    "2015 [YR2015]": 4006531188.26486,
+    "2016 [YR2016]": 4224209599.22917,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Mali",
+    "Country Code": "MLI",
+    "2015 [YR2015]": 13100058099.804,
+    "2016 [YR2016]": 14034980333.6615,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Malta",
+    "Country Code": "MLT",
+    "2015 [YR2015]": 10285547954.0777,
+    "2016 [YR2016]": 10999047580.3881,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Mauritania",
+    "Country Code": "MRT",
+    "2015 [YR2015]": 4844223106.95469,
+    "2016 [YR2016]": 4739298730.30837,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Mauritius",
+    "Country Code": "MUS",
+    "2015 [YR2015]": 11692287066.381,
+    "2016 [YR2016]": 12168437744.2644,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Mexico",
+    "Country Code": "MEX",
+    "2015 [YR2015]": 1152263780657.86,
+    "2016 [YR2016]": 1046922702460.87,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Moldova",
+    "Country Code": "MDA",
+    "2015 [YR2015]": 6512899540.34594,
+    "2016 [YR2016]": 6749515654.64419,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Mongolia",
+    "Country Code": "MNG",
+    "2015 [YR2015]": 11749620619.5962,
+    "2016 [YR2016]": 11183458130.8083,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Montenegro",
+    "Country Code": "MNE",
+    "2015 [YR2015]": 4052913385.82677,
+    "2016 [YR2016]": 4374127212.38938,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Morocco",
+    "Country Code": "MAR",
+    "2015 [YR2015]": 101187079462.942,
+    "2016 [YR2016]": 103606321692.582,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Mozambique",
+    "Country Code": "MOZ",
+    "2015 [YR2015]": 14798439527.2541,
+    "2016 [YR2016]": 11014858591.8422,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Myanmar",
+    "Country Code": "MMR",
+    "2015 [YR2015]": 59687373958.2574,
+    "2016 [YR2016]": 63225097051.255,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Namibia",
+    "Country Code": "NAM",
+    "2015 [YR2015]": 11571141027.0478,
+    "2016 [YR2016]": 10947880690.471,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Nepal",
+    "Country Code": "NPL",
+    "2015 [YR2015]": 21410840908.5198,
+    "2016 [YR2016]": 21131983246.1855,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Netherlands",
+    "Country Code": "NLD",
+    "2015 [YR2015]": 757999453314.269,
+    "2016 [YR2016]": 777227541581.307,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "New Caledonia",
+    "Country Code": "NCL",
+    "2015 [YR2015]": "..",
+    "2016 [YR2016]": "..",
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "New Zealand",
+    "Country Code": "NZL",
+    "2015 [YR2015]": 175562976175.285,
+    "2016 [YR2016]": 184969146624.47,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Nicaragua",
+    "Country Code": "NIC",
+    "2015 [YR2015]": 12747741539.7259,
+    "2016 [YR2016]": 13230844686.858,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Niger",
+    "Country Code": "NER",
+    "2015 [YR2015]": "..",
+    "2016 [YR2016]": "..",
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Nigeria",
+    "Country Code": "NGA",
+    "2015 [YR2015]": 481066152889.094,
+    "2016 [YR2016]": 404652720164.859,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Norway",
+    "Country Code": "NOR",
+    "2015 [YR2015]": 386663139402.707,
+    "2016 [YR2016]": 371076190476.19,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Oman",
+    "Country Code": "OMN",
+    "2015 [YR2015]": 69831770871.2614,
+    "2016 [YR2016]": 66293368010.4031,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Pakistan",
+    "Country Code": "PAK",
+    "2015 [YR2015]": 270556126820.064,
+    "2016 [YR2016]": 278913371202.065,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Palau",
+    "Country Code": "PLW",
+    "2015 [YR2015]": 297645400,
+    "2016 [YR2016]": 310248300,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Panama",
+    "Country Code": "PAN",
+    "2015 [YR2015]": 52132289700,
+    "2016 [YR2016]": 55187700000,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Papua New Guinea",
+    "Country Code": "PNG",
+    "2015 [YR2015]": 21060901603.8145,
+    "2016 [YR2016]": 20213214171.7204,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Paraguay",
+    "Country Code": "PRY",
+    "2015 [YR2015]": 27282581335.7964,
+    "2016 [YR2016]": 27424071382.7244,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Peru",
+    "Country Code": "PER",
+    "2015 [YR2015]": 189212096470.293,
+    "2016 [YR2016]": 192207342004.681,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Philippines",
+    "Country Code": "PHL",
+    "2015 [YR2015]": 292774099013.687,
+    "2016 [YR2016]": 304905406845.291,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Poland",
+    "Country Code": "POL",
+    "2015 [YR2015]": 477279647754.701,
+    "2016 [YR2016]": 471364408713.956,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Portugal",
+    "Country Code": "PRT",
+    "2015 [YR2015]": 199420256049.689,
+    "2016 [YR2016]": 204836597909.466,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Puerto Rico",
+    "Country Code": "PRI",
+    "2015 [YR2015]": "..",
+    "2016 [YR2016]": "..",
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Qatar",
+    "Country Code": "QAT",
+    "2015 [YR2015]": 164641483516.484,
+    "2016 [YR2016]": 152451923076.923,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Romania",
+    "Country Code": "ROU",
+    "2015 [YR2015]": 177911101680.106,
+    "2016 [YR2016]": 187592037839.968,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Russian Federation",
+    "Country Code": "RUS",
+    "2015 [YR2015]": 1365864126832.81,
+    "2016 [YR2016]": 1283162985989.3,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Rwanda",
+    "Country Code": "RWA",
+    "2015 [YR2015]": 8261034257.63248,
+    "2016 [YR2016]": 8376048904.58291,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Samoa",
+    "Country Code": "WSM",
+    "2015 [YR2015]": 803985809.166289,
+    "2016 [YR2016]": 786356314.80277,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Sao Tome and Principe",
+    "Country Code": "STP",
+    "2015 [YR2015]": 315880811.087464,
+    "2016 [YR2016]": 342781715.52048,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Saudi Arabia",
+    "Country Code": "SAU",
+    "2015 [YR2015]": 651757333333.333,
+    "2016 [YR2016]": 646438380560,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Senegal",
+    "Country Code": "SEN",
+    "2015 [YR2015]": 13640668374.1652,
+    "2016 [YR2016]": 14683697630.9,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Serbia",
+    "Country Code": "SRB",
+    "2015 [YR2015]": 37160332465.1645,
+    "2016 [YR2016]": 38299854688.1277,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Sierra Leone",
+    "Country Code": "SLE",
+    "2015 [YR2015]": 4251869869.50755,
+    "2016 [YR2016]": 3736588553.56394,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Singapore",
+    "Country Code": "SGP",
+    "2015 [YR2015]": 296840704102.415,
+    "2016 [YR2016]": 296975678610.206,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Slovak Republic",
+    "Country Code": "SVK",
+    "2015 [YR2015]": 87501423882.4686,
+    "2016 [YR2016]": 89768598023.3903,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Slovenia",
+    "Country Code": "SVN",
+    "2015 [YR2015]": 43072415017.4321,
+    "2016 [YR2016]": 44708598648.8562,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Solomon Islands",
+    "Country Code": "SLB",
+    "2015 [YR2015]": 1129164718.81436,
+    "2016 [YR2016]": 1202125000,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Somalia",
+    "Country Code": "SOM",
+    "2015 [YR2015]": 5925000000,
+    "2016 [YR2016]": 6217000000,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "South Africa",
+    "Country Code": "ZAF",
+    "2015 [YR2015]": 317610719411.483,
+    "2016 [YR2016]": 295456189492.005,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "South Sudan",
+    "Country Code": "SSD",
+    "2015 [YR2015]": 9015221096.24474,
+    "2016 [YR2016]": "..",
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Spain",
+    "Country Code": "ESP",
+    "2015 [YR2015]": 1197789902774.43,
+    "2016 [YR2016]": 1237255019653.86,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Sri Lanka",
+    "Country Code": "LKA",
+    "2015 [YR2015]": 80611989527.2158,
+    "2016 [YR2016]": 81321876307.2556,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "St. Kitts and Nevis",
+    "Country Code": "KNA",
+    "2015 [YR2015]": 878281507.766667,
+    "2016 [YR2016]": 909854619.518519,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "St. Lucia",
+    "Country Code": "LCA",
+    "2015 [YR2015]": 1649142629.62963,
+    "2016 [YR2016]": 1667078703.7037,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Sudan",
+    "Country Code": "SDN",
+    "2015 [YR2015]": 97156119150,
+    "2016 [YR2016]": 95584380032.2061,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Suriname",
+    "Country Code": "SUR",
+    "2015 [YR2015]": 4826587057.68724,
+    "2016 [YR2016]": 3278425328.32418,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Swaziland",
+    "Country Code": "SWZ",
+    "2015 [YR2015]": 4020275298.02726,
+    "2016 [YR2016]": 3720649374.57512,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Sweden",
+    "Country Code": "SWE",
+    "2015 [YR2015]": 497918109302.399,
+    "2016 [YR2016]": 514459972806.171,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Switzerland",
+    "Country Code": "CHE",
+    "2015 [YR2015]": 679289166858.236,
+    "2016 [YR2016]": 668851296244.236,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Syrian Arab Republic",
+    "Country Code": "SYR",
+    "2015 [YR2015]": "..",
+    "2016 [YR2016]": "..",
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Tajikistan",
+    "Country Code": "TJK",
+    "2015 [YR2015]": 7853450374.0001,
+    "2016 [YR2016]": 6951657158.90093,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Tanzania",
+    "Country Code": "TZA",
+    "2015 [YR2015]": 45628320606.0487,
+    "2016 [YR2016]": 47340071107.343,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Thailand",
+    "Country Code": "THA",
+    "2015 [YR2015]": 399234547137.472,
+    "2016 [YR2016]": 407026127310.434,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Timor-Leste",
+    "Country Code": "TLS",
+    "2015 [YR2015]": 1606500000,
+    "2016 [YR2016]": 1782974000,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Togo",
+    "Country Code": "TGO",
+    "2015 [YR2015]": 4087628275.95594,
+    "2016 [YR2016]": 4399995986.56477,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Tonga",
+    "Country Code": "TON",
+    "2015 [YR2015]": 435438217.281663,
+    "2016 [YR2016]": 401562006.229967,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Trinidad and Tobago",
+    "Country Code": "TTO",
+    "2015 [YR2015]": 23559224762.4424,
+    "2016 [YR2016]": 21894706041.2353,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Tunisia",
+    "Country Code": "TUN",
+    "2015 [YR2015]": 43156708809.1354,
+    "2016 [YR2016]": 42062549394.7859,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Turkey",
+    "Country Code": "TUR",
+    "2015 [YR2015]": 859794177118.102,
+    "2016 [YR2016]": 863711710426.514,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Turkmenistan",
+    "Country Code": "TKM",
+    "2015 [YR2015]": 35799628571.4286,
+    "2016 [YR2016]": 36179885714.2857,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Tuvalu",
+    "Country Code": "TUV",
+    "2015 [YR2015]": 32673277.7402149,
+    "2016 [YR2016]": 34218878.4390841,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Uganda",
+    "Country Code": "UGA",
+    "2015 [YR2015]": 27059447774.6626,
+    "2016 [YR2016]": 24078931933.4578,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Ukraine",
+    "Country Code": "UKR",
+    "2015 [YR2015]": 91030959454.6961,
+    "2016 [YR2016]": 93270479388.5243,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "United Arab Emirates",
+    "Country Code": "ARE",
+    "2015 [YR2015]": 357949199754.935,
+    "2016 [YR2016]": 348743265704.561,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "United Kingdom",
+    "Country Code": "GBR",
+    "2015 [YR2015]": 2885570309160.86,
+    "2016 [YR2016]": 2647898654635.24,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "United States",
+    "Country Code": "USA",
+    "2015 [YR2015]": 18120714000000,
+    "2016 [YR2016]": 18624475000000,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Uruguay",
+    "Country Code": "URY",
+    "2015 [YR2015]": 53274304214.8174,
+    "2016 [YR2016]": 52419720713.7316,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Uzbekistan",
+    "Country Code": "UZB",
+    "2015 [YR2015]": 66903804142.5395,
+    "2016 [YR2016]": 67220335569.6147,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Vanuatu",
+    "Country Code": "VUT",
+    "2015 [YR2015]": 742432131.041002,
+    "2016 [YR2016]": 773502895.927602,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Venezuela, RB",
+    "Country Code": "VEN",
+    "2015 [YR2015]": "..",
+    "2016 [YR2016]": "..",
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Vietnam",
+    "Country Code": "VNM",
+    "2015 [YR2015]": 193241108709.536,
+    "2016 [YR2016]": 205276172134.901,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "West Bank and Gaza",
+    "Country Code": "PSE",
+    "2015 [YR2015]": 12673000000,
+    "2016 [YR2016]": 13397100000,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Yemen",
+    "Country Code": "YEM",
+    "2015 [YR2015]": 37733919936.2465,
+    "2016 [YR2016]": 27317605346.0714,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Zambia",
+    "Country Code": "ZMB",
+    "2015 [YR2015]": 21154394545.895,
+    "2016 [YR2016]": 21063989682.5243,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "Zimbabwe",
+    "Country Code": "ZWE",
+    "2015 [YR2015]": 16304667807.0657,
+    "2016 [YR2016]": 16619960401.9038,
+    "2017 [YR2017]": ".."
+  },
+  {
+    "Series Name": "GDP (current US$)",
+    "Series Code": "NY.GDP.MKTP.CD",
+    "Country Name": "European Union",
+    "Country Code": "EUU",
+    "2015 [YR2015]": 16410700117941.6,
+    "2016 [YR2016]": 16487344364513.9,
+    "2017 [YR2017]": ".."
+  }
+]

@@ -40,7 +40,7 @@ function drawMap(data) {
         }
     }
     //console.log(map);
-    test(map)
+    //test(map)
 }
 
 function converte(countryName) {
@@ -594,6 +594,7 @@ function httpGet(url) {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var data = xmlhttp.responseText;
             var result = JSON.parse(data);
+            console.log(result["name"]);
             var rows = modal(result);
 
         }
@@ -604,6 +605,8 @@ function httpGet(url) {
 }
 
 function modal(result) {
+
+
     var englishName = result["name"];
     var nativeName = result["nativeName"];
     var capital = result["capital"];
@@ -614,35 +617,53 @@ function modal(result) {
     var region = result["region"];
     var subregion = result["subregion"];
     var languages = result["languages"];
+    var currencies = result["currencies"];
+    var timezones = result["timezones"];
+    var regionalBlocs = result["regionalBlocs"];
+    var hdi;
+    var gdp;
+    var ppp;
 
     console.log(result);
+
+    var grossDomesticProduct = getGdp(englishName, gdp);
     var index = arrow(gini);
+    hdi = findHdi(englishName);
+    ppp = getPpp(englishName);
+    console.log("\t hdi: \t " + hdi);
+    var index3 = indicator(hdi);
+
 
     var div = document.createElement("div");
     div.setAttribute("class", "modal");
     div.setAttribute("id", "modal1");
     div.innerHTML = "<div class='modal-content'>" +
         "<h4>" + englishName + "</h4>" +
-        "<h6>" + nativeName +  "</h6>" +
+        "<h6>" + nativeName + "</h6>" +
         "<img class='responsive-img' style='border: grey 1px solid' src='" + flag + "'>" +
         "<ul>" +
         "<li><p>Capital: " + capital + "</p></li>" +
         "<div class='divider'></div>" +
         "<li><p>Population: " + population + "</p></li>" +
         "<div class='divider'></div>" +
-        "<li><p>Languages: " + languageEnglish + " (" + languageNative + "),<br>" + "</p></li>" +
+        "<li><p id='language'>Languages:</p></li>" +
         "<div class='divider'></div>" +
         "<li><p>Demonym: " + demonym + "</p></li>" +
         "<div class='divider'></div>" +
         "<li><p>Region: " + region + " (" + subregion + "),<br>" + "</p></li>" +
         "<div class='divider'></div>" +
-        "<li><p>Regional Blocs: " + + "</p></li>" +
+        "<li><p id='regionalBloc'>Regional Blocs: </p></li>" +
         "<div class='divider'></div>" +
-        "<li><p>Timezones: " +  + "</p></li>" +
+        "<li><p id='timezone'>Timezones: </p></li>" +
         "<div class='divider'></div>" +
-        "<li><p>Currency: " +  + " (" +  + ")" + "</p></li>" +
+        "<li><p id='currency'>Currency: </p></li>" +
+        "<div class='divider'></div>" +
+        "<li><p>Gross Domestic Product(GDP): $"+grossDomesticProduct+"</p></li>"+
+        "<div class='divider'></div>" +
+        "<li><p>gross domestic product (at purchasing power parity) per capita: $"+ppp+"</p></li>"+
         "<div class='divider'></div>" +
         index +
+        index3 +
         "</ul>" +
         "</div>" +
         "<div class='modal-footer'>" +
@@ -650,6 +671,37 @@ function modal(result) {
         "</div>" +
         "</div>";
     document.body.appendChild(div);
+
+    for (var i = 0; i < languages.length; i++) {
+        var languageEnglish = languages[i]["name"];
+        var languageNative = languages[i]["nativeName"];
+        var a = document.getElementById("language");
+
+        a.innerHTML += "" + languageEnglish + " (" + languageNative + ")";
+    }
+    for (var j = 0; j < currencies.length; j++) {
+        var currencyName = currencies[j]["name"];
+        var currencySymbol = currencies[j]["symbol"];
+        var b = document.getElementById("currency");
+
+        b.innerHTML += "" + currencyName + " (" + currencySymbol + ")";
+    }
+    for (var k = 0; k < timezones.length; k++) {
+        var timezone = timezones[k];
+        var c = document.getElementById("timezone");
+
+        c.innerHTML += "" + timezone + "";
+
+
+    }
+    for (var l = 0; l < regionalBlocs.length; l++) {
+        var regionalBloc = regionalBlocs[l]["name"];
+        var d = document.getElementById("regionalBloc");
+
+        d.innerHTML += "" + regionalBloc + "";
+    }
+
+
     $('#modal1').open();
 
 
@@ -676,6 +728,80 @@ function arrow(gini) {
         gini = "<li><p>Income Equality Index: " + gini + "</p></li>";
     }
     return gini;
+}
+
+function findHdi(englishName) {
+    var hdi;
+    var request = new XMLHttpRequest();
+    request.open('GET', '../hdi.json', false);  // `false` makes the request synchronous
+    request.send(null);
+
+    if (request.status === 200) {
+        var data = request.responseText;
+        var result = JSON.parse(data);
+        for (var i = 0; i < result.length; i++) {
+            var country = result[i]["Country"];
+            if (country.indexOf(englishName) != -1) {
+                hdi = result[i]["2014"];
+                console.log("found value: " +hdi);
+                return hdi;
+            }
+        }
+    }
+}
+
+function indicator(hdi) {
+    if (hdi <= 0.999 && hdi > 0.800) {
+        hdi = "<li><p>Human Development Index(2014): <i class='small material-icons' style='color: #30ff30'>arrow_upward</i>" + hdi + "</p>";
+    } else if (hdi <= 0.800 && hdi > 0.701) {
+        hdi = "<li><p>Human Development Index(2014): <i class='small material-icons' style='color: #9aff9a'>arrow_upward</i>" + hdi + "</p>";
+    } else if (hdi <= 0.700 && hdi > 550) {
+        hdi = "<li><p>Human Development Index(2014): <i class='small material-icons' style='color: #fc0'>remove</i>" + hdi + "</p>";
+    } else if (hdi <= 0.550 && hdi > 0.100) {
+        hdi = "<li><p>Human Development Index(2014): <i class='small material-icons' style='color: #cd0000'>arrow_downward</i>" + hdi + "</p>";
+    } else {
+        hdi = "<li><p>Human Development Index(2014): " + hdi + "</p>";
+    }
+    return hdi;
+}
+
+function getGdp(englishName, gdp) {
+    var request = new XMLHttpRequest();
+    request.open('GET', '../gdp.json', false);  // `false` makes the request synchronous
+    request.send(null);
+
+    if (request.status === 200) {
+        var data = request.responseText;
+        var result = JSON.parse(data);
+        for (var i = 0; i < result.length; i++) {
+            var country = result[i]["Country Name"];
+            if (country.indexOf(englishName) != -1) {
+                gdp = result[i]["2016 [YR2016]"];
+                console.log("found value: " +gdp);
+                return gdp;
+            }
+        }
+    }
+}
+
+function getPpp(englishName) {
+    var ppp;
+    var request = new XMLHttpRequest();
+    request.open('GET', '../ppp.json', false);  // `false` makes the request synchronous
+    request.send(null);
+
+    if (request.status === 200) {
+        var data = request.responseText;
+        var result = JSON.parse(data);
+        for (var i = 0; i < result.length; i++) {
+            var country = result[i]["Country Name"];
+            if (country.indexOf(englishName) != -1) {
+                ppp = result[i]["2016 [YR2016]"];
+                console.log("found value: " + ppp);
+                return ppp;
+            }
+        }
+    }
 }
 
 
