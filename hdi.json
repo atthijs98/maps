@@ -165,7 +165,7 @@
     "2013": 0.895,
     "2014": 0.898,
     "HDI Rank": 17,
-    "Country": "S. Korea"
+    "Country": "Korea (Republic of)"
   },
   {
     "1990": 0.785,
@@ -286,7 +286,7 @@
     "2013": 0.868,
     "2014": 0.87,
     "HDI Rank": 28,
-    "Country": "Czech Rep."
+    "Country": "Czech Republic"
   },
   {
     "1990": 0.759,
@@ -319,7 +319,7 @@
     "2013": 0.852,
     "2014": 0.856,
     "HDI Rank": 31,
-    "Country": "Brunei"
+    "Country": "Brunei Darussalam"
   },
   {
     "1990": 0.733,
@@ -514,7 +514,7 @@
     "2013": 0.797,
     "2014": 0.798,
     "HDI Rank": 50,
-    "Country": "Russia"
+    "Country": "Russian Federation"
   },
   {
     "2010": 0.795,
@@ -674,7 +674,7 @@
     "2013": 0.764,
     "2014": 0.766,
     "HDI Rank": 69,
-    "Country": "Iran"
+    "Country": "Iran (Islamic Republic of)"
   },
   {
     "1990": 0.635,
@@ -685,7 +685,7 @@
     "2013": 0.764,
     "2014": 0.762,
     "HDI Rank": 71,
-    "Country": "Venezuela"
+    "Country": "Venezuela (Bolivarian Republic of)"
   },
   {
     "1990": 0.576,
@@ -769,7 +769,7 @@
     "2013": 0.744,
     "2014": 0.747,
     "HDI Rank": 81,
-    "Country": "Macedonia"
+    "Country": "Macedonia (the former Yugoslav Republic of)"
   },
   {
     "1990": 0.705,
@@ -833,7 +833,7 @@
     "2013": 0.729,
     "2014": 0.733,
     "HDI Rank": 85,
-    "Country": "Bosnia and Herz."
+    "Country": "Bosnia and Herzegovina"
   },
   {
     "1990": 0.645,
@@ -954,7 +954,7 @@
     "2013": 0.711,
     "2014": 0.715,
     "HDI Rank": 101,
-    "Country": "Dominican Rep."
+    "Country": "Dominican Republic"
   },
   {
     "2010": 0.707,
@@ -985,7 +985,7 @@
     "2013": 0.69,
     "2014": 0.693,
     "HDI Rank": 107,
-    "Country": "Moldova"
+    "Country": "Moldova (Republic of)"
   },
   {
     "1990": 0.546,
@@ -1047,7 +1047,7 @@
     "2013": 0.679,
     "2014": 0.677,
     "HDI Rank": 113,
-    "Country": "West Bank"
+    "Country": "Palestine, State of"
   },
   {
     "2000": 0.594,
@@ -1101,7 +1101,7 @@
     "2013": 0.663,
     "2014": 0.666,
     "HDI Rank": 116,
-    "Country": "Vietnam"
+    "Country": "Viet Nam"
   },
   {
     "1990": 0.536,
@@ -1112,7 +1112,7 @@
     "2013": 0.658,
     "2014": 0.662,
     "HDI Rank": 119,
-    "Country": "Bolivia"
+    "Country": "Bolivia (Plurinational State of)"
   },
   {
     "1990": 0.615,
@@ -1261,7 +1261,7 @@
     "2013": 0.601,
     "2014": 0.595,
     "HDI Rank": 133,
-    "Country": "East Timor"
+    "Country": "Timor-Leste"
   },
   {
     "1990": 0.553,
@@ -1272,7 +1272,7 @@
     "2013": 0.608,
     "2014": 0.594,
     "HDI Rank": 134,
-    "Country": "Syria"
+    "Country": "Syrian Arab Republic"
   },
   {
     "2010": 0.589,
@@ -1292,7 +1292,7 @@
     "2013": 0.582,
     "2014": 0.591,
     "HDI Rank": 136,
-    "Country": "Congo"
+    "Country": "Congo (Democratic Republic of the)"
   },
   {
     "2010": 0.588,
@@ -1344,7 +1344,7 @@
     "2013": 0.57,
     "2014": 0.575,
     "HDI Rank": 141,
-    "Country": "Laos"
+    "Country": "Lao People's Democratic Republic"
   },
   {
     "1990": 0.386,
@@ -1642,7 +1642,7 @@
     "2013": 0.461,
     "2014": 0.467,
     "HDI Rank": 169,
-    "Country": "S. Sudan"
+    "Country": "South Sudan"
   },
   {
     "1990": 0.367,
@@ -1675,7 +1675,7 @@
     "2013": 0.458,
     "2014": 0.462,
     "HDI Rank": 172,
-    "Country": "Ivory Coast"
+    "Country": "Côte d'Ivoire"
   },
   {
     "1990": 0.284,
@@ -1737,7 +1737,7 @@
     "2013": 0.418,
     "2014": 0.42,
     "HDI Rank": 178,
-    "Country": "Guinea Bissau"
+    "Country": "Guinea-Bissau"
   },
   {
     "1990": 0.233,
@@ -1830,7 +1830,7 @@
     "2013": 0.348,
     "2014": 0.35,
     "HDI Rank": 187,
-    "Country": "Central African Rep."
+    "Country": "Central African Republic"
   },
   {
     "1990": 0.214,
@@ -1842,5 +1842,9 @@
     "2014": 0.348,
     "HDI Rank": 188,
     "Country": "Niger"
+  },
+  {
+    "Country": "Taiwan",
+    "2014": 0.882
   }
 ]

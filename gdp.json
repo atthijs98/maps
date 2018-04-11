@@ -155,7 +155,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Bolivia",
+    "Country Name": "Bolivia (Plurinational State of)",
     "Country Code": "BOL",
     "2015 [YR2015]": 33000198263.3864,
     "2016 [YR2016]": 33806395513.7482,
@@ -164,7 +164,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Bosnia and Herz.",
+    "Country Name": "Bosnia and Herzegovina",
     "Country Code": "BIH",
     "2015 [YR2015]": 16209702863.6235,
     "2016 [YR2016]": 16910277133.6463,
@@ -191,7 +191,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Brunei",
+    "Country Name": "Brunei Darussalam",
     "Country Code": "BRN",
     "2015 [YR2015]": 12930394937.8137,
     "2016 [YR2016]": 11400653731.9916,
@@ -254,7 +254,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Central African Rep.",
+    "Country Name": "Central African Republic",
     "Country Code": "CAF",
     "2015 [YR2015]": 1583776759.97697,
     "2016 [YR2016]": 1756124677.19671,
@@ -299,7 +299,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Congo",
+    "Country Name": "Congo (Democratic Republic of the)",
     "Country Code": "COD",
     "2015 [YR2015]": 36188521106.9294,
     "2016 [YR2016]": 31930856401.9163,
@@ -308,7 +308,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Congo (Brazzaville)",
+    "Country Name": "Congo",
     "Country Code": "COG",
     "2015 [YR2015]": 8553154580.39951,
     "2016 [YR2016]": 7833508878.9666,
@@ -326,7 +326,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Ivory Coast",
+    "Country Name": "Côte d'Ivoire",
     "Country Code": "CIV",
     "2015 [YR2015]": 33145096414.0731,
     "2016 [YR2016]": 36372613022.942,
@@ -362,7 +362,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Czech Rep.",
+    "Country Name": "Czech Republic",
     "Country Code": "CZE",
     "2015 [YR2015]": 186829940545.759,
     "2016 [YR2016]": 195305084919.138,
@@ -389,7 +389,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Dominican Rep.",
+    "Country Name": "Dominican Republic",
     "Country Code": "DOM",
     "2015 [YR2015]": 68102618092.1031,
     "2016 [YR2016]": 71583553487.5646,
@@ -569,7 +569,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Guinea Bissau",
+    "Country Name": "Guinea-Bissau",
     "Country Code": "GNB",
     "2015 [YR2015]": 1036130506.53639,
     "2016 [YR2016]": 1164944509.94419,
@@ -641,7 +641,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Iran",
+    "Country Name": "Iran (Islamic Republic of)",
     "Country Code": "IRN",
     "2015 [YR2015]": 385874474398.59,
     "2016 [YR2016]": 418976679728.567,
@@ -740,7 +740,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "N. Korea",
+    "Country Name": "Korea (Democratic People's Republic of)",
     "Country Code": "PRK",
     "2015 [YR2015]": "..",
     "2016 [YR2016]": "..",
@@ -749,7 +749,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "S. Korea",
+    "Country Name": "Korea (Republic of)",
     "Country Code": "KOR",
     "2015 [YR2015]": 1382764027113.82,
     "2016 [YR2016]": 1411245589976.63,
@@ -785,7 +785,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Laos",
+    "Country Name": "Lao People's Democratic Republic",
     "Country Code": "LAO",
     "2015 [YR2015]": 14390391264.2607,
     "2016 [YR2016]": 15805707154.2329,
@@ -857,7 +857,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Macedonia",
+    "Country Name": "Macedonia (the former Yugoslav Republic of)",
     "Country Code": "MKD",
     "2015 [YR2015]": 10051659161.1733,
     "2016 [YR2016]": 10899583154.6499,
@@ -947,7 +947,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Moldova",
+    "Country Name": "Moldova (Republic of)",
     "Country Code": "MDA",
     "2015 [YR2015]": 6512899540.34594,
     "2016 [YR2016]": 6749515654.64419,
@@ -1280,7 +1280,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Slovak Republic",
+    "Country Name": "Slovakia",
     "Country Code": "SVK",
     "2015 [YR2015]": 87501423882.4686,
     "2016 [YR2016]": 89768598023.3903,
@@ -1595,7 +1595,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Venezuela, RB",
+    "Country Name": "Venezuela (Bolivarian Republic of)",
     "Country Code": "VEN",
     "2015 [YR2015]": "..",
     "2016 [YR2016]": "..",
@@ -1604,7 +1604,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Vietnam",
+    "Country Name": "Viet Nam",
     "Country Code": "VNM",
     "2015 [YR2015]": 193241108709.536,
     "2016 [YR2016]": 205276172134.901,
@@ -1613,7 +1613,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "West Bank and Gaza",
+    "Country Name": "Palestine, State of",
     "Country Code": "PSE",
     "2015 [YR2015]": 12673000000,
     "2016 [YR2016]": 13397100000,
@@ -1654,5 +1654,17 @@
     "2015 [YR2015]": 16410700117941.6,
     "2016 [YR2016]": 16487344364513.9,
     "2017 [YR2017]": ".."
+  },
+  {
+    "Country Name": "Bahamas",
+    "2016 [YR2016]": 11261800000
+  },
+  {
+    "Country Name": "Taiwan",
+    "2016 [YR2016]": 566757000000
+  },
+  {
+    "Country Name": "Fiji",
+    "2016 [YR2016]": 4703632978.5
   }
 ]

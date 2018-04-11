@@ -155,7 +155,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Bolivia",
+    "Country Name": "Bolivia (Plurinational State of)",
     "Country Code": "BOL",
     "2015 [YR2015]": 3077.02619917158,
     "2016 [YR2016]": 3104.95608914095,
@@ -164,7 +164,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Bosnia and Herz.",
+    "Country Name": "Bosnia and Herzegovina",
     "Country Code": "BIH",
     "2015 [YR2015]": 4584.24254781755,
     "2016 [YR2016]": 4808.40542514772,
@@ -200,7 +200,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Brunei",
+    "Country Name": "Brunei Darussalam",
     "Country Code": "BRN",
     "2015 [YR2015]": 30967.890506377,
     "2016 [YR2016]": 26939.4175086523,
@@ -272,7 +272,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Central African Rep.",
+    "Country Name": "Central African Republic",
     "Country Code": "CAF",
     "2015 [YR2015]": 348.381417033715,
     "2016 [YR2016]": 382.213174317687,
@@ -326,7 +326,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Congo",
+    "Country Name": "Congo (Democratic Republic of the)",
     "Country Code": "COD",
     "2015 [YR2015]": 474.936048106405,
     "2016 [YR2016]": 405.542500938753,
@@ -335,7 +335,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Congo (Brazzaville)",
+    "Country Name": "Congo",
     "Country Code": "COG",
     "2015 [YR2015]": 1712.12114632566,
     "2016 [YR2016]": 1528.24472001004,
@@ -353,7 +353,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Ivory Coast",
+    "Country Name": "Côte d'Ivoire",
     "Country Code": "CIV",
     "2015 [YR2015]": 1434.32661467505,
     "2016 [YR2016]": 1534.97372365857,
@@ -389,7 +389,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Czech Rep.",
+    "Country Name": "Czech Republic",
     "Country Code": "CZE",
     "2015 [YR2015]": 17715.6168523009,
     "2016 [YR2016]": 18483.7164797716,
@@ -416,7 +416,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Dominican Rep.",
+    "Country Name": "Dominican Republic",
     "Country Code": "DOM",
     "2015 [YR2015]": 6468.47164839225,
     "2016 [YR2016]": 6722.22353575768,
@@ -605,7 +605,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Guinea Bissau",
+    "Country Name": "Guinea-Bissau",
     "Country Code": "GNB",
     "2015 [YR2015]": 585.210556939796,
     "2016 [YR2016]": 641.595964716703,
@@ -677,7 +677,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Iran",
+    "Country Name": "Iran (Islamic Republic of)",
     "Country Code": "IRN",
     "2015 [YR2015]": 4862.29972856127,
     "2016 [YR2016]": 5219.1094080464,
@@ -776,7 +776,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "N. Korea",
+    "Country Name": "Korea (Democratic People's Republic of)",
     "Country Code": "PRK",
     "2015 [YR2015]": "..",
     "2016 [YR2016]": "..",
@@ -785,7 +785,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "S. Korea",
+    "Country Name": "Korea (Republic of)",
     "Country Code": "KOR",
     "2015 [YR2015]": 27105.076226264,
     "2016 [YR2016]": 27538.8061282212,
@@ -821,7 +821,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Laos",
+    "Country Name": "Lao People's Democratic Republic",
     "Country Code": "LAO",
     "2015 [YR2015]": 2159.43315209405,
     "2016 [YR2016]": 2338.69215683656,
@@ -893,7 +893,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Macedonia",
+    "Country Name": "Macedonia (the former Yugoslav Republic of)",
     "Country Code": "MKD",
     "2015 [YR2015]": 4834.13672297387,
     "2016 [YR2016]": 5237.1476704612,
@@ -983,7 +983,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Moldova",
+    "Country Name": "Moldova (Republic of)",
     "Country Code": "MDA",
     "2015 [YR2015]": 1832.4990518988,
     "2016 [YR2016]": 1900.22608813183,
@@ -1226,7 +1226,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Russia",
+    "Country Name": "Russian Federation",
     "Country Code": "RUS",
     "2015 [YR2015]": 9329.29071323649,
     "2016 [YR2016]": 8748.36885284202,
@@ -1334,7 +1334,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "S. Sudan",
+    "Country Name": "South Sudan",
     "Country Code": "SSD",
     "2015 [YR2015]": 758.720578206203,
     "2016 [YR2016]": "..",
@@ -1406,7 +1406,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Syria",
+    "Country Name": "Syrian Arab Republic",
     "Country Code": "SYR",
     "2015 [YR2015]": "..",
     "2016 [YR2016]": "..",
@@ -1442,7 +1442,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "East Timor",
+    "Country Name": "Timor-Leste",
     "Country Code": "TLS",
     "2015 [YR2015]": 1294.54454030977,
     "2016 [YR2016]": 1405.3872122875,
@@ -1568,7 +1568,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Venezuela",
+    "Country Name": "Venezuela (Bolivarian Republic of)",
     "Country Code": "VEN",
     "2015 [YR2015]": "..",
     "2016 [YR2016]": "..",
@@ -1577,7 +1577,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Vietnam",
+    "Country Name": "Viet Nam",
     "Country Code": "VNM",
     "2015 [YR2015]": 2065.16909895862,
     "2016 [YR2016]": 2170.64805431211,
@@ -1595,7 +1595,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "West Bank",
+    "Country Name": "Palestine, State of",
     "Country Code": "PSE",
     "2015 [YR2015]": 2865.80510851865,
     "2016 [YR2016]": 2943.4045337363,
@@ -1627,5 +1627,17 @@
     "2015 [YR2015]": 1033.41584182804,
     "2016 [YR2016]": 1029.07664867845,
     "2017 [YR2017]": ".."
+  },
+  {
+    "Country Name": "Bahamas",
+    "2016 [YR2016]": 28785.5
+  },
+  {
+    "Country Name": "Taiwan",
+    "2016 [YR2016]": 49901
+  },
+  {
+    "Country Name": "Fiji",
+    "2016 [YR2016]": 5233.5
   }
 ]

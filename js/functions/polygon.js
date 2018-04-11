@@ -1,3 +1,6 @@
+var div = document.createElement("div");
+div.setAttribute("class", "modal");
+div.setAttribute("id", "modal");
 function drawMap(data) {
 
     var rows = data['rows'];
@@ -32,7 +35,12 @@ function drawMap(data) {
             });
             google.maps.event.addListener(country, 'click', function () {
                 var countryName = this.name;
-                var code = converte(countryName);
+                var code = convert(countryName); // Calls a function that converts the name of the country to its official ISO 3166-1 alpha-2 code.
+                var modal = document.querySelector('.modal');
+                var instance = M.Modal.init(modal);
+                instance.open();
+
+
             });
 
 
@@ -43,7 +51,10 @@ function drawMap(data) {
     //test(map)
 }
 
-function converte(countryName) {
+/*
+ * This function contains a switch that returns an ISO 3166-1 alpha-2 code.
+ */
+function convert(countryName) {
     var code = '';
 
     switch (countryName) {
@@ -60,7 +71,7 @@ function converte(countryName) {
         case 'Bangladesh':
             code = 'bd';
             break;
-        case 'Congo':
+        case 'Congo (Kinshasa)':
             code = 'cg';
             break;
         case 'Cuba':
@@ -577,12 +588,15 @@ function converte(countryName) {
     }
 
     var url = "https://restcountries.eu/rest/v2/alpha/" + code;
-    //console.log(url);
-    var callback = httpGet(url);
+    console.log(url);
+    var callback = httpGet(url); // Calls a function that makes a XMLHttpRequest
     return code;
 
 }
 
+/*
+ * This function retrieves all the data from "url" and parses it to a JSON object.
+ */
 function httpGet(url) {
     if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
         xmlhttp = new XMLHttpRequest();
@@ -595,7 +609,7 @@ function httpGet(url) {
             var data = xmlhttp.responseText;
             var result = JSON.parse(data);
             console.log(result["name"]);
-            var rows = modal(result);
+            var rows = modal(result); // Calls a function that creates a modal.
 
         }
     };
@@ -604,12 +618,15 @@ function httpGet(url) {
     xmlhttp.send();
 }
 
+/*
+ * The variable "result" contains the response of the XMLHttpRequest.
+ * This function creates a modal that shows up when a country is clicked on.
+ */
 function modal(result) {
-
-
     var englishName = result["name"];
     var nativeName = result["nativeName"];
     var capital = result["capital"];
+    var area = result["area"];
     var demonym = result["demonym"];
     var flag = result["flag"];
     var gini = result["gini"];
@@ -624,31 +641,30 @@ function modal(result) {
     var gdp;
     var ppp;
 
-    console.log(result);
 
-    var grossDomesticProduct = getGdp(englishName, gdp);
-    var index = arrow(gini);
-    hdi = findHdi(englishName);
+    gdp = getGdp(englishName);
+    var giniStyle = giniIcon(gini);
+    hdi = getHdi(englishName);
     ppp = getPpp(englishName);
-    console.log("\t hdi: \t " + hdi);
-    var index3 = indicator(hdi);
+    var hdiStyle = hdiIcon(hdi);
+    var pppStyle = pppIcon(ppp);
 
 
-    var div = document.createElement("div");
-    div.setAttribute("class", "modal");
-    div.setAttribute("id", "modal1");
+
     div.innerHTML = "<div class='modal-content'>" +
-        "<h4>" + englishName + "</h4>" +
-        "<h6>" + nativeName + "</h6>" +
-        "<img class='responsive-img' style='border: grey 1px solid' src='" + flag + "'>" +
+        "<h4 class='center-align'>" + englishName + "</h4>" +
+        "<h6 class='center-align'>" + nativeName + "</h6>" +
+        "<img class='responsive-img center-align' style='border: grey 1px solid' src='" + flag + "'>" +
         "<ul>" +
         "<li><p>Capital: " + capital + "</p></li>" +
         "<div class='divider'></div>" +
-        "<li><p>Population: " + population + "</p></li>" +
+        "<li><p>Population: " + numeral(population).format('0,0') + "</p></li>" +
         "<div class='divider'></div>" +
         "<li><p id='language'>Languages:</p></li>" +
         "<div class='divider'></div>" +
         "<li><p>Demonym: " + demonym + "</p></li>" +
+        "<div class='divider'></div>" +
+        "<li><p>Area: " + numeral(area).format('0,0') + " km2</p></li>" +
         "<div class='divider'></div>" +
         "<li><p>Region: " + region + " (" + subregion + "),<br>" + "</p></li>" +
         "<div class='divider'></div>" +
@@ -658,39 +674,41 @@ function modal(result) {
         "<div class='divider'></div>" +
         "<li><p id='currency'>Currency: </p></li>" +
         "<div class='divider'></div>" +
-        "<li><p>Gross Domestic Product(GDP): $"+grossDomesticProduct+"</p></li>"+
+        "<li><p>Gross Domestic Product(GDP)(2016): $" + numeral(gdp).format('0,0.00') + "</p></li>" +
         "<div class='divider'></div>" +
-        "<li><p>gross domestic product (at purchasing power parity) per capita: $"+ppp+"</p></li>"+
+        pppStyle+
         "<div class='divider'></div>" +
-        index +
-        index3 +
+        giniStyle +
+        "<div class='divider'></div>"+
+        hdiStyle +
         "</ul>" +
         "</div>" +
         "<div class='modal-footer'>" +
-        "<a href='#!' class='modal-action modal-close waves-effect waves-green btn-flat'>Agree</a>" +
+        "<btn id='modalclose' class='modal-action modal-close waves-effect waves-green btn-flat'>Close</btn>" +
         "</div>" +
         "</div>";
     document.body.appendChild(div);
-
+    /* The following "for loops" loop through json objects that came back as arrays and adds the results to the modal.
+     */
     for (var i = 0; i < languages.length; i++) {
         var languageEnglish = languages[i]["name"];
         var languageNative = languages[i]["nativeName"];
         var a = document.getElementById("language");
 
-        a.innerHTML += "" + languageEnglish + " (" + languageNative + ")";
+        a.innerHTML += " " + languageEnglish + " (" + languageNative + "), ";
     }
     for (var j = 0; j < currencies.length; j++) {
         var currencyName = currencies[j]["name"];
         var currencySymbol = currencies[j]["symbol"];
         var b = document.getElementById("currency");
 
-        b.innerHTML += "" + currencyName + " (" + currencySymbol + ")";
+        b.innerHTML += " " + currencyName + " (" + currencySymbol + ")";
     }
     for (var k = 0; k < timezones.length; k++) {
         var timezone = timezones[k];
         var c = document.getElementById("timezone");
 
-        c.innerHTML += "" + timezone + "";
+        c.innerHTML += " " + timezone + ", ";
 
 
     }
@@ -698,39 +716,17 @@ function modal(result) {
         var regionalBloc = regionalBlocs[l]["name"];
         var d = document.getElementById("regionalBloc");
 
-        d.innerHTML += "" + regionalBloc + "";
+        d.innerHTML += " " + regionalBloc + ", ";
     }
-
-
-    $('#modal1').open();
 
 
 }
 
-function arrow(gini) {
-    if (gini < 30) {
-        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #00cd00'>arrow_upward</i>" + gini + "</p></li>";
-    } else if (gini >= 30 && gini < 35) {
-        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #30ff30'>arrow_upward</i>" + gini + "</p></li>";
-    } else if (gini >= 35 && gini < 40) {
-        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #9aff9a'>arrow_upward</i>" + gini + "</p></li>";
-    } else if (gini >= 40 && gini < 45) {
-        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #ffcdff'>arrow_downward</i>" + gini + "</p></li>";
-    } else if (gini >= 45 && gini < 50) {
-        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #ff6666'>arrow_downward</i>" + gini + "</p></li>";
-    } else if (gini >= 50 && gini < 55) {
-        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #ff1212'>arrow_downward</i>" + gini + "</p></li>";
-    } else if (gini >= 55 && gini < 60) {
-        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #cd0000'>arrow_downward</i>" + gini + "</p></li>";
-    } else if (gini >= 60 && gini <= 66) {
-        gini = "<li><p>Income Equality Index: <i class='small material-icons' style='color: #9a0000'>arrow_downward</i>" + gini + "</p></li>";
-    } else {
-        gini = "<li><p>Income Equality Index: " + gini + "</p></li>";
-    }
-    return gini;
-}
-
-function findHdi(englishName) {
+/*
+ *   The variable "englishName" holds a string containing the name of the country that is clicked on.
+ *   This function retrieves the Human Development Index score of "englishName" from "hdi.json"
+ */
+function getHdi(englishName) {
     var hdi;
     var request = new XMLHttpRequest();
     request.open('GET', '../hdi.json', false);  // `false` makes the request synchronous
@@ -743,29 +739,19 @@ function findHdi(englishName) {
             var country = result[i]["Country"];
             if (country.indexOf(englishName) != -1) {
                 hdi = result[i]["2014"];
-                console.log("found value: " +hdi);
+                console.log("found hdi: " + hdi);
                 return hdi;
             }
         }
     }
 }
 
-function indicator(hdi) {
-    if (hdi <= 0.999 && hdi > 0.800) {
-        hdi = "<li><p>Human Development Index(2014): <i class='small material-icons' style='color: #30ff30'>arrow_upward</i>" + hdi + "</p>";
-    } else if (hdi <= 0.800 && hdi > 0.701) {
-        hdi = "<li><p>Human Development Index(2014): <i class='small material-icons' style='color: #9aff9a'>arrow_upward</i>" + hdi + "</p>";
-    } else if (hdi <= 0.700 && hdi > 550) {
-        hdi = "<li><p>Human Development Index(2014): <i class='small material-icons' style='color: #fc0'>remove</i>" + hdi + "</p>";
-    } else if (hdi <= 0.550 && hdi > 0.100) {
-        hdi = "<li><p>Human Development Index(2014): <i class='small material-icons' style='color: #cd0000'>arrow_downward</i>" + hdi + "</p>";
-    } else {
-        hdi = "<li><p>Human Development Index(2014): " + hdi + "</p>";
-    }
-    return hdi;
-}
-
-function getGdp(englishName, gdp) {
+/*
+ *   The variable "englishName" holds a string containing the name of the country that is clicked on.
+ *   This function retrieves the gross domestic product of "englishName" from "gdp.json"
+ */
+function getGdp(englishName) {
+    var gdp;
     var request = new XMLHttpRequest();
     request.open('GET', '../gdp.json', false);  // `false` makes the request synchronous
     request.send(null);
@@ -777,13 +763,17 @@ function getGdp(englishName, gdp) {
             var country = result[i]["Country Name"];
             if (country.indexOf(englishName) != -1) {
                 gdp = result[i]["2016 [YR2016]"];
-                console.log("found value: " +gdp);
+                console.log("found gdp: " + gdp);
                 return gdp;
             }
         }
     }
 }
 
+/*
+ *  The variable "englishName" holds a string containing the name of the country that is clicked on.
+ *  This function retrieves the gross domestic product (at purchasing power parity) per capita of "englishName" from "ppp.json"
+ */
 function getPpp(englishName) {
     var ppp;
     var request = new XMLHttpRequest();
@@ -797,13 +787,87 @@ function getPpp(englishName) {
             var country = result[i]["Country Name"];
             if (country.indexOf(englishName) != -1) {
                 ppp = result[i]["2016 [YR2016]"];
-                console.log("found value: " + ppp);
+                console.log("found ppp: " + ppp);
                 return ppp;
             }
         }
     }
 }
 
+/*
+ * The variable "hdi" contains the retrieved value from "getHdi" function.
+ * This function categorizes hdi scores in four different categories "Very High, High, Medium, Low".
+ * Each category has a different color.
+ */
+function hdiIcon(hdi) {
+    if (hdi <= 0.999 && hdi > 0.800) {
+        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #30ff30'> Very high</span></p>";
+    } else if (hdi <= 0.800 && hdi > 0.701) {
+        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #9aff9a'> High</span></p>";
+    } else if (hdi <= 0.700 && hdi > 550) {
+        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #fc0'> Medium</span></p>";
+    } else if (hdi <= 0.550 && hdi > 0.100) {
+        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #cd0000'> Low</span></p>";
+    } else {
+        hdi = "<li><p>Human Development Index(2014): " + hdi + "</p>";
+    }
+    return hdi;
+}
+
+/*
+ * The variable "gini" contains the retrieved value from "getGini" function.
+ * This function categorizes gini scores in eight different categories "25-30, 30-35, 35-40, 40-45, 45-50, 50-55, 55-60, 60-66".
+ * Each category has a different colour.
+ */
+function giniIcon(gini) {
+    if (gini < 30) {
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #00cd00'> Very high</span></p></li>";
+    } else if (gini >= 30 && gini < 35) {
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #30ff30'> High</span></p></li>";
+    } else if (gini >= 35 && gini < 40) {
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #9aff9a'> Above average</span></p></li>";
+    } else if (gini >= 40 && gini < 45) {
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ffcdff'> Average</span></p></li>";
+    } else if (gini >= 45 && gini < 50) {
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ff6666'> Below average</span></p></li>";
+    } else if (gini >= 50 && gini < 55) {
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ff1212'> Low</span></p></li>";
+    } else if (gini >= 55 && gini < 60) {
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #cd0000'> Very low</span></p></li>";
+    } else if (gini >= 60 && gini <= 66) {
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #9a0000'> Extremely low</span></p></li>";
+    } else {
+        gini = "<li><p>Income Equality Index: " + gini + "</p></li>";
+    }
+    return gini;
+}
+
+/*
+ * The variable "ppp" contains the retrieved value from "getPpp" function.
+ * This function categorizes gini scores in seven different categories.
+ * Each category has a different colour.
+ */
+function pppIcon(ppp) {
+    if (ppp >= 50000){
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #00cd00'> Extremely high</span></p></li>";
+    } else if (ppp < 50000 && ppp >= 35000) {
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #30ff30'> Very high</span></p></li>";
+    } else if (ppp < 35000 && ppp >= 20000) {
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #9aff9a'> High</span></p></li>";
+    } else if (ppp < 20000 && ppp >= 10000) {
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #fc0'> Medium</span></p></li>";
+    } else if (ppp < 10000 && ppp >= 5000) {
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #ff6666'> Low</span></p></li>";
+    } else if (ppp < 5000 && ppp >= 2000) {
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #ff1212'> Very low</span></p></li>";
+    } else if (ppp < 2000) {
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #cd0000'> Extremely low</span></p></li>";
+    } else {
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "</p></li>";
+    }
+
+    return ppp;
+}
 
 function constructNewCoordinates(polygon) {
     var newCoordinates = [];
@@ -814,3 +878,4 @@ function constructNewCoordinates(polygon) {
     }
     return newCoordinates;
 }
+
