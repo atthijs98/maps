@@ -539,7 +539,7 @@
     "Waterways (km)": 2400
   },
   {
-    "Country": "South Korea",
+    "Country": "Korea (Republic of)",
     "ISO3": "SKO",
     "Rank": 12,
     "Total Population": 50924172,
@@ -1078,7 +1078,7 @@
     "Waterways (km)": 2000
   },
   {
-    "Country": "North Korea",
+    "Country": "Korea (Democratic People's Republic of)",
     "ISO3": "NKO",
     "Rank": 23,
     "Total Population": 25115311,
@@ -6521,5 +6521,11 @@
   },
   {
     "Country": "Moldova (Republic of)"
+  },
+  {
+    "Country": "Montenegro"
+  },
+  {
+    "Country": "Republic of Kosovo"
   }
 ]
