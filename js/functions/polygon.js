@@ -640,14 +640,17 @@ function modal(result) {
     var hdi;
     var gdp;
     var ppp;
+    var happiness;
 
 
     gdp = getGdp(englishName);
     var giniStyle = giniIcon(gini);
     hdi = getHdi(englishName);
     ppp = getPpp(englishName);
+    happiness = getHappiness(englishName);
     var hdiStyle = hdiIcon(hdi);
     var pppStyle = pppIcon(ppp);
+    var happinessStyle = happinessIcon(happiness);
 
 
 
@@ -681,6 +684,8 @@ function modal(result) {
         giniStyle +
         "<div class='divider'></div>"+
         hdiStyle +
+        "<div class='divider'></div>"+
+        happinessStyle +
         "</ul>" +
         "</div>" +
         "<div class='modal-footer'>" +
@@ -795,19 +800,43 @@ function getPpp(englishName) {
 }
 
 /*
+ *  The variable "englishName" holds a string containing the name of the country that is clicked on.
+ *  This function retrieves the happiness index of "englishName" from "happiness.json"
+ */
+function getHappiness(englishName) {
+    var happiness;
+    var request = new XMLHttpRequest();
+    request.open('GET', '../happy.json', false);  // `false` makes the request synchronous
+    request.send(null);
+
+    if (request.status === 200) {
+        var data = request.responseText;
+        var result = JSON.parse(data);
+        for (var i = 0; i < result.length; i++) {
+            var country = result[i]["Country"];
+            if (country.indexOf(englishName) != -1) {
+                happiness = result[i]["Happiness.Rank"];
+                console.log("found happiness index: " + happiness);
+                return happiness;
+            }
+        }
+    }
+}
+
+/*
  * The variable "hdi" contains the retrieved value from "getHdi" function.
  * This function categorizes hdi scores in four different categories "Very High, High, Medium, Low".
  * Each category has a different color.
  */
 function hdiIcon(hdi) {
     if (hdi <= 0.999 && hdi > 0.800) {
-        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #30ff30'> Very high</span></p>";
+        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #30ff30'><b> Very high</b></span></p>";
     } else if (hdi <= 0.800 && hdi > 0.701) {
-        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #9aff9a'> High</span></p>";
+        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #9aff9a'><b> High</b></span></p>";
     } else if (hdi <= 0.700 && hdi > 550) {
-        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #fc0'> Medium</span></p>";
+        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #fc0'><b> Medium</b></span></p>";
     } else if (hdi <= 0.550 && hdi > 0.100) {
-        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #cd0000'> Low</span></p>";
+        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #cd0000'><b> Low</b></span></p>";
     } else {
         hdi = "<li><p>Human Development Index(2014): " + hdi + "</p>";
     }
@@ -821,21 +850,21 @@ function hdiIcon(hdi) {
  */
 function giniIcon(gini) {
     if (gini < 30) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #00cd00'> Very high</span></p></li>";
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #00cd00'><b> Very high</b></span></p></li>";
     } else if (gini >= 30 && gini < 35) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #30ff30'> High</span></p></li>";
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #30ff30'><b> High</b></span></p></li>";
     } else if (gini >= 35 && gini < 40) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #9aff9a'> Above average</span></p></li>";
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #9aff9a'><b> Above average</b></span></p></li>";
     } else if (gini >= 40 && gini < 45) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ffcdff'> Average</span></p></li>";
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ffcdff'><b> Average</b></span></p></li>";
     } else if (gini >= 45 && gini < 50) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ff6666'> Below average</span></p></li>";
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ff6666'><b> Below average</b></span></p></li>";
     } else if (gini >= 50 && gini < 55) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ff1212'> Low</span></p></li>";
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ff1212'><b> Low</b></span></p></li>";
     } else if (gini >= 55 && gini < 60) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #cd0000'> Very low</span></p></li>";
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #cd0000'><b> Very low</b></span></p></li>";
     } else if (gini >= 60 && gini <= 66) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #9a0000'> Extremely low</span></p></li>";
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #9a0000'><b> Extremely low</b></span></p></li>";
     } else {
         gini = "<li><p>Income Equality Index: " + gini + "</p></li>";
     }
@@ -849,24 +878,57 @@ function giniIcon(gini) {
  */
 function pppIcon(ppp) {
     if (ppp >= 50000){
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #00cd00'> Extremely high</span></p></li>";
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #00cd00'><b> Extremely high</b></span></p></li>";
     } else if (ppp < 50000 && ppp >= 35000) {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #30ff30'> Very high</span></p></li>";
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #30ff30'><b> Very high</b></span></p></li>";
     } else if (ppp < 35000 && ppp >= 20000) {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #9aff9a'> High</span></p></li>";
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #9aff9a'><b> High</b></span></p></li>";
     } else if (ppp < 20000 && ppp >= 10000) {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #fc0'> Medium</span></p></li>";
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #fc0'><b> Medium</b></span></p></li>";
     } else if (ppp < 10000 && ppp >= 5000) {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #ff6666'> Low</span></p></li>";
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #ff6666'><b> Low</b></span></p></li>";
     } else if (ppp < 5000 && ppp >= 2000) {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #ff1212'> Very low</span></p></li>";
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #ff1212'><b> Very low</b></span></p></li>";
     } else if (ppp < 2000) {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #cd0000'> Extremely low</span></p></li>";
+        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #cd0000'><b> Extremely low</b></span></p></li>";
     } else {
         ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "</p></li>";
     }
 
     return ppp;
+}
+
+function happinessIcon(happiness) {
+    if (happiness >= 1 && happiness <= 8 ) {
+        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #002400'><b> Near perfect</b></span></p></li>";
+    } else if (happiness > 8 && happiness <= 20) {
+        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #006d00'><b> Extremely good</b></span></p></li>";
+    } else if (happiness > 20 && happiness <= 36) {
+        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color:#00b600 '><b> Very good</b></span></p></li>";
+    } else if (happiness > 36 && happiness <= 48) {
+        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #24ff24'><b> Good</b></span></p></li>";
+    } else if (happiness > 48 && happiness <= 61) {
+        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #6dff6d'><b> Quite well</b></span></p></li>";
+    } else if (happiness > 61 && happiness <= 74) {
+        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color:#b6ffb6 '><b> Ok</b></span></p></li>";
+    } else if (happiness > 74 && happiness <= 87) {
+        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #ffb6b6'><b> Not so well</b></span></p></li>";
+    } else if (happiness > 87 && happiness <= 92) {
+        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #ff6d6d'><b> Kind of bad</b></span></p></li>";
+    } else if (happiness > 92 && happiness <= 107) {
+        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #ff2424'><b> Bad</b></span></p></li>";
+    } else if (happiness > 107 && happiness <= 118) {
+        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #b60000'><b> Very bad</b></span></p></li>";
+    } else if (happiness > 118 && happiness <= 131) {
+        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #6d0000'><b> Extremely bad</b></span></p></li>";
+    } else if (happiness > 131 && happiness <= 143) {
+        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #240000'><b> Super bad</b></span></p></li>";
+    } else if (happiness > 143 && happiness <= 156){
+        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #000000'><b> Fucked</b></span></p></li>";
+    } else {
+        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "</p></li>";
+    }
+    return happiness;
 }
 
 function constructNewCoordinates(polygon) {

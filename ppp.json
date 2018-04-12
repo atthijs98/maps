@@ -1532,7 +1532,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "United Kingdom",
+    "Country Name": "United Kingdom of Great Britain and Northern Ireland",
     "Country Code": "GBR",
     "2015 [YR2015]": 44305.5546320834,
     "2016 [YR2016]": 40367.0378421962,
@@ -1541,7 +1541,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "United States",
+    "Country Name": "United States of America",
     "Country Code": "USA",
     "2015 [YR2015]": 56469.0089691129,
     "2016 [YR2016]": 57638.1590879883,

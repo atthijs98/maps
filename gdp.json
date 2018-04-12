@@ -1550,7 +1550,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "United Kingdom",
+    "Country Name": "United Kingdom of Great Britain and Northern Ireland",
     "Country Code": "GBR",
     "2015 [YR2015]": 2885570309160.86,
     "2016 [YR2016]": 2647898654635.24,
@@ -1559,7 +1559,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "United States",
+    "Country Name": "United States of America",
     "Country Code": "USA",
     "2015 [YR2015]": 18120714000000,
     "2016 [YR2016]": 18624475000000,
