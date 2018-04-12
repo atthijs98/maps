@@ -651,8 +651,15 @@ function modal(result) {
     var hdiStyle = hdiIcon(hdi);
     var pppStyle = pppIcon(ppp);
     var happinessStyle = happinessIcon(happiness);
+    var mili = getGfp(englishName);
 
-
+    var info = mili[0];
+    var airforce = mili[1];
+    var army = mili[2];
+    var navy = mili[3];
+    var geo = mili[4];
+    var money = mili[5];
+    var rank = mili[6];
 
     div.innerHTML = "<div class='modal-content'>" +
         "<h4 class='center-align'>" + englishName + "</h4>" +
@@ -686,6 +693,50 @@ function modal(result) {
         hdiStyle +
         "<div class='divider'></div>"+
         happinessStyle +
+        "<div class='divider'></div>" +
+        "<li><p>Global Firepower Rank(2018): #" + rank + "</p></li>" +
+        "<div class='divider'></div>"+
+        "    <li><p>Man Power Available: " + numeral(info[0]).format('0,0') + "</p></li>" +
+        "    <li><p>Fit-for-Service: " + numeral(info[1]).format('0,0') + "</p></li>" +
+            "<li><p>Reaching Military Age: " + numeral(info[2]).format('0,0') + "</p></li>" +
+            "<li><p>Total Military Personnel: " + numeral(info[3]).format('0,0') + "</p></li>" +
+            "<li><p>Active Personnel: " + numeral(info[4]).format('0,0') + "</p></li>" +
+            "<li><p>Reserve Personnel: " + numeral(info[5]).format('0,0') + "</p></li>" +
+        "    <div class='divider'></div>" +
+        "    <li><p>Total Aircraft Strength: " + airforce[0] + "</p></li>" +
+        "    <li><p>Fighter Aircraft: " + airforce[1]+ "</p></li>" +
+        "    <li><p>Attack Aircraft: " + airforce[2]+ "</p></li>" +
+        "    <li><p>Transport Aircraft: " + airforce[3]+ "</p></li>" +
+        "    <li><p>Trainer Aircraft: " +airforce[4] + "</p></li>" +
+        "    <div class='divider'></div>" +
+        "<li><p>Total Helicopter Strength: " + army[0] + "</p></li>" +
+        "<li><p>Attack Helicopters: " + army[1] + "</p></li>" +
+        "<li><p>Combat Tanks: " + army[2] + "</p></li>" +
+        "<li><p>Armored Fighting Vehicles: " + army[3] + "</p></li>" +
+        "<li><p>Self-Propelled Artillery: " + army[4] + "</p></li>" +
+        "<li><p>Towed Artillery: " + army[5] + "</p></li>" +
+        "<li><p>Rocket Projectors: " + army[6] + "</p></li>" +
+        "<div class='divider'></div>" +
+        "<li><p>Total Naval Assets: " + navy[0] + "</p></li>"+
+        "<li><p>Aircraft Carriers: " + navy[1] + "</p></li>"+
+        "<li><p>Frigates: " + navy[2] + "</p></li>"+
+        "<li><p>Destroyers: " + navy[3] + "</p></li>"+
+        "<li><p>Corvettes: " + navy[4] + "</p></li>"+
+        "<li><p>Submarines: " + navy[5] + "</p></li>"+
+        "<li><p>Patrol Craft: " + navy[6] + "</p></li>"+
+        "<li><p>Mine Warfare Vessels: " + navy[7] + "</p></li>"+
+        "<div class='divider'></div>" +
+        "<li><p>Merchant Marine Strength: " + numeral(geo[0]).format('0,0')+ "</p></li>"+
+        "<li><p>Major Ports / Terminals: " + numeral(geo[1]).format('0,0')+ "</p></li>"+
+        "<li><p>Roadway Coverage (km): " + numeral(geo[2]).format('0,0.00')+ " km</p></li>"+
+        "<li><p>Railway Coverage (km): " + numeral(geo[3]).format('0,0.00')+ " km</p></li>"+
+        "<li><p>Serivecable Airports: " + numeral(geo[4]).format('0,0')+ "</p></li>"+
+        "<li><p>Coastline (km): " +numeral(geo[5]).format('0,0.00') + " km</p></li>"+
+        "<li><p>Shared Borders (km): " + numeral(geo[6]).format('0,0.00')+ " km</p></li>"+
+        "<li><p>Waterways (km): " + numeral(geo[7]).format('0,0.00')+ " km</p></li>"+
+        "<div class='divider'></div>"+
+        "<li><p>Defense Budget: $" + numeral(money[0]).format('0,0.00')+ "</p></li>" +
+        "<li><p>External Debt: $" + numeral(money[1]).format('0,0.00')+ "</p></li>" +
         "</ul>" +
         "</div>" +
         "<div class='modal-footer'>" +
@@ -824,6 +875,35 @@ function getHappiness(englishName) {
 }
 
 /*
+ *  The variable "englishName" holds a string containing the name of the country that is clicked on.
+ *  This function retrieves the military strength of "englishName" from "gfp.json"
+ */
+function getGfp(englishName) {
+    var request = new XMLHttpRequest();
+    request.open('GET', '../gfp.json', false);  // `false` makes the request synchronous
+    request.send(null);
+
+    if (request.status === 200) {
+        var data = request.responseText;
+        var result = JSON.parse(data);
+        for (var i = 0; i < result.length; i++) {
+            var country = result[i]["Country"];
+            if (country.indexOf(englishName) != -1) {
+                var rank = result[i]["Rank"];
+                var info = [result[i]["Manpower Available"], result[i]["Fit-for-Service"], result[i]["Reaching Military Age"], result[i]["Total Military Personnel"], result[i]["Active Personnel"], result[i]["Reserve Personnel"]];
+                var airforce = [result[i]["Total Aircraft Strength"], result[i]["Fighter Aircraft"], result[i]["Attack Aircraft"], result[i]["Transport Aircraft"], result[i]["Trainer Aircraft"]];
+                var army = [result[i]["Total Helicopter Strength"], result[i]["Attack Helicopters"], result[i]["Combat Tanks"], result[i]["Armored Fighting Vehicles"], result[i]["Self-Propelled Artillery"], result[i]["Towed Artillery"], result[i]["Rocket Projectors"]];
+                var navy = [result[i]["Total Naval Assets"], result[i]["Aircraft Carriers"], result[i]["Frigates"], result[i]["Destroyers"], result[i]["Corvettes"], result[i]["Submarines"], result[i]["Patrol Craft"], result[i]["Mine Warfare Vessels"]];
+                var geo = [result[i]["Merchant Marine Strength"], result[i]["Major Ports / Terminals"], result[i]["Roadway Coverage (km)"], result[i]["Railway Coverage (km)"], result[i]["Serivecable Airports"], result[i]["Coastline (km)"], result[i]["Shared Borders (km)"], result[i]["Waterways (km)"]];
+                var money = [result[i]["Defense Budget"], result[i]["External Debt"]];
+
+                return [info, airforce, army, navy, geo, money, rank];
+            }
+        }
+    }
+}
+
+/*
  * The variable "hdi" contains the retrieved value from "getHdi" function.
  * This function categorizes hdi scores in four different categories "Very High, High, Medium, Low".
  * Each category has a different color.
@@ -854,11 +934,11 @@ function giniIcon(gini) {
     } else if (gini >= 30 && gini < 35) {
         gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #30ff30'><b> High</b></span></p></li>";
     } else if (gini >= 35 && gini < 40) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #9aff9a'><b> Above average</b></span></p></li>";
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #9aff9a'><b> Ok</b></span></p></li>";
     } else if (gini >= 40 && gini < 45) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ffcdff'><b> Average</b></span></p></li>";
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ffcdff'><b> Medium</b></span></p></li>";
     } else if (gini >= 45 && gini < 50) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ff6666'><b> Below average</b></span></p></li>";
+        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ff6666'><b> Kind of low</b></span></p></li>";
     } else if (gini >= 50 && gini < 55) {
         gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ff1212'><b> Low</b></span></p></li>";
     } else if (gini >= 55 && gini < 60) {
