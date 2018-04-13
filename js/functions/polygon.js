@@ -836,7 +836,7 @@ function modal(result) {
  */
 function getHdi(englishName) {
     var hdi;
-    var french = "French Southern and Antartic Lands";
+    var french = "French Southern Territories";
     var sahara = "Western Sahara";
     var caledonia = "New Caledonia";
     var somaliland = "Somaliland";
@@ -878,7 +878,7 @@ function getHdi(englishName) {
 function getGdp(englishName) {
     var gdp;
     var som = "Somaliland";
-    var french = "French Southern and Antartic Lands";
+    var french = "French Southern Territories";
     var sahara = "Western Sahara";
     var request = new XMLHttpRequest();
     request.open('GET', '../data/gdp.json', false);  // `false` makes the request synchronous
@@ -892,8 +892,8 @@ function getGdp(englishName) {
             var exceptions = [som, french, sahara];
             for (var j = 0; j < exceptions.length; j++) {
                 if (exceptions[j].indexOf(englishName) != -1) {
-                    gdp = exceptions[j];
-                    return;
+                    gdp = "No data available";
+                    return gdp;
                 } else {
                     var country = result[i]["Country Name"];
                     if (country.indexOf(englishName) != -1) {
@@ -915,7 +915,7 @@ function getPpp(englishName) {
     var ppp;
     var falk = "Falkland Islands (Malvinas)";
     var ncyprus = "North Cyprus";
-    var french = "French Southern and Antartic Lands";
+    var french = "French Southern Territories";
     var vanuatu = "Vanuatu";
     var sahara = "Western Sahara";
     var request = new XMLHttpRequest();
@@ -929,7 +929,7 @@ function getPpp(englishName) {
 
             var exceptions = [falk, ncyprus, french, vanuatu, sahara];
             for (var j = 0; j < exceptions.length; j++) {
-                if (exceptions[j].indexOf(englishName != -1)) {
+                if (exceptions[j].indexOf(englishName) != -1) {
                     ppp = exceptions[j];
                     return ppp;
                 } else {
@@ -952,7 +952,7 @@ function getPpp(englishName) {
 function getHappiness(englishName) {
     var happiness;
     var falk = "Falkland Islands (Malvinas)";
-    var french = "French Southern and Antartic Lands";
+    var french = "French Southern Territories";
     var vanuatu = "Vanuatu";
     var sahara = "Western Sahara";
     var bahamas = "Bahamas";
@@ -1040,8 +1040,8 @@ function getGfp(englishName) {
         "Papua New Guinea",
         "Solomon Islands",
         "Iceland",
-        "Vanuata",
-        "French Southern and Antarctic Lands"
+        "Vanuatu",
+        "French Southern Territories"
     ];
     var request = new XMLHttpRequest();
     request.open('GET', '../data/gfp.json', false);  // `false` makes the request synchronous
@@ -1091,7 +1091,6 @@ function hdiIcon(hdi) {
         hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #cd0000'><b> Low</b></span></p>";
     } else {
         hdi = "<li><p>Human Development Index(2014): No data available</p>";
-        console.log(hdi);
     }
     return hdi;
 }
@@ -1204,7 +1203,7 @@ function gfpIcon(mili) {
         mili = "<li><p>Iceland has not had a standing army since 1869, but is an active member of NATO.</p></li>";
     } else if (mili == "Vanuatu") {
         mili = "<li><p>The Vanuatu Police Force maintain a paramilitary force, called the Vanuatu Mobile Force for internal security purposes. The Vanuatu Mobile Force is manned by almost 300 men and women, who are well-equipped with small arms.</p></li>";
-    } else if (mili == "French Southern and Antartic Lands") {
+    } else if (mili == "French Southern Territories") {
         mili = "<li><p>Under French portectorate</p></li>";
     }
 
