@@ -425,7 +425,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Equatorial Guinea",
+    "Country Name": "Equatorial-Guinea",
     "Country Code": "GNQ",
     "2015 [YR2015]": 12597210657.5048,
     "2016 [YR2016]": 10684804794.0361,
@@ -758,7 +758,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Kosovo",
+    "Country Name": "Republic of Kosovo",
     "Country Code": "XKX",
     "2015 [YR2015]": 6440501275.36875,
     "2016 [YR2016]": 6649888888.88889,
@@ -1433,7 +1433,7 @@
   {
     "Series Name": "GDP (current US$)",
     "Series Code": "NY.GDP.MKTP.CD",
-    "Country Name": "Tanzania",
+    "Country Name": "Tanzania, United Republic of",
     "Country Code": "TZA",
     "2015 [YR2015]": 45628320606.0487,
     "2016 [YR2016]": 47340071107.343,

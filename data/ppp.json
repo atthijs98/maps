@@ -452,7 +452,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Equatorial Guinea",
+    "Country Name": "Equatorial-Guinea",
     "Country Code": "GNQ",
     "2015 [YR2015]": 10717.4821761177,
     "2016 [YR2016]": 8747.35347324673,
@@ -794,7 +794,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Kosovo",
+    "Country Name": "Republic of Kosovo",
     "Country Code": "XKX",
     "2015 [YR2015]": 3574.48178231144,
     "2016 [YR2016]": 3661.42984742258,
@@ -1424,7 +1424,7 @@
   {
     "Series Name": "GDP per capita (current US$)",
     "Series Code": "NY.GDP.PCAP.CD",
-    "Country Name": "Tanzania",
+    "Country Name": "Tanzania, United Republic of",
     "Country Code": "TZA",
     "2015 [YR2015]": 872.295494924971,
     "2016 [YR2016]": 877.507612002733,
@@ -1639,5 +1639,9 @@
   {
     "Country Name": "Fiji",
     "2016 [YR2016]": 5233.5
+  },
+  {
+    "Country Name": "Somaliland",
+    "2016 [YR2016]": 347
   }
 ]

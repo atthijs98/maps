@@ -1,6 +1,7 @@
 var div = document.createElement("div");
 div.setAttribute("class", "modal");
 div.setAttribute("id", "modal");
+
 function drawMap(data) {
 
     var rows = data['rows'];
@@ -146,7 +147,7 @@ function convert(countryName) {
         case 'Armenia':
             code = 'am';
             break;
-        case 'Fr. S. and Antartic Lands':
+        case 'Fr. S. and Antarctic Lands':
             code = 'tf';
             break;
         case 'Burundi':
@@ -641,6 +642,7 @@ function modal(result) {
     var gdp;
     var ppp;
     var happiness;
+    var mili;
 
 
     gdp = getGdp(englishName);
@@ -651,63 +653,65 @@ function modal(result) {
     var hdiStyle = hdiIcon(hdi);
     var pppStyle = pppIcon(ppp);
     var happinessStyle = happinessIcon(happiness);
-    var mili = getGfp(englishName);
+    mili = getGfp(englishName);
+    var gfpStyle = gfpIcon(mili);
 
-    var info = mili[0];
-    var airforce = mili[1];
-    var army = mili[2];
-    var navy = mili[3];
-    var geo = mili[4];
-    var money = mili[5];
-    var rank = mili[6];
-
-    div.innerHTML = "<div class='modal-content'>" +
-        "<h4 class='center-align'>" + englishName + "</h4>" +
-        "<h6 class='center-align'>" + nativeName + "</h6>" +
-        "<img class='responsive-img center-align' style='border: grey 1px solid' src='" + flag + "'>" +
-        "<ul>" +
-        "<li><p>Capital: " + capital + "</p></li>" +
-        "<div class='divider'></div>" +
-        "<li><p>Population: " + numeral(population).format('0,0') + "</p></li>" +
-        "<div class='divider'></div>" +
-        "<li><p id='language'>Languages:</p></li>" +
-        "<div class='divider'></div>" +
-        "<li><p>Demonym: " + demonym + "</p></li>" +
-        "<div class='divider'></div>" +
-        "<li><p>Area: " + numeral(area).format('0,0') + " km2</p></li>" +
-        "<div class='divider'></div>" +
-        "<li><p>Region: " + region + " (" + subregion + "),<br>" + "</p></li>" +
-        "<div class='divider'></div>" +
-        "<li><p id='regionalBloc'>Regional Blocs: </p></li>" +
-        "<div class='divider'></div>" +
-        "<li><p id='timezone'>Timezones: </p></li>" +
-        "<div class='divider'></div>" +
-        "<li><p id='currency'>Currency: </p></li>" +
-        "<div class='divider'></div>" +
-        "<li><p>Gross Domestic Product(GDP)(2016): $" + numeral(gdp).format('0,0.00') + "</p></li>" +
-        "<div class='divider'></div>" +
-        pppStyle+
-        "<div class='divider'></div>" +
-        giniStyle +
-        "<div class='divider'></div>"+
-        hdiStyle +
-        "<div class='divider'></div>"+
-        happinessStyle +
-        "<div class='divider'></div>" +
+    if (typeof(mili) == 'object'){
+        var info = mili[0];
+        var airforce = mili[1];
+        var army = mili[2];
+        var navy = mili[3];
+        var geo = mili[4];
+        var money = mili[5];
+        var rank = mili[6];
+        var innerHmlNorm = "<div class='modal-content'>" +
+            "<h4 class='center-align'>" + englishName + "</h4>" +
+            "<h6 class='center-align'>" + nativeName + "</h6>" +
+            "<img class='responsive-img center-align' style='border: grey 1px solid' src='" + flag + "'>" +
+            "<ul>" +
+            "<li><p>Capital: " + capital + "</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Population: " + numeral(population).format('0,0') + "</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p id='language'>Languages:</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Demonym: " + demonym + "</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Area: " + numeral(area).format('0,0') + " km2</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Region: " + region + " (" + subregion + "),<br>" + "</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p id='regionalBloc'>Regional Blocs: </p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p id='timezone'>Timezones: </p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p id='currency'>Currency: </p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Gross Domestic Product(GDP)(2016): $" + numeral(gdp).format('0,0.00') + "</p></li>" +
+            "<div class='divider'></div>" +
+            pppStyle +
+            "<div class='divider'></div>" +
+            giniStyle +
+            "<div class='divider'></div>" +
+            hdiStyle +
+            "<div class='divider'></div>" +
+            happinessStyle +
+            "<div class='divider'></div>" +
+        "<div id='defensie'>" +
         "<li><p>Global Firepower Rank(2018): #" + rank + "</p></li>" +
-        "<div class='divider'></div>"+
+        "<div class='divider'></div>" +
         "    <li><p>Man Power Available: " + numeral(info[0]).format('0,0') + "</p></li>" +
         "    <li><p>Fit-for-Service: " + numeral(info[1]).format('0,0') + "</p></li>" +
-            "<li><p>Reaching Military Age: " + numeral(info[2]).format('0,0') + "</p></li>" +
-            "<li><p>Total Military Personnel: " + numeral(info[3]).format('0,0') + "</p></li>" +
-            "<li><p>Active Personnel: " + numeral(info[4]).format('0,0') + "</p></li>" +
-            "<li><p>Reserve Personnel: " + numeral(info[5]).format('0,0') + "</p></li>" +
+        "<li><p>Reaching Military Age: " + numeral(info[2]).format('0,0') + "</p></li>" +
+        "<li><p>Total Military Personnel: " + numeral(info[3]).format('0,0') + "</p></li>" +
+        "<li><p>Active Personnel: " + numeral(info[4]).format('0,0') + "</p></li>" +
+        "<li><p>Reserve Personnel: " + numeral(info[5]).format('0,0') + "</p></li>" +
         "    <div class='divider'></div>" +
         "    <li><p>Total Aircraft Strength: " + airforce[0] + "</p></li>" +
-        "    <li><p>Fighter Aircraft: " + airforce[1]+ "</p></li>" +
-        "    <li><p>Attack Aircraft: " + airforce[2]+ "</p></li>" +
-        "    <li><p>Transport Aircraft: " + airforce[3]+ "</p></li>" +
-        "    <li><p>Trainer Aircraft: " +airforce[4] + "</p></li>" +
+        "    <li><p>Fighter Aircraft: " + airforce[1] + "</p></li>" +
+        "    <li><p>Attack Aircraft: " + airforce[2] + "</p></li>" +
+        "    <li><p>Transport Aircraft: " + airforce[3] + "</p></li>" +
+        "    <li><p>Trainer Aircraft: " + airforce[4] + "</p></li>" +
         "    <div class='divider'></div>" +
         "<li><p>Total Helicopter Strength: " + army[0] + "</p></li>" +
         "<li><p>Attack Helicopters: " + army[1] + "</p></li>" +
@@ -717,33 +721,81 @@ function modal(result) {
         "<li><p>Towed Artillery: " + army[5] + "</p></li>" +
         "<li><p>Rocket Projectors: " + army[6] + "</p></li>" +
         "<div class='divider'></div>" +
-        "<li><p>Total Naval Assets: " + navy[0] + "</p></li>"+
-        "<li><p>Aircraft Carriers: " + navy[1] + "</p></li>"+
-        "<li><p>Frigates: " + navy[2] + "</p></li>"+
-        "<li><p>Destroyers: " + navy[3] + "</p></li>"+
-        "<li><p>Corvettes: " + navy[4] + "</p></li>"+
-        "<li><p>Submarines: " + navy[5] + "</p></li>"+
-        "<li><p>Patrol Craft: " + navy[6] + "</p></li>"+
-        "<li><p>Mine Warfare Vessels: " + navy[7] + "</p></li>"+
+        "<li><p>Total Naval Assets: " + navy[0] + "</p></li>" +
+        "<li><p>Aircraft Carriers: " + navy[1] + "</p></li>" +
+        "<li><p>Frigates: " + navy[2] + "</p></li>" +
+        "<li><p>Destroyers: " + navy[3] + "</p></li>" +
+        "<li><p>Corvettes: " + navy[4] + "</p></li>" +
+        "<li><p>Submarines: " + navy[5] + "</p></li>" +
+        "<li><p>Patrol Craft: " + navy[6] + "</p></li>" +
+        "<li><p>Mine Warfare Vessels: " + navy[7] + "</p></li>" +
         "<div class='divider'></div>" +
-        "<li><p>Merchant Marine Strength: " + numeral(geo[0]).format('0,0')+ "</p></li>"+
-        "<li><p>Major Ports / Terminals: " + numeral(geo[1]).format('0,0')+ "</p></li>"+
-        "<li><p>Roadway Coverage (km): " + numeral(geo[2]).format('0,0.00')+ " km</p></li>"+
-        "<li><p>Railway Coverage (km): " + numeral(geo[3]).format('0,0.00')+ " km</p></li>"+
-        "<li><p>Serivecable Airports: " + numeral(geo[4]).format('0,0')+ "</p></li>"+
-        "<li><p>Coastline (km): " +numeral(geo[5]).format('0,0.00') + " km</p></li>"+
-        "<li><p>Shared Borders (km): " + numeral(geo[6]).format('0,0.00')+ " km</p></li>"+
-        "<li><p>Waterways (km): " + numeral(geo[7]).format('0,0.00')+ " km</p></li>"+
-        "<div class='divider'></div>"+
-        "<li><p>Defense Budget: $" + numeral(money[0]).format('0,0.00')+ "</p></li>" +
-        "<li><p>External Debt: $" + numeral(money[1]).format('0,0.00')+ "</p></li>" +
+        "<li><p>Merchant Marine Strength: " + numeral(geo[0]).format('0,0') + "</p></li>" +
+        "<li><p>Major Ports / Terminals: " + numeral(geo[1]).format('0,0') + "</p></li>" +
+        "<li><p>Roadway Coverage (km): " + numeral(geo[2]).format('0,0.00') + " km</p></li>" +
+        "<li><p>Railway Coverage (km): " + numeral(geo[3]).format('0,0.00') + " km</p></li>" +
+        "<li><p>Serivecable Airports: " + numeral(geo[4]).format('0,0') + "</p></li>" +
+        "<li><p>Coastline (km): " + numeral(geo[5]).format('0,0.00') + " km</p></li>" +
+        "<li><p>Shared Borders (km): " + numeral(geo[6]).format('0,0.00') + " km</p></li>" +
+        "<li><p>Waterways (km): " + numeral(geo[7]).format('0,0.00') + " km</p></li>" +
+        "<div class='divider'></div>" +
+        "<li><p>Defense Budget: $" + numeral(money[0]).format('0,0.00') + "</p></li>" +
+        "<li><p>External Debt: $" + numeral(money[1]).format('0,0.00') + "</p></li>" +
+        "</div>" +
         "</ul>" +
         "</div>" +
         "<div class='modal-footer'>" +
         "<btn id='modalclose' class='modal-action modal-close waves-effect waves-green btn-flat'>Close</btn>" +
         "</div>" +
         "</div>";
+    }
+
+    else{
+        var innerHmlNorm = "<div class='modal-content'>" +
+            "<h4 class='center-align'>" + englishName + "</h4>" +
+            "<h6 class='center-align'>" + nativeName + "</h6>" +
+            "<img class='responsive-img center-align' style='border: grey 1px solid' src='" + flag + "'>" +
+            "<ul>" +
+            "<li><p>Capital: " + capital + "</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Population: " + numeral(population).format('0,0') + "</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p id='language'>Languages:</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Demonym: " + demonym + "</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Area: " + numeral(area).format('0,0') + " km2</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Region: " + region + " (" + subregion + "),<br>" + "</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p id='regionalBloc'>Regional Blocs: </p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p id='timezone'>Timezones: </p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p id='currency'>Currency: </p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Gross Domestic Product(GDP)(2016): $" + numeral(gdp).format('0,0.00') + "</p></li>" +
+            "<div class='divider'></div>" +
+            pppStyle +
+            "<div class='divider'></div>" +
+            giniStyle +
+            "<div class='divider'></div>" +
+            hdiStyle +
+            "<div class='divider'></div>" +
+            happinessStyle +
+            "<div class='divider'></div>" +
+            gfpStyle +
+            "<div class='modal-footer'>" +
+            "<btn id='modalclose' class='modal-action modal-close waves-effect waves-green btn-flat'>Close</btn>" +
+            "</div>" +
+            "</div>";
+    }
+
+
+    div.innerHTML = innerHmlNorm;
     document.body.appendChild(div);
+
+
     /* The following "for loops" loop through json objects that came back as arrays and adds the results to the modal.
      */
     for (var i = 0; i < languages.length; i++) {
@@ -784,19 +836,36 @@ function modal(result) {
  */
 function getHdi(englishName) {
     var hdi;
+    var french = "French Southern and Antartic Lands";
+    var sahara = "Western Sahara";
+    var caledonia = "New Caledonia";
+    var somaliland = "Somaliland";
+    var ncyprus = "North Cyprus";
+    var falk = "Falkland Islands (Malvinas)";
+    var rico = "Puerto Rico";
+
     var request = new XMLHttpRequest();
-    request.open('GET', '../hdi.json', false);  // `false` makes the request synchronous
+    request.open('GET', '../data/hdi.json', false);  // `false` makes the request synchronous
     request.send(null);
 
     if (request.status === 200) {
         var data = request.responseText;
         var result = JSON.parse(data);
         for (var i = 0; i < result.length; i++) {
-            var country = result[i]["Country"];
-            if (country.indexOf(englishName) != -1) {
-                hdi = result[i]["2014"];
-                console.log("found hdi: " + hdi);
-                return hdi;
+
+            var exceptions = [french, sahara, caledonia, somaliland, ncyprus, falk, rico];
+            for (var j = 0; j < exceptions.length; j++) {
+                if (exceptions[j].indexOf(englishName) != -1) {
+                    hdi = exceptions[j];
+                    return hdi;
+                } else {
+                    var country = result[i]["Country"];
+                    if (country.indexOf(englishName) != -1) {
+                        hdi = result[i]["2014"];
+                        console.log("found hdi: " + hdi);
+                        return hdi;
+                    }
+                }
             }
         }
     }
@@ -808,19 +877,31 @@ function getHdi(englishName) {
  */
 function getGdp(englishName) {
     var gdp;
+    var som = "Somaliland";
+    var french = "French Southern and Antartic Lands";
+    var sahara = "Western Sahara";
     var request = new XMLHttpRequest();
-    request.open('GET', '../gdp.json', false);  // `false` makes the request synchronous
+    request.open('GET', '../data/gdp.json', false);  // `false` makes the request synchronous
     request.send(null);
 
     if (request.status === 200) {
         var data = request.responseText;
         var result = JSON.parse(data);
         for (var i = 0; i < result.length; i++) {
-            var country = result[i]["Country Name"];
-            if (country.indexOf(englishName) != -1) {
-                gdp = result[i]["2016 [YR2016]"];
-                console.log("found gdp: " + gdp);
-                return gdp;
+
+            var exceptions = [som, french, sahara];
+            for (var j = 0; j < exceptions.length; j++) {
+                if (exceptions[j].indexOf(englishName) != -1) {
+                    gdp = exceptions[j];
+                    return;
+                } else {
+                    var country = result[i]["Country Name"];
+                    if (country.indexOf(englishName) != -1) {
+                        gdp = result[i]["2016 [YR2016]"];
+                        console.log("found gdp: " + gdp);
+                        return gdp;
+                    }
+                }
             }
         }
     }
@@ -832,19 +913,33 @@ function getGdp(englishName) {
  */
 function getPpp(englishName) {
     var ppp;
+    var falk = "Falkland Islands (Malvinas)";
+    var ncyprus = "North Cyprus";
+    var french = "French Southern and Antartic Lands";
+    var vanuatu = "Vanuatu";
+    var sahara = "Western Sahara";
     var request = new XMLHttpRequest();
-    request.open('GET', '../ppp.json', false);  // `false` makes the request synchronous
+    request.open('GET', '../data/ppp.json', false);  // `false` makes the request synchronous
     request.send(null);
 
     if (request.status === 200) {
         var data = request.responseText;
         var result = JSON.parse(data);
         for (var i = 0; i < result.length; i++) {
-            var country = result[i]["Country Name"];
-            if (country.indexOf(englishName) != -1) {
-                ppp = result[i]["2016 [YR2016]"];
-                console.log("found ppp: " + ppp);
-                return ppp;
+
+            var exceptions = [falk, ncyprus, french, vanuatu, sahara];
+            for (var j = 0; j < exceptions.length; j++) {
+                if (exceptions[j].indexOf(englishName != -1)) {
+                    ppp = exceptions[j];
+                    return ppp;
+                } else {
+                    var country = result[i]["Country Name"];
+                    if (country.indexOf(englishName) != -1) {
+                        ppp = result[i]["2016 [YR2016]"];
+                        console.log("found ppp: " + ppp);
+                        return ppp;
+                    }
+                }
             }
         }
     }
@@ -856,19 +951,45 @@ function getPpp(englishName) {
  */
 function getHappiness(englishName) {
     var happiness;
+    var falk = "Falkland Islands (Malvinas)";
+    var french = "French Southern and Antartic Lands";
+    var vanuatu = "Vanuatu";
+    var sahara = "Western Sahara";
+    var bahamas = "Bahamas";
+    var greenland = "Greenland";
+    var fiji = "Fiji";
+    var djibouti = "Djibouti";
+    var caledonia = "New Caledonia";
+    var swazi = "Swaziland";
+    var eri = "Eritrea";
+    var equa = "Equatoriaal-Guinea";
+    var bissau = "Guinea-Bissau";
+    var gambia = "Gambia";
+    var laos = "Lao People's Democratic Republic";
+    var timor = "Timor-Leste";
+    var papua = "Papua New Guinea";
+    var solomon = "Solomon Islands";
     var request = new XMLHttpRequest();
-    request.open('GET', '../happy.json', false);  // `false` makes the request synchronous
+    request.open('GET', '../data/happy.json', false);  // `false` makes the request synchronous
     request.send(null);
 
     if (request.status === 200) {
         var data = request.responseText;
         var result = JSON.parse(data);
         for (var i = 0; i < result.length; i++) {
-            var country = result[i]["Country"];
-            if (country.indexOf(englishName) != -1) {
-                happiness = result[i]["Happiness.Rank"];
-                console.log("found happiness index: " + happiness);
-                return happiness;
+            var exceptions = [falk, french, vanuatu, sahara, bahamas, greenland, fiji, djibouti, caledonia, swazi, eri, equa, bissau, gambia, laos, timor, papua, solomon];
+            for (var j = 0; j < exceptions.length; j++) {
+                if (exceptions[j].indexOf(englishName) != -1) {
+                    happiness = exceptions[j];
+                    return happiness;
+                } else {
+                    var country = result[i]["Country"];
+                    if (country.indexOf(englishName) != -1) {
+                        happiness = result[i]["Happiness.Rank"];
+                        console.log("found happiness index: " + happiness);
+                        return happiness;
+                    }
+                }
             }
         }
     }
@@ -879,8 +1000,51 @@ function getHappiness(englishName) {
  *  This function retrieves the military strength of "englishName" from "gfp.json"
  */
 function getGfp(englishName) {
+    var mili;
+    var exceptions = [
+        "Costa Rica",
+        "Jamaica",
+        "Puerto Rico",
+        "Bahamas",
+        "Haiti",
+        "Falkland Islands (Malvinas)",
+        "North Cyprus",
+        "Greenland",
+        "Somaliland",
+        "Fiji",
+        "Djibouti",
+        "Lesotho",
+        "Liberia",
+        "New Caledonia",
+        "Swaziland",
+        "Western Sahara",
+        "Montenegro",
+        "Republic of Kosovo",
+        "Moldova (Republic of)",
+        "Cyprus",
+        "Palestine, State of",
+        "Eritrea",
+        "Rwanda",
+        "Burundi",
+        "Malawi",
+        "Equatoriaal-Giunea",
+        "Benin",
+        "Togo",
+        "Burkina Faso",
+        "Liberia",
+        "Guinea",
+        "Guinea-Bissau",
+        "Senegal",
+        "Gambia",
+        "Timor-Leste",
+        "Papua New Guinea",
+        "Solomon Islands",
+        "Iceland",
+        "Vanuata",
+        "French Southern and Antarctic Lands"
+    ];
     var request = new XMLHttpRequest();
-    request.open('GET', '../gfp.json', false);  // `false` makes the request synchronous
+    request.open('GET', '../data/gfp.json', false);  // `false` makes the request synchronous
     request.send(null);
 
     if (request.status === 200) {
@@ -888,7 +1052,7 @@ function getGfp(englishName) {
         var result = JSON.parse(data);
         for (var i = 0; i < result.length; i++) {
             var country = result[i]["Country"];
-            if (country.indexOf(englishName) != -1) {
+            if (country.indexOf(englishName) != -1 && englishName != null) {
                 var rank = result[i]["Rank"];
                 var info = [result[i]["Manpower Available"], result[i]["Fit-for-Service"], result[i]["Reaching Military Age"], result[i]["Total Military Personnel"], result[i]["Active Personnel"], result[i]["Reserve Personnel"]];
                 var airforce = [result[i]["Total Aircraft Strength"], result[i]["Fighter Aircraft"], result[i]["Attack Aircraft"], result[i]["Transport Aircraft"], result[i]["Trainer Aircraft"]];
@@ -898,7 +1062,15 @@ function getGfp(englishName) {
                 var money = [result[i]["Defense Budget"], result[i]["External Debt"]];
 
                 return [info, airforce, army, navy, geo, money, rank];
+            } else {
+                for (var j = 0; j < exceptions.length; j++) {
+                    if (exceptions[j].indexOf(englishName) != -1) {
+                        mili = exceptions[j];
+                        return mili;
+                    }
+                }
             }
+
         }
     }
 }
@@ -918,7 +1090,8 @@ function hdiIcon(hdi) {
     } else if (hdi <= 0.550 && hdi > 0.100) {
         hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #cd0000'><b> Low</b></span></p>";
     } else {
-        hdi = "<li><p>Human Development Index(2014): " + hdi + "</p>";
+        hdi = "<li><p>Human Development Index(2014): No data available</p>";
+        console.log(hdi);
     }
     return hdi;
 }
@@ -952,12 +1125,99 @@ function giniIcon(gini) {
 }
 
 /*
+ * The variable "gfp" contains the retrieved value from "getGfp" function.
+ */
+function gfpIcon(mili) {
+    if (mili == "Costa Rica") {
+        mili = "<li><p>Costa Rica is one of the few nations without a standing army.</p></li>";
+    } else if (mili == "Jamaica") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Puerto Rico") {
+        mili = "<li><p>Under US protectorate</p></li>";
+    } else if (mili == "Bahamas") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Haiti") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Falkland Islands (Malvinas)") {
+        mili = "<li><p>Under British protectorate</p></li>";
+    } else if (mili == "North Cyprus") {
+        mili = "<li><p>Under Turkish protectorate</p></li>";
+    } else if (mili == "Greenland") {
+        mili = "<li><p>Under Danish protectorate </p></li>";
+    } else if (mili == "Somaliland") {
+        mili = "<li><p>Unrecognised state. Recognised by the United Nations as de jure part of Somalia as an autonomous territory</p></li>";
+    } else if (mili == "Fiji") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Djibouti") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Lesotho") {
+        mili = "<li><p>Under South African protectorate</p></li>";
+    } else if (mili == "Liberia") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "New Caledonia") {
+        mili = "<li><p>Under French protectorate</p></li>";
+    } else if (mili == "Swaziland") {
+        mili = "<li><p>Under South African protectorate</p></li>";
+    } else if (mili == "Western Sahara") {
+        mili = "<li><p></p></li>";
+    } else if (mili == "Montenegro") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Republic of Kosovo") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Moldova (Republic of)") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Cyprus") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Palestine, State of") {
+        mili = "<li><p>The West Bank and the Gaza Strip are occupied otherwise under control of Israel.</p></li>";
+    } else if (mili == "Eritrea") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Rwanda") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Burundi") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Malawi") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Equatorial-Guinea") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Benin") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Togo") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Burkina Faso") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Guinea") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Guinea-Bissau") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Senegal") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Gambia") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Timor-Leste") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Papua New Guinea") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
+    } else if (mili == "Solomon Islands") {
+        mili = "<li><p>Maintained a paramilitary force until a heavy ethnic conflict, in which Australia, New Zealand and other Pacific countries intervened to restore law and order. Since then no military has been maintained, however, there is a relatively large police force, and a Maritime Surveillance Unit for internal security. The Maritime Surveillance Unit is equipped with small arms, and maintains two Pacific-class patrol boats, the Auki and the Lata. Defense and policing assistance was the responsibility of the RAMSI until June 30, 2017.</p></li>";
+    } else if (mili == "Iceland") {
+        mili = "<li><p>Iceland has not had a standing army since 1869, but is an active member of NATO.</p></li>";
+    } else if (mili == "Vanuatu") {
+        mili = "<li><p>The Vanuatu Police Force maintain a paramilitary force, called the Vanuatu Mobile Force for internal security purposes. The Vanuatu Mobile Force is manned by almost 300 men and women, who are well-equipped with small arms.</p></li>";
+    } else if (mili == "French Southern and Antartic Lands") {
+        mili = "<li><p>Under French portectorate</p></li>";
+    }
+
+    return mili;
+}
+
+/*
  * The variable "ppp" contains the retrieved value from "getPpp" function.
- * This function categorizes gini scores in seven different categories.
+ * This function categorizes ppp scores in seven different categories.
  * Each category has a different colour.
  */
 function pppIcon(ppp) {
-    if (ppp >= 50000){
+    if (ppp >= 50000) {
         ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #00cd00'><b> Extremely high</b></span></p></li>";
     } else if (ppp < 50000 && ppp >= 35000) {
         ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #30ff30'><b> Very high</b></span></p></li>";
@@ -972,14 +1232,19 @@ function pppIcon(ppp) {
     } else if (ppp < 2000) {
         ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #cd0000'><b> Extremely low</b></span></p></li>";
     } else {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "</p></li>";
+        ppp = "<li><p>GDP (at PPP) per capita (2016): No data available </p></li>";
     }
 
     return ppp;
 }
 
+/*
+ * The variable "happiness" contains the retrieved value from "getHappiness" function.
+ * This function categorizes happiness scores in different categories.
+ * Each category has a different colour.
+ */
 function happinessIcon(happiness) {
-    if (happiness >= 1 && happiness <= 8 ) {
+    if (happiness >= 1 && happiness <= 8) {
         happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #002400'><b> Near perfect</b></span></p></li>";
     } else if (happiness > 8 && happiness <= 20) {
         happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #006d00'><b> Extremely good</b></span></p></li>";
@@ -1003,10 +1268,10 @@ function happinessIcon(happiness) {
         happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #6d0000'><b> Extremely bad</b></span></p></li>";
     } else if (happiness > 131 && happiness <= 143) {
         happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #240000'><b> Super bad</b></span></p></li>";
-    } else if (happiness > 143 && happiness <= 156){
+    } else if (happiness > 143 && happiness <= 156) {
         happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #000000'><b> Fucked</b></span></p></li>";
     } else {
-        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "</p></li>";
+        happiness = "<li><p>World Happiness Index(2018): No data available</p></li>";
     }
     return happiness;
 }

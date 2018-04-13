@@ -1311,7 +1311,7 @@
     "2013": 0.584,
     "2014": 0.587,
     "HDI Rank": 138,
-    "Country": "Equatorial Guinea"
+    "Country": "Equatorial-Guinea"
   },
   {
     "1990": 0.403,
@@ -1453,7 +1453,7 @@
     "2013": 0.516,
     "2014": 0.521,
     "HDI Rank": 151,
-    "Country": "Tanzania"
+    "Country": "Tanzania, United Republic of"
   },
   {
     "2010": 0.493,
@@ -1846,5 +1846,13 @@
   {
     "Country": "Taiwan",
     "2014": 0.882
+  },
+  {
+    "Country": "Greenland",
+    "2014": 0.786
+  },
+  {
+    "Country": "Republic of Kosovo",
+    "2014": 0.786
   }
 ]
