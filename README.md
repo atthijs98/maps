@@ -8,6 +8,7 @@ https://restcountries.eu/rest/v2/alpha/gb <br>
 <ul>
     <li>Search bar</li>
     <li>Countries Clickable when clicked show outline of the country and an information modal*</li>
+    <li>Don't show ploygon when searchbar has found result</li>
     <li>Don't show outline when hovering over a country</li>
     <li>Multiple mapstyles with an option to show terrain</li>
     <li>Add customized markers on venue locations. User can add marker without having to google for the LatLng</li>
