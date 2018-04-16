@@ -6,9 +6,9 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: "Roboto", sans-serif !important;
 }
 #description {
-    font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
 }
@@ -33,7 +33,6 @@ html, body {
     outline: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     background-color: #fff;
-    font-family: Roboto;
 }
 
 #pac-container {
@@ -46,13 +45,11 @@ html, body {
 }
 
 .pac-controls label {
-    font-family: Roboto;
     font-weight: 300;
 }
 
 #pac-input {
     background-color: #fff;
-    font-family: Roboto;
     font-size: 11px;
     font-weight: 300;
     padding: 8px;
@@ -85,5 +82,4 @@ html, body {
 #target {
     width: 345px;
 }
-
 

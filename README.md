@@ -16,4 +16,6 @@ https://restcountries.eu/rest/v2/alpha/gb <br>
 </ul>  
 
  http://databank.worldbank.org/data/reports.aspx?source=2&series=NY.GDP.MKTP.CD# <br>
-https://www.csvjson.com/csv2json
+https://www.csvjson.com/csv2json<br>
+https://developers.google.com/maps/documentation/javascript/examples/layer-data-quakes<br>
+"Simple style"
