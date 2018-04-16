@@ -17,10 +17,10 @@ https://restcountries.eu/rest/v2/alpha/gb <br>
 </ul>  
 
  http://databank.worldbank.org/data/reports.aspx?source=2&series=NY.GDP.MKTP.CD# <br>
-<<<<<<< HEAD
+
 https://www.csvjson.com/csv2json<br>
 https://developers.google.com/maps/documentation/javascript/examples/layer-data-quakes<br>
 "Simple style"
-=======
+
 https://www.csvjson.com/csv2json
->>>>>>> e257c9cdb1a2472253ff504f27a0d2eee6276e14
+
