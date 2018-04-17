@@ -681,7 +681,7 @@ function modal(result) {
             "<div class='divider'></div>" +
             "<li><p>Regio: " + region + " (" + subregion + "),<br>" + "</p></li>" +
             "<div class='divider'></div>" +
-            "<li><p id='regionalBloc'>Regionaal Blok: </p></li>" +
+            "<li><p id='regionalBloc'>Regionale Blokken: </p></li>" +
             "<div class='divider'></div>" +
             "<li><p id='timezone'>Tijdzones: </p></li>" +
             "<div class='divider'></div>" +
@@ -702,8 +702,8 @@ function modal(result) {
             "<li><p>Global Firepower Rank(2018): #" + rank + "</p></li>" +
             "<div class='divider'></div>" +
             "    <li><p>Mankracht beschikbaar: " + numeral(info[0]).format('0,0') + "</p></li>" +
-            "    <li><p>Geschikt voor service: " + numeral(info[1]).format('0,0') + "</p></li>" +
-            "<li><p>Het bereiken van de militaire leeftijd per jaar: " + numeral(info[2]).format('0,0') + "</p></li>" +
+            "    <li><p>Geschikt voor militaire dienst: " + numeral(info[1]).format('0,0') + "</p></li>" +
+            "<li><p>Bereikt jaarlijks de militaire leeftijd: " + numeral(info[2]).format('0,0') + "</p></li>" +
             "<li><p>Totaal militair personeel: " + numeral(info[3]).format('0,0') + "</p></li>" +
             "<li><p>Actief personeel: " + numeral(info[4]).format('0,0') + "</p></li>" +
             "<li><p>Nationale reserve: " + numeral(info[5]).format('0,0') + "</p></li>" +
