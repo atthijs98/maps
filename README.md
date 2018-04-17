@@ -14,6 +14,10 @@ https://restcountries.eu/rest/v2/alpha/gb <br>
     <li>Add customized markers on venue locations. User can add marker without having to google for the LatLng</li>
     <li>A fancy visualization of the sales</li>
     <li>Responsive with support for touchscreen</li>
+    <li>Build a webscraper</li>
+    <li>Head of State,  Head of government</li>
+    <li>Consituional form, Head of state, Basis of executive legitimacy</li>
+    <li>Bevlokingsdichtheid</li>
 </ul>  
 
  http://databank.worldbank.org/data/reports.aspx?source=2&series=NY.GDP.MKTP.CD# <br>
@@ -23,4 +27,10 @@ https://developers.google.com/maps/documentation/javascript/examples/layer-data-
 "Simple style"
 
 https://www.csvjson.com/csv2json
+
+scrape data from:
+<ul>
+    <li>https://en.wikipedia.org/wiki/List_of_current_heads_of_state_and_government</li>
+    <li>https://en.wikipedia.org/wiki/List_of_countries_by_system_of_government</li>
+</ul>
 

@@ -9,8 +9,17 @@
     <link rel="shortcut icon" type="image/png" href="../images/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-
 <body>
+<script>
+    function showFunction(){
+        var x = document.getElementById("defensie");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
 <input id="pac-input" class="controls z-depth-1" type="text" placeholder="Search Box">
 <div id="map"></div>
 <script>

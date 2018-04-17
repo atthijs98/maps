@@ -669,25 +669,25 @@ function modal(result) {
             "<h6 class='center-align'>" + nativeName + "</h6>" +
             "<img class='responsive-img center-align' style='border: grey 1px solid' src='" + flag + "'>" +
             "<ul>" +
-            "<li><p>Capital: " + capital + "</p></li>" +
+            "<li><p>Hoofdstad: " + capital + "</p></li>" +
             "<div class='divider'></div>" +
-            "<li><p>Population: " + numeral(population).format('0,0') + "</p></li>" +
+            "<li><p>Aantal inwoners: " + numeral(population).format('0,0') + "</p></li>" +
             "<div class='divider'></div>" +
-            "<li><p id='language'>Languages:</p></li>" +
+            "<li><p id='language'>Talen:</p></li>" +
             "<div class='divider'></div>" +
-            "<li><p>Demonym: " + demonym + "</p></li>" +
+            "<li><p>Inwoneraanduiding: " + demonym + "</p></li>" +
             "<div class='divider'></div>" +
-            "<li><p>Area: " + numeral(area).format('0,0') + " km2</p></li>" +
+            "<li><p>Oppervlakte: " + numeral(area).format('0,0') + " km2</p></li>" +
             "<div class='divider'></div>" +
-            "<li><p>Region: " + region + " (" + subregion + "),<br>" + "</p></li>" +
+            "<li><p>Regio: " + region + " (" + subregion + "),<br>" + "</p></li>" +
             "<div class='divider'></div>" +
-            "<li><p id='regionalBloc'>Regional Blocs: </p></li>" +
+            "<li><p id='regionalBloc'>Regionaal Blok: </p></li>" +
             "<div class='divider'></div>" +
-            "<li><p id='timezone'>Timezones: </p></li>" +
+            "<li><p id='timezone'>Tijdzones: </p></li>" +
             "<div class='divider'></div>" +
-            "<li><p id='currency'>Currency: </p></li>" +
+            "<li><p id='currency'>Munteenheid: </p></li>" +
             "<div class='divider'></div>" +
-            "<li><p>Gross Domestic Product(GDP)(2016): $" + numeral(gdp).format('0,0.00') + "</p></li>" +
+            "<li><p>Bruto binnenlands product(2016): $" + numeral(gdp).format('0,0.00') + "</p></li>" +
             "<div class='divider'></div>" +
             pppStyle +
             "<div class='divider'></div>" +
@@ -697,57 +697,58 @@ function modal(result) {
             "<div class='divider'></div>" +
             happinessStyle +
             "<div class='divider'></div>" +
-        "<div id='defensie'>" +
-        "<li><p>Global Firepower Rank(2018): #" + rank + "</p></li>" +
-        "<div class='divider'></div>" +
-        "    <li><p>Man Power Available: " + numeral(info[0]).format('0,0') + "</p></li>" +
-        "    <li><p>Fit-for-Service: " + numeral(info[1]).format('0,0') + "</p></li>" +
-        "<li><p>Reaching Military Age: " + numeral(info[2]).format('0,0') + "</p></li>" +
-        "<li><p>Total Military Personnel: " + numeral(info[3]).format('0,0') + "</p></li>" +
-        "<li><p>Active Personnel: " + numeral(info[4]).format('0,0') + "</p></li>" +
-        "<li><p>Reserve Personnel: " + numeral(info[5]).format('0,0') + "</p></li>" +
-        "    <div class='divider'></div>" +
-        "    <li><p>Total Aircraft Strength: " + airforce[0] + "</p></li>" +
-        "    <li><p>Fighter Aircraft: " + airforce[1] + "</p></li>" +
-        "    <li><p>Attack Aircraft: " + airforce[2] + "</p></li>" +
-        "    <li><p>Transport Aircraft: " + airforce[3] + "</p></li>" +
-        "    <li><p>Trainer Aircraft: " + airforce[4] + "</p></li>" +
-        "    <div class='divider'></div>" +
-        "<li><p>Total Helicopter Strength: " + army[0] + "</p></li>" +
-        "<li><p>Attack Helicopters: " + army[1] + "</p></li>" +
-        "<li><p>Combat Tanks: " + army[2] + "</p></li>" +
-        "<li><p>Armored Fighting Vehicles: " + army[3] + "</p></li>" +
-        "<li><p>Self-Propelled Artillery: " + army[4] + "</p></li>" +
-        "<li><p>Towed Artillery: " + army[5] + "</p></li>" +
-        "<li><p>Rocket Projectors: " + army[6] + "</p></li>" +
-        "<div class='divider'></div>" +
-        "<li><p>Total Naval Assets: " + navy[0] + "</p></li>" +
-        "<li><p>Aircraft Carriers: " + navy[1] + "</p></li>" +
-        "<li><p>Frigates: " + navy[2] + "</p></li>" +
-        "<li><p>Destroyers: " + navy[3] + "</p></li>" +
-        "<li><p>Corvettes: " + navy[4] + "</p></li>" +
-        "<li><p>Submarines: " + navy[5] + "</p></li>" +
-        "<li><p>Patrol Craft: " + navy[6] + "</p></li>" +
-        "<li><p>Mine Warfare Vessels: " + navy[7] + "</p></li>" +
-        "<div class='divider'></div>" +
-        "<li><p>Merchant Marine Strength: " + numeral(geo[0]).format('0,0') + "</p></li>" +
-        "<li><p>Major Ports / Terminals: " + numeral(geo[1]).format('0,0') + "</p></li>" +
-        "<li><p>Roadway Coverage (km): " + numeral(geo[2]).format('0,0.00') + " km</p></li>" +
-        "<li><p>Railway Coverage (km): " + numeral(geo[3]).format('0,0.00') + " km</p></li>" +
-        "<li><p>Serivecable Airports: " + numeral(geo[4]).format('0,0') + "</p></li>" +
-        "<li><p>Coastline (km): " + numeral(geo[5]).format('0,0.00') + " km</p></li>" +
-        "<li><p>Shared Borders (km): " + numeral(geo[6]).format('0,0.00') + " km</p></li>" +
-        "<li><p>Waterways (km): " + numeral(geo[7]).format('0,0.00') + " km</p></li>" +
-        "<div class='divider'></div>" +
-        "<li><p>Defense Budget: $" + numeral(money[0]).format('0,0.00') + "</p></li>" +
-        "<li><p>External Debt: $" + numeral(money[1]).format('0,0.00') + "</p></li>" +
-        "</div>" +
-        "</ul>" +
-        "</div>" +
-        "<div class='modal-footer'>" +
-        "<btn id='modalclose' class='modal-action modal-close waves-effect waves-green btn-flat'>Close</btn>" +
-        "</div>" +
-        "</div>";
+            "<li><a id='mili-btn' onclick='showFunction()'>Show Global Fire Power</a></li>" +
+            "<div id='defensie'>" +
+            "<li><p>Global Firepower Rank(2018): #" + rank + "</p></li>" +
+            "<div class='divider'></div>" +
+            "    <li><p>Mankracht beschikbaar: " + numeral(info[0]).format('0,0') + "</p></li>" +
+            "    <li><p>Geschikt voor service: " + numeral(info[1]).format('0,0') + "</p></li>" +
+            "<li><p>Het bereiken van de militaire leeftijd per jaar: " + numeral(info[2]).format('0,0') + "</p></li>" +
+            "<li><p>Totaal militair personeel: " + numeral(info[3]).format('0,0') + "</p></li>" +
+            "<li><p>Actief personeel: " + numeral(info[4]).format('0,0') + "</p></li>" +
+            "<li><p>Nationale reserve: " + numeral(info[5]).format('0,0') + "</p></li>" +
+            "    <div class='divider'></div>" +
+            "    <li><p>Totale sterkte van de luchtmacht: " + airforce[0] + "</p></li>" +
+            "    <li><p>Jachtvliegtuigen: " + airforce[1] + "</p></li>" +
+            "    <li><p>Gevechtsvliegtuigen: " + airforce[2] + "</p></li>" +
+            "    <li><p>Transportvliegtuigen: " + airforce[3] + "</p></li>" +
+            "    <li><p>Opleidingsvliegtuigen: " + airforce[4] + "</p></li>" +
+            "    <div class='divider'></div>" +
+            "<li><p>Totale helicopter kracht: " + army[0] + "</p></li>" +
+            "<li><p>Aanvalshelikopters: " + army[1] + "</p></li>" +
+            "<li><p>Tanks: " + army[2] + "</p></li>" +
+            "<li><p>Pantservoertuigen: " + army[3] + "</p></li>" +
+            "<li><p>Gemechaniseerde artillerie: " + army[4] + "</p></li>" +
+            "<li><p>Artillerie: " + army[5] + "</p></li>" +
+            "<li><p>Raketlanceerprojectoren: " + army[6] + "</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Totaal aantal oorlogschepen: " + navy[0] + "</p></li>" +
+            "<li><p>Vliegdekschepen: " + navy[1] + "</p></li>" +
+            "<li><p>Fregatten: " + navy[2] + "</p></li>" +
+            "<li><p>Torpedobootjagers: " + navy[3] + "</p></li>" +
+            "<li><p>korvetten: " + navy[4] + "</p></li>" +
+            "<li><p>Onderzeeërs: " + navy[5] + "</p></li>" +
+            "<li><p>Patrouillevaartuigen: " + navy[6] + "</p></li>" +
+            "<li><p>Mijnenvegers: " + navy[7] + "</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Totale koopvaardij sterkte: " + numeral(geo[0]).format('0,0') + "</p></li>" +
+            "<li><p>Grote havens / Terminals: " + numeral(geo[1]).format('0,0') + "</p></li>" +
+            "<li><p>Roadway Coverage (km): " + numeral(geo[2]).format('0,0.00') + " km</p></li>" +
+            "<li><p>Railway Coverage (km): " + numeral(geo[3]).format('0,0.00') + " km</p></li>" +
+            "<li><p>Bruikbare vliegvelden: " + numeral(geo[4]).format('0,0') + "</p></li>" +
+            "<li><p>Kustlijn (km): " + numeral(geo[5]).format('0,0.00') + " km</p></li>" +
+            "<li><p>Geldeelde grenzen (km): " + numeral(geo[6]).format('0,0.00') + " km</p></li>" +
+            "<li><p>Waterways (km): " + numeral(geo[7]).format('0,0.00') + " km</p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Defensie Budget: $" + numeral(money[0]).format('0,0.00') + "</p></li>" +
+            "<li><p>Staatschuld: $" + numeral(money[1]).format('0,0.00') + "</p></li>" +
+            "</div>" +
+            "</ul>" +
+            "</div>" +
+            "<div class='modal-footer'>" +
+            "<btn id='modalclose' class='modal-action modal-close waves-effect waves-green btn-flat'>Close</btn>" +
+            "</div>" +
+            "</div>";
     }
 
     else{
@@ -756,25 +757,25 @@ function modal(result) {
             "<h6 class='center-align'>" + nativeName + "</h6>" +
             "<img class='responsive-img center-align' style='border: grey 1px solid' src='" + flag + "'>" +
             "<ul>" +
-            "<li><p>Capital: " + capital + "</p></li>" +
+            "<li><p>Hoofdstad: " + capital + "</p></li>" +
             "<div class='divider'></div>" +
-            "<li><p>Population: " + numeral(population).format('0,0') + "</p></li>" +
+            "<li><p>Aantal inwoners: " + numeral(population).format('0,0') + "</p></li>" +
             "<div class='divider'></div>" +
             "<li><p id='language'>Languages:</p></li>" +
             "<div class='divider'></div>" +
-            "<li><p>Demonym: " + demonym + "</p></li>" +
+            "<li><p>Inwoneraanduiding: " + demonym + "</p></li>" +
             "<div class='divider'></div>" +
-            "<li><p>Area: " + numeral(area).format('0,0') + " km2</p></li>" +
+            "<li><p>Oppervlakte: " + numeral(area).format('0,0') + " km2</p></li>" +
             "<div class='divider'></div>" +
-            "<li><p>Region: " + region + " (" + subregion + "),<br>" + "</p></li>" +
+            "<li><p>Regio: " + region + " (" + subregion + "),<br>" + "</p></li>" +
             "<div class='divider'></div>" +
-            "<li><p id='regionalBloc'>Regional Blocs: </p></li>" +
+            "<li><p id='regionalBloc'>Regionaal Blok: </p></li>" +
             "<div class='divider'></div>" +
-            "<li><p id='timezone'>Timezones: </p></li>" +
+            "<li><p id='timezone'>Tijdzones: </p></li>" +
             "<div class='divider'></div>" +
-            "<li><p id='currency'>Currency: </p></li>" +
+            "<li><p id='currency'>Munteenheid: </p></li>" +
             "<div class='divider'></div>" +
-            "<li><p>Gross Domestic Product(GDP)(2016): $" + numeral(gdp).format('0,0.00') + "</p></li>" +
+            "<li><p>Bruto binnenlands product(2016): $" + numeral(gdp).format('0,0.00') + "</p></li>" +
             "<div class='divider'></div>" +
             pppStyle +
             "<div class='divider'></div>" +
@@ -1041,7 +1042,8 @@ function getGfp(englishName) {
         "Solomon Islands",
         "Iceland",
         "Vanuatu",
-        "French Southern Territories"
+        "French Southern Territories",
+        "Luxembourg"
     ];
     var request = new XMLHttpRequest();
     request.open('GET', '../data/gfp.json', false);  // `false` makes the request synchronous
@@ -1082,15 +1084,15 @@ function getGfp(englishName) {
  */
 function hdiIcon(hdi) {
     if (hdi <= 0.999 && hdi > 0.800) {
-        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #30ff30'><b> Very high</b></span></p>";
+        hdi = "<li><p>Index van de menselijke ontwikkeling(2014): " + hdi + "<span style='color: #30ff30'><b> Very high</b></span></p>";
     } else if (hdi <= 0.800 && hdi > 0.701) {
-        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #9aff9a'><b> High</b></span></p>";
+        hdi = "<li><p>Index van de menselijke ontwikkeling(2014): " + hdi + "<span style='color: #9aff9a'><b> High</b></span></p>";
     } else if (hdi <= 0.700 && hdi > 550) {
-        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #fc0'><b> Medium</b></span></p>";
+        hdi = "<li><p>Index van de menselijke ontwikkeling(2014): " + hdi + "<span style='color: #fc0'><b> Medium</b></span></p>";
     } else if (hdi <= 0.550 && hdi > 0.100) {
-        hdi = "<li><p>Human Development Index(2014): " + hdi + "<span style='color: #cd0000'><b> Low</b></span></p>";
+        hdi = "<li><p>Index van de menselijke ontwikkeling(2014): " + hdi + "<span style='color: #cd0000'><b> Low</b></span></p>";
     } else {
-        hdi = "<li><p>Human Development Index(2014): No data available</p>";
+        hdi = "<li><p>Index van de menselijke ontwikkeling(2014): No data available</p>";
     }
     return hdi;
 }
@@ -1102,23 +1104,23 @@ function hdiIcon(hdi) {
  */
 function giniIcon(gini) {
     if (gini < 30) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #00cd00'><b> Very high</b></span></p></li>";
+        gini = "<li><p>Gini-coëfficiënt van inkomensverdeling: " + gini + "<span style='color: #00cd00'><b> Very high</b></span></p></li>";
     } else if (gini >= 30 && gini < 35) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #30ff30'><b> High</b></span></p></li>";
+        gini = "<li><p>Gini-coëfficiënt van inkomensverdeling: " + gini + "<span style='color: #30ff30'><b> High</b></span></p></li>";
     } else if (gini >= 35 && gini < 40) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #9aff9a'><b> Ok</b></span></p></li>";
+        gini = "<li><p>Gini-coëfficiënt van inkomensverdeling: " + gini + "<span style='color: #9aff9a'><b> Ok</b></span></p></li>";
     } else if (gini >= 40 && gini < 45) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ffcdff'><b> Medium</b></span></p></li>";
+        gini = "<li><p>Gini-coëfficiënt van inkomensverdeling: " + gini + "<span style='color: #ffcdff'><b> Medium</b></span></p></li>";
     } else if (gini >= 45 && gini < 50) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ff6666'><b> Kind of low</b></span></p></li>";
+        gini = "<li><p>Gini-coëfficiënt van inkomensverdeling: " + gini + "<span style='color: #ff6666'><b> Kind of low</b></span></p></li>";
     } else if (gini >= 50 && gini < 55) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #ff1212'><b> Low</b></span></p></li>";
+        gini = "<li><p>Gini-coëfficiënt van inkomensverdeling: " + gini + "<span style='color: #ff1212'><b> Low</b></span></p></li>";
     } else if (gini >= 55 && gini < 60) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #cd0000'><b> Very low</b></span></p></li>";
+        gini = "<li><p>Gini-coëfficiënt van inkomensverdeling: " + gini + "<span style='color: #cd0000'><b> Very low</b></span></p></li>";
     } else if (gini >= 60 && gini <= 66) {
-        gini = "<li><p>Income Equality Index: " + gini + "<span style='color: #9a0000'><b> Extremely low</b></span></p></li>";
+        gini = "<li><p>Gini-coëfficiënt van inkomensverdeling: " + gini + "<span style='color: #9a0000'><b> Extremely low</b></span></p></li>";
     } else {
-        gini = "<li><p>Income Equality Index: " + gini + "</p></li>";
+        gini = "<li><p>Gini-coëfficiënt van inkomensverdeling: " + gini + "</p></li>";
     }
     return gini;
 }
@@ -1205,6 +1207,8 @@ function gfpIcon(mili) {
         mili = "<li><p>The Vanuatu Police Force maintain a paramilitary force, called the Vanuatu Mobile Force for internal security purposes. The Vanuatu Mobile Force is manned by almost 300 men and women, who are well-equipped with small arms.</p></li>";
     } else if (mili == "French Southern Territories") {
         mili = "<li><p>Under French portectorate</p></li>";
+    } else if (mili == "Luxembourg") {
+        mili = "<li><p>No military data available for " + mili + "</p></li>";
     }
 
     return mili;
@@ -1217,21 +1221,21 @@ function gfpIcon(mili) {
  */
 function pppIcon(ppp) {
     if (ppp >= 50000) {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #00cd00'><b> Extremely high</b></span></p></li>";
+        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #00cd00'><b> Extremely high</b></span></p></li>";
     } else if (ppp < 50000 && ppp >= 35000) {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #30ff30'><b> Very high</b></span></p></li>";
+        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #30ff30'><b> Very high</b></span></p></li>";
     } else if (ppp < 35000 && ppp >= 20000) {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #9aff9a'><b> High</b></span></p></li>";
+        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #9aff9a'><b> High</b></span></p></li>";
     } else if (ppp < 20000 && ppp >= 10000) {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #fc0'><b> Medium</b></span></p></li>";
+        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #fc0'><b> Medium</b></span></p></li>";
     } else if (ppp < 10000 && ppp >= 5000) {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #ff6666'><b> Low</b></span></p></li>";
+        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #ff6666'><b> Low</b></span></p></li>";
     } else if (ppp < 5000 && ppp >= 2000) {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #ff1212'><b> Very low</b></span></p></li>";
+        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #ff1212'><b> Very low</b></span></p></li>";
     } else if (ppp < 2000) {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #cd0000'><b> Extremely low</b></span></p></li>";
+        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #cd0000'><b> Extremely low</b></span></p></li>";
     } else {
-        ppp = "<li><p>GDP (at PPP) per capita (2016): No data available </p></li>";
+        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): No data available </p></li>";
     }
 
     return ppp;
