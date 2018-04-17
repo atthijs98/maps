@@ -24,6 +24,7 @@
 <div id="map"></div>
 <script>
     var map;
+
     function initAutocomplete() {
         var myOptions = {
             zoom: 5,
@@ -31,9 +32,12 @@
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             zoomControl: false,
             fullscreenControl: false,
-            streetViewControl: false
+            streetViewControl: false,
+            minZoom: 3,
+            maxZoom: 20
 
         };
+
 
         map = new google.maps.Map(document.getElementById('map'), myOptions);
 
@@ -257,6 +261,7 @@
             searchBox.setBounds(map.getBounds());
         });
 
+
         var markers = [];
         // Listen for the event fired when the user selects a prediction and retrieve
         // more details for that place.
@@ -307,6 +312,7 @@
         });
         drawMap(map);
     }
+
 </script>
 </body>
 <script src="../js/jquery-3.3.1.min.js"></script>
