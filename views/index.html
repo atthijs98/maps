@@ -11,12 +11,12 @@
 </head>
 <body>
 <script>
-    function showFunction(){
+    function showFunction(e){
         var x = document.getElementById("defensie");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
+        if (x.style.display === "block") {
             x.style.display = "none";
+        } else {
+            x.style.display = "block";
         }
     }
 </script>
@@ -36,6 +36,13 @@
         };
 
         map = new google.maps.Map(document.getElementById('map'), myOptions);
+
+        var eventsTravel = {lat: 52.143844, lng: 4.48114};
+        var pointer = new google.maps.Marker({
+            position: eventsTravel,
+            map: map,
+            title: 'Events Travel'
+        });
 
         // these are the map styles
         var styles = [
@@ -305,6 +312,7 @@
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/materialize.min.js"></script>
 <script src="../js/numeral.min.js"></script>
+<script src="../locales/nl.js"></script>
 <script src="../js/functions/polygon.js"></script>
 <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfpEmZZ_7-cv8yGZc0JS_GNVLYLCuuUKs&libraries=places&callback=initAutocomplete"
         type="text/javascript"></script>

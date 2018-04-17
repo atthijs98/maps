@@ -2,6 +2,8 @@ var div = document.createElement("div");
 div.setAttribute("class", "modal");
 div.setAttribute("id", "modal");
 
+
+
 function drawMap(data) {
 
     var rows = data['rows'];
@@ -29,7 +31,7 @@ function drawMap(data) {
                 name: rows[i][0]
             });
             google.maps.event.addListener(country, 'mouseover', function () {
-                this.setOptions({fillOpacity: 0.4});
+                this.setOptions({fillOpacity: 0.3});
             });
             google.maps.event.addListener(country, 'mouseout', function () {
                 this.setOptions({fillOpacity: 0});
@@ -664,7 +666,8 @@ function modal(result) {
         var geo = mili[4];
         var money = mili[5];
         var rank = mili[6];
-        var innerHmlNorm = "<div class='modal-content'>" +
+        var innerHmlNorm =
+            "<div class='modal-content'>" +
             "<h4 class='center-align'>" + englishName + "</h4>" +
             "<h6 class='center-align'>" + nativeName + "</h6>" +
             "<img class='responsive-img center-align' style='border: grey 1px solid' src='" + flag + "'>" +
@@ -687,7 +690,7 @@ function modal(result) {
             "<div class='divider'></div>" +
             "<li><p id='currency'>Munteenheid: </p></li>" +
             "<div class='divider'></div>" +
-            "<li><p>Bruto binnenlands product(2016): $" + numeral(gdp).format('0,0.00') + "</p></li>" +
+            "<li><p>Bruto binnenlands product(2016): " + numeral(gdp).format('$ 0,0[.]00') + "</p></li>" +
             "<div class='divider'></div>" +
             pppStyle +
             "<div class='divider'></div>" +
@@ -696,10 +699,10 @@ function modal(result) {
             hdiStyle +
             "<div class='divider'></div>" +
             happinessStyle +
-            "<div class='divider'></div>" +
-            "<li><a id='mili-btn' onclick='showFunction()'>Show Global Fire Power</a></li>" +
+            "<div class='divider'></div><br>" +
+            "<li><a href='#!' id='mili-btn' onclick='showFunction()'>Show Global Fire Power</a></li>" +
             "<div id='defensie'>" +
-            "<li><p>Global Firepower Rank(2018): #" + rank + "</p></li>" +
+            "<li><p>Global Firepower Rank(2018): " + numeral(rank).format('0o') + "</p></li>" +
             "<div class='divider'></div>" +
             "    <li><p>Mankracht beschikbaar: " + numeral(info[0]).format('0,0') + "</p></li>" +
             "    <li><p>Geschikt voor militaire dienst: " + numeral(info[1]).format('0,0') + "</p></li>" +
@@ -733,15 +736,16 @@ function modal(result) {
             "<div class='divider'></div>" +
             "<li><p>Totale koopvaardij sterkte: " + numeral(geo[0]).format('0,0') + "</p></li>" +
             "<li><p>Grote havens / Terminals: " + numeral(geo[1]).format('0,0') + "</p></li>" +
-            "<li><p>Roadway Coverage (km): " + numeral(geo[2]).format('0,0.00') + " km</p></li>" +
-            "<li><p>Railway Coverage (km): " + numeral(geo[3]).format('0,0.00') + " km</p></li>" +
+            "<li><p>Totale grootte van het wegennet (km): " + numeral(geo[2]).format('0,0.00') + " km</p></li>" +
+            "<li><p>Grootte van het spoorwegvervoer (km): " + numeral(geo[3]).format('0,0.00') + " km</p></li>" +
             "<li><p>Bruikbare vliegvelden: " + numeral(geo[4]).format('0,0') + "</p></li>" +
             "<li><p>Kustlijn (km): " + numeral(geo[5]).format('0,0.00') + " km</p></li>" +
             "<li><p>Geldeelde grenzen (km): " + numeral(geo[6]).format('0,0.00') + " km</p></li>" +
-            "<li><p>Waterways (km): " + numeral(geo[7]).format('0,0.00') + " km</p></li>" +
+            "<li><p>Waterwegen (km): " + numeral(geo[7]).format('0,0.00') + " km</p></li>" +
             "<div class='divider'></div>" +
-            "<li><p>Defensie Budget: $" + numeral(money[0]).format('0,0.00') + "</p></li>" +
-            "<li><p>Staatschuld: $" + numeral(money[1]).format('0,0.00') + "</p></li>" +
+            "<li><p>Defensie Budget: " + numeral(money[0]).multiply(1000000).format('($0.00a)') + "</p></li>" +
+            "<li><p>Staatschuld: " + numeral(money[1]).multiply(1000000).format('($0.00a)') + "</p></li>" +
+            "<li><p><small>Bron: https://www.globalfirepower.com/</small></p></li>"+
             "</div>" +
             "</ul>" +
             "</div>" +
@@ -775,7 +779,7 @@ function modal(result) {
             "<div class='divider'></div>" +
             "<li><p id='currency'>Munteenheid: </p></li>" +
             "<div class='divider'></div>" +
-            "<li><p>Bruto binnenlands product(2016): $" + numeral(gdp).format('0,0.00') + "</p></li>" +
+            "<li><p>Bruto binnenlands product(2016): " + numeral(gdp).format('$ 0,0[.]00') + "</p></li>" +
             "<div class='divider'></div>" +
             pppStyle +
             "<div class='divider'></div>" +
@@ -1221,21 +1225,21 @@ function gfpIcon(mili) {
  */
 function pppIcon(ppp) {
     if (ppp >= 50000) {
-        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #00cd00'><b> Extremely high</b></span></p></li>";
+        ppp = "<li><p>koopkrachtpariteit per hoofd van de bevolking (2016): " + numeral(ppp).format('$0,0[.]00') + "<span style='color: #00cd00'><b> Extremely high</b></span></p></li>";
     } else if (ppp < 50000 && ppp >= 35000) {
-        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #30ff30'><b> Very high</b></span></p></li>";
+        ppp = "<li><p>koopkrachtpariteit per hoofd van de bevolking (2016): " + numeral(ppp).format('$0,0[.]00') + "<span style='color: #30ff30'><b> Very high</b></span></p></li>";
     } else if (ppp < 35000 && ppp >= 20000) {
-        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #9aff9a'><b> High</b></span></p></li>";
+        ppp = "<li><p>koopkrachtpariteit per hoofd van de bevolking (2016): " + numeral(ppp).format('$0,0[.]00') + "<span style='color: #9aff9a'><b> High</b></span></p></li>";
     } else if (ppp < 20000 && ppp >= 10000) {
-        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #fc0'><b> Medium</b></span></p></li>";
+        ppp = "<li><p>koopkrachtpariteit per hoofd van de bevolking (2016): " + numeral(ppp).format('$0,0[.]00') + "<span style='color: #fc0'><b> Medium</b></span></p></li>";
     } else if (ppp < 10000 && ppp >= 5000) {
-        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #ff6666'><b> Low</b></span></p></li>";
+        ppp = "<li><p>koopkrachtpariteit per hoofd van de bevolking (2016): " + numeral(ppp).format('$0,0[.]00') + "<span style='color: #ff6666'><b> Low</b></span></p></li>";
     } else if (ppp < 5000 && ppp >= 2000) {
-        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #ff1212'><b> Very low</b></span></p></li>";
+        ppp = "<li><p>koopkrachtpariteit per hoofd van de bevolking (2016): " + numeral(ppp).format('$0,0[.]00') + "<span style='color: #ff1212'><b> Very low</b></span></p></li>";
     } else if (ppp < 2000) {
-        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #cd0000'><b> Extremely low</b></span></p></li>";
+        ppp = "<li><p>koopkrachtpariteit per hoofd van de bevolking (2016): " + numeral(ppp).format('$0,0[.]00') + "<span style='color: #cd0000'><b> Extremely low</b></span></p></li>";
     } else {
-        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): Geen data beschikbaar </p></li>";
+        ppp = "<li><p>koopkrachtpariteit per hoofd van de bevolking (2016): Geen data beschikbaar </p></li>";
     }
 
     return ppp;
@@ -1248,31 +1252,31 @@ function pppIcon(ppp) {
  */
 function happinessIcon(happiness) {
     if (happiness >= 1 && happiness <= 8) {
-        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #002400'><b> Near perfect</b></span></p></li>";
+        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color: #002400'><b> Near perfect</b></span></p></li>";
     } else if (happiness > 8 && happiness <= 20) {
-        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #006d00'><b> Extremely good</b></span></p></li>";
+        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color: #006d00'><b> Extremely good</b></span></p></li>";
     } else if (happiness > 20 && happiness <= 36) {
-        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color:#00b600 '><b> Very good</b></span></p></li>";
+        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color:#00b600 '><b> Very good</b></span></p></li>";
     } else if (happiness > 36 && happiness <= 48) {
-        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #24ff24'><b> Good</b></span></p></li>";
+        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color: #24ff24'><b> Good</b></span></p></li>";
     } else if (happiness > 48 && happiness <= 61) {
-        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #6dff6d'><b> Quite well</b></span></p></li>";
+        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color: #6dff6d'><b> Quite well</b></span></p></li>";
     } else if (happiness > 61 && happiness <= 74) {
-        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color:#b6ffb6 '><b> Ok</b></span></p></li>";
+        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color:#b6ffb6 '><b> Ok</b></span></p></li>";
     } else if (happiness > 74 && happiness <= 87) {
-        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #ffb6b6'><b> Not so well</b></span></p></li>";
+        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color: #ffb6b6'><b> Not so well</b></span></p></li>";
     } else if (happiness > 87 && happiness <= 92) {
-        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #ff6d6d'><b> Kind of bad</b></span></p></li>";
+        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color: #ff6d6d'><b> Kind of bad</b></span></p></li>";
     } else if (happiness > 92 && happiness <= 107) {
-        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #ff2424'><b> Bad</b></span></p></li>";
+        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color: #ff2424'><b> Bad</b></span></p></li>";
     } else if (happiness > 107 && happiness <= 118) {
-        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #b60000'><b> Very bad</b></span></p></li>";
+        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color: #b60000'><b> Very bad</b></span></p></li>";
     } else if (happiness > 118 && happiness <= 131) {
-        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #6d0000'><b> Extremely bad</b></span></p></li>";
+        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color: #6d0000'><b> Extremely bad</b></span></p></li>";
     } else if (happiness > 131 && happiness <= 143) {
-        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #240000'><b> Super bad</b></span></p></li>";
+        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color: #240000'><b> Super bad</b></span></p></li>";
     } else if (happiness > 143 && happiness <= 156) {
-        happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #000000'><b> Fucked</b></span></p></li>";
+        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color: #000000'><b> Fucked</b></span></p></li>";
     } else {
         happiness = "<li><p>World Happiness Index(2018): Geen data beschikbaar</p></li>";
     }

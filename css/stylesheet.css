@@ -88,3 +88,21 @@ html, body {
     width: 345px;
 }
 
+@media screen and (max-width: 600px) {
+    #modal {
+        width: 90%;
+        margin: 0 auto;
+    }
+    #pac-input {
+        display: none;
+    }
+}
+@media screen and (max-width: 1024px) {
+    #modal {
+        width: 70%;
+        margin: 0 auto;
+    }
+    #pac-input {
+        display: none;
+    }
+}

@@ -28,6 +28,9 @@ https://developers.google.com/maps/documentation/javascript/examples/layer-data-
 
 https://www.csvjson.com/csv2json
 
+https://github.com/adamwdraper/Numeral-js/tree/master/locales
+<small>All numerals for numeral.js</small>
+
 scrape data from:
 <ul>
     <li>https://en.wikipedia.org/wiki/List_of_current_heads_of_state_and_government</li>
