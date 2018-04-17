@@ -1092,7 +1092,7 @@ function hdiIcon(hdi) {
     } else if (hdi <= 0.550 && hdi > 0.100) {
         hdi = "<li><p>Index van de menselijke ontwikkeling(2014): " + hdi + "<span style='color: #cd0000'><b> Low</b></span></p>";
     } else {
-        hdi = "<li><p>Index van de menselijke ontwikkeling(2014): No data available</p>";
+        hdi = "<li><p>Index van de menselijke ontwikkeling(2014): Geen data beschikbaar</p>";
     }
     return hdi;
 }
@@ -1130,15 +1130,15 @@ function giniIcon(gini) {
  */
 function gfpIcon(mili) {
     if (mili == "Costa Rica") {
-        mili = "<li><p>Costa Rica is one of the few nations without a standing army.</p></li>";
+        mili = "<li><p>Costa Rica is een van de weinige landen zonder een leger.</p></li>";
     } else if (mili == "Jamaica") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Puerto Rico") {
         mili = "<li><p>Under US protectorate</p></li>";
     } else if (mili == "Bahamas") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Haiti") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Falkland Islands (Malvinas)") {
         mili = "<li><p>Under British protectorate</p></li>";
     } else if (mili == "North Cyprus") {
@@ -1146,59 +1146,59 @@ function gfpIcon(mili) {
     } else if (mili == "Greenland") {
         mili = "<li><p>Under Danish protectorate </p></li>";
     } else if (mili == "Somaliland") {
-        mili = "<li><p>Unrecognised state. Recognised by the United Nations as de jure part of Somalia as an autonomous territory</p></li>";
+        mili = "<li><p>Republiek Somaliland, is een de facto onafhankelijk land op het territorium van Somalië en volgt de grenzen van het vroegere protectoraat Brits-Somaliland.</p></li>";
     } else if (mili == "Fiji") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Djibouti") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Lesotho") {
         mili = "<li><p>Under South African protectorate</p></li>";
     } else if (mili == "Liberia") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "New Caledonia") {
         mili = "<li><p>Under French protectorate</p></li>";
     } else if (mili == "Swaziland") {
         mili = "<li><p>Under South African protectorate</p></li>";
     } else if (mili == "Western Sahara") {
-        mili = "<li><p></p></li>";
+        mili = "<li><p>Niet-zelfsturend gebied. Geclaimed door Marokko.</p></li>";
     } else if (mili == "Montenegro") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Republic of Kosovo") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Moldova (Republic of)") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Cyprus") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Palestine, State of") {
-        mili = "<li><p>The West Bank and the Gaza Strip are occupied otherwise under control of Israel.</p></li>";
+        mili = "<li><p>Zelfstandige autoriteit met grote mate van autonomie, maar geen volledige soevereiniteit: mogelijk toekomstige republiek. Palestina is militair afhankelijk van Israël.</p></li>";
     } else if (mili == "Eritrea") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Rwanda") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Burundi") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Malawi") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Equatorial-Guinea") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Benin") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Togo") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Burkina Faso") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Guinea") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Guinea-Bissau") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Senegal") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Gambia") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Timor-Leste") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Papua New Guinea") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Solomon Islands") {
         mili = "<li><p>Maintained a paramilitary force until a heavy ethnic conflict, in which Australia, New Zealand and other Pacific countries intervened to restore law and order. Since then no military has been maintained, however, there is a relatively large police force, and a Maritime Surveillance Unit for internal security. The Maritime Surveillance Unit is equipped with small arms, and maintains two Pacific-class patrol boats, the Auki and the Lata. Defense and policing assistance was the responsibility of the RAMSI until June 30, 2017.</p></li>";
     } else if (mili == "Iceland") {
@@ -1208,7 +1208,7 @@ function gfpIcon(mili) {
     } else if (mili == "French Southern Territories") {
         mili = "<li><p>Under French portectorate</p></li>";
     } else if (mili == "Luxembourg") {
-        mili = "<li><p>No military data available for " + mili + "</p></li>";
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     }
 
     return mili;
@@ -1235,7 +1235,7 @@ function pppIcon(ppp) {
     } else if (ppp < 2000) {
         ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): $" + numeral(ppp).format('0,0.00') + "<span style='color: #cd0000'><b> Extremely low</b></span></p></li>";
     } else {
-        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): No data available </p></li>";
+        ppp = "<li><p>koopkrachtpariteit (kkp) per hoofd van de bevolking (2016): Geen data beschikbaar </p></li>";
     }
 
     return ppp;
@@ -1274,7 +1274,7 @@ function happinessIcon(happiness) {
     } else if (happiness > 143 && happiness <= 156) {
         happiness = "<li><p>World Happiness Index(2018): #" + happiness + "<span style='color: #000000'><b> Fucked</b></span></p></li>";
     } else {
-        happiness = "<li><p>World Happiness Index(2018): No data available</p></li>";
+        happiness = "<li><p>World Happiness Index(2018): Geen data beschikbaar</p></li>";
     }
     return happiness;
 }
