@@ -38,11 +38,10 @@ function drawMap(data) {
             });
             google.maps.event.addListener(country, 'click', function () {
                 var countryName = this.name;
-                var code = convert(countryName); // Calls a function that converts the name of the country to its official ISO 3166-1 alpha-2 code.
-                var modal = document.querySelector('.modal');
-                var instance = M.Modal.init(modal);
-                instance.open();
-
+                    var code = convert(countryName); // Calls a function that converts the name of the country to its official ISO 3166-1 alpha-2 code.
+                    var modal = document.querySelector('.modal');
+                    var instance = M.Modal.init(modal);
+                    instance.open();
 
             });
 
@@ -590,10 +589,11 @@ function convert(countryName) {
 
     }
 
-    var url = "https://restcountries.eu/rest/v2/alpha/" + code;
-    console.log(url);
-    var callback = httpGet(url); // Calls a function that makes a XMLHttpRequest
-    return code;
+        var url = "https://restcountries.eu/rest/v2/alpha/" + code;
+        console.log(url);
+        var callback = httpGet(url); // Calls a function that makes a XMLHttpRequest
+        return code;
+
 
 }
 
@@ -640,14 +640,15 @@ function modal(result) {
     var currencies = result["currencies"];
     var timezones = result["timezones"];
     var regionalBlocs = result["regionalBlocs"];
-    var code = result["alpha2Code"];
-    code = code.toLowerCase();
+    var iso = result["alpha2Code"];
+    iso = iso.toLowerCase();
     var hdi;
     var gdp;
     var ppp;
     var happiness;
     var mili;
 
+    console.log(iso);
 
     gdp = getGdp(englishName);
     var giniStyle = giniIcon(gini);
@@ -676,7 +677,7 @@ function modal(result) {
             "<div class='col s10 push-s1'><div class='center-align'><img style='border: grey 1px solid;' src='" + flag + "' class='responsive-img'></div></div>" +
             "</div>" +
             "<div class='row'>" +
-            "<div class='col s10 push-s1'><div class='center-align'><img src='../images/coatOfArms/"+code+".png' class='responsive-img'></div></div>" +
+            "<div class='col s10 push-s1'><div class='center-align'><img src='../images/coatOfArms/"+iso+".png' class='responsive-img'></div></div>" +
             "</div>" +
             "<div class='divider'></div> " +
             "<ul>" +
@@ -771,7 +772,7 @@ function modal(result) {
             "<div class='col s10 push-s1'><div class='center-align'><img style='border: grey 1px solid;' src='" + flag + "' class='responsive-img'></div></div>" +
             "</div>" +
             "<div class='row'>" +
-            "<div class='col s10 push-s1'><div class='center-align'><img src='../images/coatOfArms/"+code+".png' class='responsive-img'></div></div>" +
+            "<div class='col s10 push-s1'><div class='center-align'><img src='../images/coatOfArms/"+iso+".png' class='responsive-img'></div></div>" +
             "</div>" +
             "<ul>" +
             "<li><p>Hoofdstad: " + capital + "</p></li>" +
