@@ -640,8 +640,14 @@ function modal(result) {
     var currencies = result["currencies"];
     var timezones = result["timezones"];
     var regionalBlocs = result["regionalBlocs"];
-    var iso = result["alpha2Code"];
-    iso = iso.toLowerCase();
+    if (englishName == "Afghanistan") {
+        iso = result["alpha3Code"];
+        iso = iso.toLowerCase();
+    }else {
+        var iso = result["alpha2Code"];
+        iso = iso.toLowerCase();
+    }
+
     var hdi;
     var gdp;
     var ppp;
