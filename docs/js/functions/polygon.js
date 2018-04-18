@@ -2,8 +2,6 @@ var div = document.createElement("div");
 div.setAttribute("class", "modal");
 div.setAttribute("id", "modal");
 
-
-
 function drawMap(data) {
 
     var rows = data['rows'];
@@ -654,8 +652,6 @@ function modal(result) {
     var happiness;
     var mili;
 
-    console.log(iso);
-
     gdp = getGdp(englishName);
     var giniStyle = giniIcon(gini);
     hdi = getHdi(englishName);
@@ -683,7 +679,7 @@ function modal(result) {
             "<div class='col s10 push-s1'><div class='center-align'><img style='border: grey 1px solid;' src='" + flag + "' class='responsive-img'></div></div>" +
             "</div>" +
             "<div class='row'>" +
-            "<div class='col s10 push-s1'><div class='center-align'><img src='../images/coatOfArms/"+iso+".png' class='responsive-img'></div></div>" +
+            "<div class='col s10 push-s1'><div class='center-align'><img src='images/coatOfArms/"+iso+".png' class='responsive-img'></div></div>" +
             "</div>" +
             "<div class='divider'></div> " +
             "<ul>" +
@@ -778,7 +774,7 @@ function modal(result) {
             "<div class='col s10 push-s1'><div class='center-align'><img style='border: grey 1px solid;' src='" + flag + "' class='responsive-img'></div></div>" +
             "</div>" +
             "<div class='row'>" +
-            "<div class='col s10 push-s1'><div class='center-align'><img src='../images/coatOfArms/"+iso+".png' class='responsive-img'></div></div>" +
+            "<div class='col s10 push-s1'><div class='center-align'><img src='images/coatOfArms/"+iso+".png' class='responsive-img'></div></div>" +
             "</div>" +
             "<ul>" +
             "<li><p>Hoofdstad: " + capital + "</p></li>" +
@@ -870,7 +866,7 @@ function getHdi(englishName) {
     var rico = "Puerto Rico";
 
     var request = new XMLHttpRequest();
-    request.open('GET', '../data/hdi.json', false);  // `false` makes the request synchronous
+    request.open('GET', 'data/hdi.json', false);  // `false` makes the request synchronous
     request.send(null);
 
     if (request.status === 200) {
@@ -906,7 +902,7 @@ function getGdp(englishName) {
     var french = "French Southern Territories";
     var sahara = "Western Sahara";
     var request = new XMLHttpRequest();
-    request.open('GET', '../data/gdp.json', false);  // `false` makes the request synchronous
+    request.open('GET', 'data/gdp.json', false);  // `false` makes the request synchronous
     request.send(null);
 
     if (request.status === 200) {
@@ -944,7 +940,7 @@ function getPpp(englishName) {
     var vanuatu = "Vanuatu";
     var sahara = "Western Sahara";
     var request = new XMLHttpRequest();
-    request.open('GET', '../data/ppp.json', false);  // `false` makes the request synchronous
+    request.open('GET', 'data/ppp.json', false);  // `false` makes the request synchronous
     request.send(null);
 
     if (request.status === 200) {
@@ -995,7 +991,7 @@ function getHappiness(englishName) {
     var papua = "Papua New Guinea";
     var solomon = "Solomon Islands";
     var request = new XMLHttpRequest();
-    request.open('GET', '../data/happy.json', false);  // `false` makes the request synchronous
+    request.open('GET', 'data/happy.json', false);  // `false` makes the request synchronous
     request.send(null);
 
     if (request.status === 200) {
@@ -1072,7 +1068,7 @@ function getGfp(englishName) {
         "Brunei Darussalam"
     ];
     var request = new XMLHttpRequest();
-    request.open('GET', '../data/gfp.json', false);  // `false` makes the request synchronous
+    request.open('GET', 'data/gfp.json', false);  // `false` makes the request synchronous
     request.send(null);
 
     if (request.status === 200) {
