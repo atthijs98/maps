@@ -1068,7 +1068,8 @@ function getGfp(englishName) {
         "Vanuatu",
         "French Southern Territories",
         "Luxembourg",
-        "Trinidad and Tobago"
+        "Trinidad and Tobago",
+        "Brunei Darussalam"
     ];
     var request = new XMLHttpRequest();
     request.open('GET', '../data/gfp.json', false);  // `false` makes the request synchronous
@@ -1236,6 +1237,8 @@ function gfpIcon(mili) {
         mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     } else if (mili == "Trinidad and Tobago") {
         mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
+    } else if (mili == "Brunei Darussalam") {
+        mili = "<li><p>Geen militaire data beschikbaar voor "+ mili + "</p></li>";
     }
 
     return mili;
