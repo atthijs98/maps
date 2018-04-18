@@ -1296,7 +1296,7 @@ function happinessIcon(happiness) {
     } else if (happiness > 131 && happiness <= 143) {
         happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color: #240000'><b> Super bad</b></span></p></li>";
     } else if (happiness > 143 && happiness <= 156) {
-        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color: #000000'><b> Fucked</b></span></p></li>";
+        happiness = "<li><p>World Happiness Index(2018): " + numeral(happiness).format('0o') + "<span style='color: #000000'><b> Worst of the worst</b></span></p></li>";
     } else {
         happiness = "<li><p>World Happiness Index(2018): Geen data beschikbaar</p></li>";
     }
