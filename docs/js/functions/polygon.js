@@ -1067,7 +1067,8 @@ function getGfp(englishName) {
         "Iceland",
         "Vanuatu",
         "French Southern Territories",
-        "Luxembourg"
+        "Luxembourg",
+        "Trinidad and Tobago"
     ];
     var request = new XMLHttpRequest();
     request.open('GET', '../data/gfp.json', false);  // `false` makes the request synchronous
@@ -1232,6 +1233,8 @@ function gfpIcon(mili) {
     } else if (mili == "French Southern Territories") {
         mili = "<li><p>Under French portectorate</p></li>";
     } else if (mili == "Luxembourg") {
+        mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
+    } else if (mili == "Trinidad and Tobago") {
         mili = "<li><p>Geen militaire data beschikbaar voor " + mili + "</p></li>";
     }
 
