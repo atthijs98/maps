@@ -640,6 +640,8 @@ function modal(result) {
     var currencies = result["currencies"];
     var timezones = result["timezones"];
     var regionalBlocs = result["regionalBlocs"];
+    var code = result["alpha2Code"];
+    code = code.toLowerCase();
     var hdi;
     var gdp;
     var ppp;
@@ -670,7 +672,13 @@ function modal(result) {
             "<div class='modal-content'>" +
             "<h4 class='center-align'>" + englishName + "</h4>" +
             "<h6 class='center-align'>" + nativeName + "</h6>" +
-            "<img class='responsive-img center-align' style='border: grey 1px solid' src='" + flag + "'>" +
+            "<div class='row'>" +
+            "<div class='col s10 push-s1'><div class='center-align'><img style='border: grey 1px solid;' src='" + flag + "' class='responsive-img'></div></div>" +
+            "</div>" +
+            "<div class='row'>" +
+            "<div class='col s10 push-s1'><div class='center-align'><img src='../images/coatOfArms/"+code+".png' class='responsive-img'></div></div>" +
+            "</div>" +
+            "<div class='divider'></div> " +
             "<ul>" +
             "<li><p>Hoofdstad: " + capital + "</p></li>" +
             "<div class='divider'></div>" +
@@ -759,7 +767,12 @@ function modal(result) {
         var innerHmlNorm = "<div class='modal-content'>" +
             "<h4 class='center-align'>" + englishName + "</h4>" +
             "<h6 class='center-align'>" + nativeName + "</h6>" +
-            "<img class='responsive-img center-align' style='border: grey 1px solid' src='" + flag + "'>" +
+            "<div class='row'>" +
+            "<div class='col s10 push-s1'><div class='center-align'><img style='border: grey 1px solid;' src='" + flag + "' class='responsive-img'></div></div>" +
+            "</div>" +
+            "<div class='row'>" +
+            "<div class='col s10 push-s1'><div class='center-align'><img src='../images/coatOfArms/"+code+".png' class='responsive-img'></div></div>" +
+            "</div>" +
             "<ul>" +
             "<li><p>Hoofdstad: " + capital + "</p></li>" +
             "<div class='divider'></div>" +
