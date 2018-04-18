@@ -90,7 +90,7 @@ html, body {
 
 @media screen and (max-width: 600px) {
     #modal {
-        width: 90%;
+        width: 80% !important;
         margin: 0 auto;
     }
     #pac-input {
@@ -99,7 +99,7 @@ html, body {
 }
 @media screen and (max-width: 1024px) {
     #modal {
-        width: 70%;
+        width: 70% !important;
         margin: 0 auto;
     }
     #pac-input {
@@ -109,6 +109,6 @@ html, body {
 
 @media screen and (max-width: 1500px) {
     #modal {
-        width: 45%;
+        width: 45% !important;
     }
 }
