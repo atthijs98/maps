@@ -18,6 +18,9 @@ https://restcountries.eu/rest/v2/alpha/gb <br>
     <li>Head of State,  Head of government</li>
     <li>Consituional form, Head of state, Basis of executive legitimacy</li>
     <li>Bevlokingsdichtheid</li>
+    <li>Volkslied</li>
+    <li>Motto's</li>
+    <li>Links en rechts rijden</li>
 </ul>  
 
  http://databank.worldbank.org/data/reports.aspx?source=2&series=NY.GDP.MKTP.CD# <br>
@@ -35,5 +38,8 @@ scrape data from:
 <ul>
     <li>https://en.wikipedia.org/wiki/List_of_current_heads_of_state_and_government</li>
     <li>https://en.wikipedia.org/wiki/List_of_countries_by_system_of_government</li>
+    <li>https://en.wikipedia.org/wiki/List_of_national_anthems</li>
+    <li>https://en.wikipedia.org/wiki/List_of_national_mottos</li>
+    <li>https://en.wikipedia.org/wiki/Left-_and_right-hand_traffic</li>
 </ul>
 
