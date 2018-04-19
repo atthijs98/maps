@@ -1,525 +1,350 @@
-Afghanistan
-afg
+Afghanistan (afg)
 
-United Arab Emirates
-ae
+United Arab Emirates (ae)
 
-Burkina Faso
-bf
+Burkina Faso (bf)
 
-Bangladesh
-bd
+Bangladesh (bd)
 
-Congo
-cg
+Congo (cg)
 
-Cuba
-cu
+Cuba (cu)
 
-Czech Republic
-cz
+Czech Republic (cz)
 
-Denmark
-dk
+Denmark (dk)
 
-Ethiopia
-et
+Ethiopia (et)
 
-Guinea-Bissau
-gw
+Guinea-Bissau (gw)
 
-Croatia
-hr
+Croatia (hr)
 
-Indonesia
-id
+Indonesia (id)
 
-Iran (Islamic Republic of)
-ir
+Iran (Islamic Republic of) (ir)
 
-Jordan
-jo
+Jordan (jo)
 
-Kazakhstan
-kz
+Kazakhstan (kz)
 
-Cambodia
-kh
+Cambodia (kh)
 
-Lao People's Democratic Republic
-la
+Lao People's Democratic Republic (la)
 
-New Zealand
-nz
+New Zealand (nz)
 
-Papua New Guinea
-pg
+Papua New Guinea (pg)
 
-Russian Federation
-ru
+Russian Federation (ru)
 
-Rwanda
-rw
+Rwanda (rw)
 
-Somalia
-so
+Somalia (so)
 
-Serbia
-rs
+Serbia (rs)
 
-Trinidad and Tobago
-tt
+Trinidad and Tobago (tt)
 
-Tunisia
-tn
+Tunisia (tn)
 
-Yemen
-ye
+Yemen (ye)
 
-Zimbabwe
-zw
+Zimbabwe (zw)
 
-Angola
-ao
+Angola (ao)
 
-Armenia
-am
+Armenia (am)
 
-Fr. S. and Antarctic Lands
-tf
+French Southern Territories (tf)
 
-Burundi
-bi
+Burundi (bi)
 
-Bosnia and Herzegovina
-ba
+Bosnia and Herzegovina (ba)
 
-Colombia
-co
+Colombia (co)
 
-Cyprus
-cy
+Cyprus (cy)
 
-Ecuador
-ec
+Ecuador (ec)
 
-Eritrea
-er
+Eritrea (er)
 
-Honduras
-hn
+Honduras (hn)
 
-Kuwait
-kw
+Kuwait (kw)
 
-Sri Lanka
-lk
+Sri Lanka (lk)
 
-Lithuania
-lt
+Lithuania (lt)
 
-Moldova (Republic of)
-md
+Moldova (Republic of) (md)
 
-Nicaragua
-ni
+Nicaragua (ni)
 
-Nepal
-np
+Nepal (np)
 
-Panama
-pa
+Panama (pa)
 
-Portugal
-pt
+Portugal (pt)
 
-Qatar
-qa
+Qatar (qa)
 
-Romania
-ro
+Romania (ro)
 
-Solomon Is.
-sb
+Solomon Islands (sb)
 
-Slovenia
-si
+Slovenia (si)
 
-Viet Nam
-vn
+Viet Nam (vn)
 
-Albania
-al
+Albania (al)
 
-Australia
-au
+Australia (au)
 
-Azerbaijan
-az
+Azerbaijan (az)
 
-Belgium
-be
+Belgium (be)
 
-Switzerland
-ch
+Switzerland (ch)
 
-Congo (Democratic Republic of the)
-cd
+Congo (Democratic Republic of the) (cd)
 
-Costa Rica
-cr
+Costa Rica (cr)
 
-N. Cyprus
-cy
+N. Cyprus (cy)
 
-France
-fr
+France (fr)
 
-Guyana
-gy
+Guyana (gy)
 
-Luxembourg
-lu
+Luxembourg (lu)
 
-Latvia
-lv
+Latvia (lv)
 
-Madagascar
-mg
+Madagascar (mg)
 
-Mali
-ml
+Mali (ml)
 
-Mozambique
-mz
+Mozambique (mz)
 
-Saudi Arabia
-sa
+Saudi Arabia (sa)
 
-Slovakia
-sk
+Slovakia (sk)
 
-Syrian Arab Republic
-sy
+Syrian Arab Republic (sy)
 
-Thailand
-th
+Thailand (th)
 
-Uzbekistan
-uz
+Uzbekistan (uz)
 
-South Africa
-za
+South Africa (za)
 
-Argentina
-ar
+Argentina (ar)
 
-Brunei
-bn
+Brunei (bn)
 
-Botswana
-bw
+Botswana (bw)
 
-Canada
-ca
+Canada (ca)
 
-China
-cn
+China (cn)
 
-Côte d'Ivoire
-ci
+Côte d'Ivoire (ci)
 
-Germany
-de
+Germany (de)
 
-Egypt
-eg
+Egypt (eg)
 
-Spain
-es
+Spain (es)
 
-Finland
-fi
+Finland (fi)
 
-Gambia
-gm
+Gambia (gm)
 
-Greenland
-gl
+Greenland (gl)
 
-Iraq
-iq
+Iraq (iq)
 
-Korea (Republic of)
-kr
+Korea (Republic of) (kr)
 
-Republic of Kosovo
-xk
+Republic of Kosovo (xk)
 
-Malaysia
-my
+Malaysia (my)
 
-Namibia
-na
+Namibia (na)
 
-Norway
-no
+Norway (no)
 
-Korea (Democratic People's Republic of)
-kp
+Korea (Democratic People's Republic of) (kp)
 
-Somaliland
-so
+Somaliland (so)
 
-Turkmenistan
-tm
+Turkmenistan (tm)
 
-Taiwan
-tw
+Taiwan (tw)
 
-Tanzania
-tz
+Tanzania (tz)
 
-Venezuela (Bolivarian Republic of)
-ve
+Venezuela (Bolivarian Republic of) (ve)
 
-Vanuatu
-vu
+Vanuatu (vu)
 
-Benin
-bj
+Benin (bj)
 
-Belarus
-by
+Belarus (by)
 
-Belize
-bz
+Belize (bz)
 
-Bolivia (Plurinational State of)
-bo
+Bolivia (Plurinational State of) (bo)
 
-Brazil
-br
+Brazil (br)
 
-Bhutan
-bt
+Bhutan (bt)
 
-Central African Republic
-cf
+Central African Republic (cf)
 
-Chile
-cl
+Chile (cl)
 
-Fiji
-fj
+Fiji (fj)
 
-Georgia
-ge
+Georgia (ge)
 
-Hungary
-hu
+Hungary (hu)
 
-Ireland
-ie
+Ireland (ie)
 
-Italy
-it
+Italy (it)
 
-Jamaica
-jm
+Jamaica (jm)
 
-Japan
-jp
+Japan (jp)
 
-Kyrgyzstan
-kg
+Kyrgyzstan (kg)
 
-Morocco
-ma
+Morocco (ma)
 
-Macedonia (the former Yugoslav Republic of)
-mk
+Macedonia (the former Yugoslav Republic of) (mk)
 
-Malawi
-mw
+Malawi (mw)
 
-Suriname
-sr
+Suriname (sr)
 
-Sweden
-se
+Sweden (se)
 
-Timor-Leste
-tl
+Timor-Leste (tl)
 
-Turkey
-tr
+Turkey (tr)
 
-United States of America
-us
+United States of America (us)
 
-Austria
-at
+Austria (at)
 
-Cameroon
-cm
+Cameroon (cm)
 
-Djibouti
-dj
+Djibouti (dj)
 
-Dominican Republic
-do
+Dominican Republic (do)
 
-Falkland Islands (Malvinas)
-fk
+Falkland Islands (Malvinas) (fk)
 
-Gabon
-ga
+Gabon (ga)
 
-United Kingdom of Great Britain and Northern Ireland
-gb
+United Kingdom of Great Britain and Northern Ireland (gb)
 
-Ghana
-gh
+Ghana (gh)
 
-Greece
-gr
+Greece (gr)
 
-Iceland
-is
+Iceland (is)
 
-Lebanon
-lb
+Lebanon (lb)
 
-Libya
-ly
+Libya (ly)
 
-Lesotho
-ls
+Lesotho (ls)
 
-Mexico
-mx
+Mexico (mx)
 
-Myanmar
-mm
+Myanmar (mm)
 
-Montenegro
-me
+Montenegro (me)
 
-Mongolia
-mn
+Mongolia (mn)
 
-Niger
-ne
+Niger (ne)
 
-Nigeria
-ng
+Nigeria (ng)
 
-Netherlands
-nl
+Netherlands (nl)
 
-Sudan
-sd
+Sudan (sd)
 
-South Sudan
-ss
+South Sudan (ss)
 
-Senegal
-sn
+Senegal (sn)
 
-Sierra Leone
-sl
+Sierra Leone (sl)
 
-El Salvador
-sv
+El Salvador (sv)
 
-Chad
-td
+Chad (td)
 
-Tajikistan
-tj
+Tajikistan (tj)
 
-Uganda
-ug
+Uganda (ug)
 
-Ukraine
-ua
+Ukraine (ua)
 
-Uruguay
-uy
+Uruguay (uy)
 
-Zambia
-zm
+Zambia (zm)
 
-Bulgaria
-bg
+Bulgaria (bg)
 
-Algeria
-dz
+Algeria (dz)
 
-Estonia
-ee
+Estonia (ee)
 
-Haiti
-ht
+Haiti (ht)
 
-India
-in
+India (in)
 
-Kenya
-ke
+Kenya (ke)
 
-Liberia
-lr
+Liberia (lr)
 
-Mauritania
-mr
+Mauritania (mr)
 
-New Caledonia
-nc
+New Caledonia (nc)
 
-Pakistan
-pk
+Pakistan (pk)
 
-Peru
-pe
+Peru (pe)
 
-Philippines
-ph
+Philippines (ph)
 
-Paraguay
-py
+Paraguay (py)
 
-Swaziland
-sz
+Swaziland (sz)
 
-Palestine, State of
-ps
+Palestine, State of (ps)
 
-Bahamas
-bs
+Bahamas (bs)
 
-Guinea
-gn
+Guinea (gn)
 
-Guatemala
-gt
+Guatemala (gt)
 
-Israel
-il
+Israel (il)
 
-Oman
-om
+Oman (om)
 
-Poland
-pl
+Poland (pl)
 
-Puerto Rico
-pr
+Puerto Rico (pr)
 
-Western Sahara
-eh
+Western Sahara (eh)
 
-Togo
-tg
+Togo (tg)
 
