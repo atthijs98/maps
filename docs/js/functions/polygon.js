@@ -628,6 +628,7 @@ function modal(result) {
     var nativeName = result["nativeName"];
     var capital = result["capital"];
     var area = result["area"];
+    var calling = result["callingCodes"];
     var demonym = result["demonym"];
     var flag = result["flag"];
     var gini = result["gini"];
@@ -698,6 +699,8 @@ function modal(result) {
             "<li><p id='regionalBloc'>Regionale Blokken: </p></li>" +
             "<div class='divider'></div>" +
             "<li><p id='timezone'>Tijdzones: </p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Landnummer: " + calling + "</p></li>" +
             "<div class='divider'></div>" +
             "<li><p id='currency'>Munteenheid: </p></li>" +
             "<div class='divider'></div>" +
@@ -792,6 +795,8 @@ function modal(result) {
             "<li><p id='regionalBloc'>Regionaal Blok: </p></li>" +
             "<div class='divider'></div>" +
             "<li><p id='timezone'>Tijdzones: </p></li>" +
+            "<div class='divider'></div>" +
+            "<li><p>Landnummer: " + calling + "</p></li>" +
             "<div class='divider'></div>" +
             "<li><p id='currency'>Munteenheid: </p></li>" +
             "<div class='divider'></div>" +
