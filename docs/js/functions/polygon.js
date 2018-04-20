@@ -757,8 +757,8 @@ function modal(result) {
             "<li><p>Geldeelde grenzen (km): " + numeral(geo[6]).format('0,0.00') + " km</p></li>" +
             "<li><p>Waterwegen (km): " + numeral(geo[7]).format('0,0.00') + " km</p></li>" +
             "<div class='divider'></div>" +
-            "<li><p>Defensie Budget: " + numeral(money[0]).multiply(1000000).format('($0.00a)') + "</p></li>" +
-            "<li><p>Staatschuld: " + numeral(money[1]).multiply(1000000).format('($0.00a)') + "</p></li>" +
+            "<li><p>Defensie Budget: " + numeral(money[0]).multiply(1000000).format('($0.00a)'); + "</p></li>" +
+            "<li><p>Staatschuld: " + numeral(money[1]).multiply(1000000).format('($0.00a)'); + "</p></li>" +
             "<li><p><small>Bron: https://www.globalfirepower.com/</small></p></li>"+
             "</div>" +
             "</ul>" +
