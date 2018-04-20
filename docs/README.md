@@ -38,6 +38,7 @@ Services and data that helped me a lot:
     <li><a href="https://data.worldbank.org/indicator/PA.NUS.PPP">PPP dataset</a></li>
     <li><a href="https://www.kaggle.com/unsdsn/world-happiness/data">World happiness report dataset</a></li>
     <li><a href="http://hdr.undp.org/en/data">Human development index dataset</a></li>
+    <li><a href="https://tinypng.com/">Compress images</a></li>
 </ul>
 
 Use "simple style" from: https://developers.google.com/maps/documentation/javascript/examples/layer-data-quakes
