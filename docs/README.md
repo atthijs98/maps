@@ -1,8 +1,4 @@
 # maps
-https://github.com/hannesgassert/countrynames <br>
-<small>ISO 3166 Country Name / Code Mapper in Javascript</small><br>
-https://restcountries.eu/rest/v2/alpha/gb <br>
-<small>I will be using this website to retrieve the country information. To do that I need to converte the country names into ISO code.</small>
 
 <b>Demands:</b>
 <ul>
@@ -17,22 +13,11 @@ https://restcountries.eu/rest/v2/alpha/gb <br>
     <li>Build a webscraper</li>
     <li>Head of State,  Head of government</li>
     <li>Consituional form, Head of state, Basis of executive legitimacy</li>
-    <li>Bevlokingsdichtheid</li>
-    <li>Volkslied</li>
+    <li>Population density</li>
+    <li>National anthem</li>
     <li>Motto's</li>
-    <li>Links en rechts rijden</li>
+    <li>Left or right hand drive</li>
 </ul>  
-
- http://databank.worldbank.org/data/reports.aspx?source=2&series=NY.GDP.MKTP.CD# <br>
-
-https://www.csvjson.com/csv2json<br>
-https://developers.google.com/maps/documentation/javascript/examples/layer-data-quakes<br>
-"Simple style"
-
-https://www.csvjson.com/csv2json
-
-https://github.com/adamwdraper/Numeral-js/tree/master/locales
-<small>All numerals for numeral.js</small>
 
 scrape data from:
 <ul>
@@ -43,3 +28,16 @@ scrape data from:
     <li>https://en.wikipedia.org/wiki/Left-_and_right-hand_traffic</li>
 </ul>
 
+Services and data that helped me a lot:
+<ul>
+    <li><a href="https://csvjson.com">Convert CSV to Json</a></li>    
+    <li><a href="https://github.com/adamwdraper/Numeral-js/tree/master/locales">All numerals for numeral.js</a></li>
+    <li><a href="https://restcountries.eu/rest/v2/alpha/gb">Json object I got all my information from</a></li>
+    <li><a href="https://www.kaggle.com/blitzr/gfp2017">Global fire power index dataset</a></li>
+    <li><a href="http://databank.worldbank.org/data/reports.aspx?source=2&series=NY.GDP.MKTP.CD#">GDP dataset</a></li>
+    <li><a href="https://data.worldbank.org/indicator/PA.NUS.PPP">PPP dataset</a></li>
+    <li><a href="https://www.kaggle.com/unsdsn/world-happiness/data">World happiness report dataset</a></li>
+    <li><a href="http://hdr.undp.org/en/data">Human development index dataset</a></li>
+</ul>
+
+Use "simple style" from: https://developers.google.com/maps/documentation/javascript/examples/layer-data-quakes
