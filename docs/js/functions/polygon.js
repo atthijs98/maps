@@ -27,6 +27,7 @@ function drawMap(data) {
                 fillColor: '#cd0000',
                 fillOpacity: 0,
                 name: rows[i][0]
+
             });
             google.maps.event.addListener(country, 'mouseover', function () {
                 this.setOptions({fillOpacity: 0.3});

@@ -1,0 +1,42 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.496366,
+          41.902783
+        ]
+      },
+      "properties": {
+        "name": "Italy",
+        "code": "it",
+        "capital": "Rome",
+        "percentage": 10
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.895167899999933,
+          52.3702157
+        ]
+      },
+      "properties": {
+        "name": "Netherlands",
+        "code": "nl",
+        "capital": "Amsterdam",
+        "percentage": 20
+      }
+    }
+  ]
+}
+
+
+
+
+

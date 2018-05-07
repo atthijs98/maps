@@ -9,9 +9,9 @@
     <link rel="shortcut icon" type="image/png" href="images/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<body>
+<body onload="initMap()">
 <script>
-    function showFunction(){
+    function showFunction() {
         var x = document.getElementById("defensie");
         if (x.style.display === "block") {
             x.style.display = "none";
@@ -19,13 +19,14 @@
             x.style.display = "block";
         }
     }
+
+
 </script>
-<input id="pac-input" class="controls z-depth-1" type="text" placeholder="Search Box">
 <div id="map"></div>
 <script>
     var map;
 
-    function initAutocomplete() {
+    function initMap() {
         var myOptions = {
             zoom: 5,
             center: new google.maps.LatLng(52.143743, 4.481109),
@@ -41,12 +42,35 @@
 
         map = new google.maps.Map(document.getElementById('map'), myOptions);
 
-        var eventsTravel = {lat: 52.143844, lng: 4.48114};
-        var pointer = new google.maps.Marker({
-            position: eventsTravel,
-            map: map,
-            title: 'Events Travel'
+        map.data.loadGeoJson('./data/test.json');
+
+
+        map.data.setStyle(function (feature) {
+            var percentage = parseFloat(feature.getProperty('percentage'));
+            return ({
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    scale: percentage,
+                    fillColor: '#00ff00',
+                    fillOpacity: 0.35,
+                    strokeWeight: 0,
+                }
+            })
+
         });
+
+        map.data.addListener('mouseover', function (event) {
+            map.data.overrideStyle(event.feature, {title: 'Hello, World!'});
+        });
+
+        map.data.addListener('mouseout', function (event) {
+            map.data.revertStyle();
+        });
+
+        function eqfeed_callback(data) {
+            map.data.addGeoJson(data);
+        }
+
 
         // these are the map styles
         var styles = [
@@ -251,75 +275,19 @@
         var body = document.getElementsByTagName('body')[0];
         body.appendChild(script);
 
-        // Create the search box and link it to the UI element.
-        var input = document.getElementById('pac-input');
-        var searchBox = new google.maps.places.SearchBox(input);
-        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(input);
-
-        // Bias the SearchBox results towards current map's viewport.
-        map.addListener('bounds_changed', function() {
-            searchBox.setBounds(map.getBounds());
-        });
-
-
-        var markers = [];
-        // Listen for the event fired when the user selects a prediction and retrieve
-        // more details for that place.
-        searchBox.addListener('places_changed', function() {
-            var places = searchBox.getPlaces();
-
-            if (places.length == 0) {
-                return;
-            }
-
-            // Clear out the old markers.
-            markers.forEach(function(marker) {
-                marker.setMap(null);
-            });
-            markers = [];
-
-            // For each place, get the icon, name and location.
-            var bounds = new google.maps.LatLngBounds();
-            places.forEach(function(place) {
-                if (!place.geometry) {
-                    console.log("Returned place contains no geometry");
-                    return;
-                }
-                var icon = {
-                    url: place.icon,
-                    size: new google.maps.Size(71, 71),
-                    origin: new google.maps.Point(0, 0),
-                    anchor: new google.maps.Point(17, 34),
-                    scaledSize: new google.maps.Size(25, 25)
-                };
-
-                // Create a marker for each place.
-                markers.push(new google.maps.Marker({
-                    map: map,
-                    icon: icon,
-                    title: place.name,
-                    position: place.geometry.location
-                }));
-
-                if (place.geometry.viewport) {
-                    // Only geocodes have viewport.
-                    bounds.union(place.geometry.viewport);
-                } else {
-                    bounds.extend(place.geometry.location);
-                }
-            });
-            map.fitBounds(bounds);
-        });
         drawMap(map);
     }
-
 </script>
+
 </body>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/materialize.min.js"></script>
 <script src="js/numeral.min.js"></script>
 <script src="locales/nl.js"></script>
 <script src="js/functions/polygon.js"></script>
-<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfpEmZZ_7-cv8yGZc0JS_GNVLYLCuuUKs&libraries=places&callback=initAutocomplete"
-        type="text/javascript"></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfpEmZZ_7-cv8yGZc0JS_GNVLYLCuuUKs&libraries=places"
+        type="text/javascript">
+
+</script>
+
 </html>
