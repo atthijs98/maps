@@ -20,7 +20,23 @@
         }
     }
 
+    function showFunction2() {
+        var x = document.getElementById("informatie");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
 
+    function showFunction3() {
+        var x = document.getElementById("verkopen");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
 </script>
 <div id="map"></div>
 <script>
@@ -41,36 +57,6 @@
 
 
         map = new google.maps.Map(document.getElementById('map'), myOptions);
-
-        map.data.loadGeoJson('./data/test.json');
-
-
-        map.data.setStyle(function (feature) {
-            var percentage = parseFloat(feature.getProperty('percentage'));
-            return ({
-                icon: {
-                    path: google.maps.SymbolPath.CIRCLE,
-                    scale: percentage,
-                    fillColor: '#00ff00',
-                    fillOpacity: 0.35,
-                    strokeWeight: 0,
-                }
-            })
-
-        });
-
-        map.data.addListener('mouseover', function (event) {
-            map.data.overrideStyle(event.feature, {title: 'Hello, World!'});
-        });
-
-        map.data.addListener('mouseout', function (event) {
-            map.data.revertStyle();
-        });
-
-        function eqfeed_callback(data) {
-            map.data.addGeoJson(data);
-        }
-
 
         // these are the map styles
         var styles = [

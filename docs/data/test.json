@@ -14,7 +14,7 @@
         "name": "Italy",
         "code": "it",
         "capital": "Rome",
-        "percentage": 10
+        "percentage": 6
       }
     },
     {
@@ -30,7 +30,7 @@
         "name": "Netherlands",
         "code": "nl",
         "capital": "Amsterdam",
-        "percentage": 20
+        "percentage": 4.5
       }
     }
   ]

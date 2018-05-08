@@ -621,6 +621,66 @@ function httpGet(url) {
 }
 
 /*
+ * This function creates the datalayers based on the sales per country
+ */
+function setDataLayer(){
+    //console.log(afasIso);
+
+    map.data.setStyle(styleFeature);
+
+    map.data.loadGeoJson('./data/test.json');
+
+    function eqfeed_callback(data) {
+        map.data.addGeoJson(data);
+    }
+
+    function styleFeature(feature) {
+        var low = [151, 83, 34]; // color of mag 1.0
+        var high = [5, 69, 54];  //color of mag 6.0 and above
+        var minMag = 1.0;
+        var maxMag = 6.0;
+
+        // fraction represents where the value sits between the min and max
+        var fraction = (Math.min(feature.getProperty('percentage'), maxMag) - minMag) /
+            (maxMag - minMag);
+
+
+        var color = interpolateHsl(low, high, fraction);
+
+        return {
+            icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                fillColor: color,
+                strokeWeight: 0.5,
+                strokeColor: '#fff',
+                fillOpacity: 2 / feature.getProperty('percentage'),
+                scale: Math.pow(feature.getProperty('percentage'), 2)
+            },
+            zIndex: Math.floor(feature.getProperty('percentage'))
+        };
+
+    }
+
+    function interpolateHsl(lowHsl, highHsl, fraction) {
+        var color = [];
+        for (var i = 0; i < 3; i++) {
+            // Calculate color based on the fraction.
+            color[i] = (highHsl[i] - lowHsl[i]) * fraction + lowHsl[i];
+        }
+
+        return 'hsl(' + color[0] + ',' + color[1] + '%,' + color[2] + '%)';
+    }
+
+    map.data.addListener('mouseover', function (event) {
+        map.data.overrideStyle(event.feature, {title: 'Hello, World!'});
+    });
+
+    map.data.addListener('mouseout', function (event) {
+        map.data.revertStyle();
+    });
+}
+
+/*
  * The variable "result" contains the response of the XMLHttpRequest.
  * This function creates a modal that shows up when a country is clicked on.
  */
@@ -653,7 +713,9 @@ function modal(result) {
     var ppp;
     var happiness;
     var mili;
+    var sales;
 
+    sales = getSales(iso);
     gdp = getGdp(englishName);
     var giniStyle = giniIcon(gini);
     hdi = getHdi(englishName);
@@ -673,6 +735,8 @@ function modal(result) {
         var geo = mili[4];
         var money = mili[5];
         var rank = mili[6];
+        var totalTickets = sales[1];
+        var totalMoney = sales[0];
         var innerHmlNorm =
             "<div class='modal-content'>" +
             "<h4 class='center-align'>" + englishName + "</h4>" +
@@ -683,8 +747,10 @@ function modal(result) {
             "<div class='row'>" +
             "<div class='col s10 push-s1'><div class='center-align'><img src='images/coatOfArms/"+iso+".png' class='responsive-img'></div></div>" +
             "</div>" +
-            "<div class='divider'></div> " +
-            "<ul>" +
+            "<div class='divider'></div><br>" +
+            "<li><a href='#!' id='info-btn' onclick='showFunction2()'>Show Country Information</a></li>" +
+            "<div id='informatie'>" +
+            "<div>" +
             "<li><p>Hoofdstad: " + capital + "</p></li>" +
             "<div class='divider'></div>" +
             "<li><p>Aantal inwoners: " + numeral(population).format('0,0') + "</p></li>" +
@@ -714,6 +780,8 @@ function modal(result) {
             hdiStyle +
             "<div class='divider'></div>" +
             happinessStyle +
+            "</div>"+
+            "</div><br>"+
             "<div class='divider'></div><br>" +
             "<li><a href='#!' id='mili-btn' onclick='showFunction()'>Show Global Fire Power</a></li>" +
             "<div id='defensie'>" +
@@ -763,14 +831,24 @@ function modal(result) {
             "<li><p><small>Bron: https://www.globalfirepower.com/</small></p></li>"+
             "</div>" +
             "</ul>" +
+            "<br><div class='divider'></div><br>" +
+            "<li><a href='#!' id='verkoop-btn' onclick='showFunction3()'>Show Ticket Sales</a></li>"+
+            "<div id='verkopen'>"+
+            "<ul>" +
+            "<li><p>Totaal aantal verkochten tickets: " + numeral(totalTickets).format('0,0')+ "</p></li>" +
+            "<li><p>Totale omzet: € " + numeral(totalMoney).format('€0,0[.]00') + "</p></li>"+
+            "</ul>" +
+            "</div>"+
             "</div>" +
             "<div class='modal-footer'>" +
-            "<btn id='modalclose' class='modal-action modal-close waves-effect waves-green btn-flat'>Close</btn>" +
+            "<btn id='modalclose' class='modal-action modal-close waves-effect waves-green btn-flat'>Sluiten</btn>" +
             "</div>" +
             "</div>";
     }
 
     else{
+        var totalTickets = sales[1];
+        var totalMoney = sales[0];
         var innerHmlNorm = "<div class='modal-content'>" +
             "<h4 class='center-align'>" + englishName + "</h4>" +
             "<h6 class='center-align'>" + nativeName + "</h6>" +
@@ -780,6 +858,8 @@ function modal(result) {
             "<div class='row'>" +
             "<div class='col s10 push-s1'><div class='center-align'><img src='images/coatOfArms/"+iso+".png' class='responsive-img'></div></div>" +
             "</div>" +
+            "<li><a href='#!' id='info-btn' onclick='showFunction2()'>Show Country Information</a></li>" +
+            "<div id='informatie'>" +
             "<ul>" +
             "<li><p>Hoofdstad: " + capital + "</p></li>" +
             "<div class='divider'></div>" +
@@ -812,8 +892,19 @@ function modal(result) {
             happinessStyle +
             "<div class='divider'></div>" +
             gfpStyle +
+            "</ul>" +
+            "</div>" +
+            "<br><div class='divider'></div><br>" +
+            "<li><a href='#!' id='verkoop-btn' onclick='showFunction3()'>Show Ticket Sales</a></li>"+
+            "<div id='verkopen'>"+
+            "<ul>" +
+            "<li><p>Totaal aantal verkochten tickets: " + numeral(totalTickets).format('0,0')+ "</p></li>" +
+            "<li><p>Totale omzet: € " + numeral(totalMoney).format('€0,0[.]00') + "</p></li>"+
+            "</ul>" +
+            "</div>"+
+            "</div>" +
             "<div class='modal-footer'>" +
-            "<btn id='modalclose' class='modal-action modal-close waves-effect waves-green btn-flat'>Close</btn>" +
+            "<btn id='modalclose' class='modal-action modal-close waves-effect waves-green btn-flat'>Sluiten</btn>" +
             "</div>" +
             "</div>";
     }
@@ -855,6 +946,37 @@ function modal(result) {
     }
 
 
+}
+
+/*
+ * This function gets all the sales from afas.
+ */
+function getSales(iso) {
+
+    var authcode = btoa("<token><version>1</version><data>BFB2BED0440C49DFBC53C0781B68E47F71ACC7C44C3F7CF69A397ABB3F943B73</data></token>");
+
+    var request = new XMLHttpRequest();
+    var apiCall = 'https://83814.afasonlineconnector.nl/ProfitRestServices/connectors/Profit_Salesorders_2?filterfieldids=ISO_Alpha-2&filtervalues='+iso+'&operatortypes=1&take=1000000';
+    request.open('GET', apiCall,false);  // `false` makes the request synchronous
+    request.setRequestHeader('Authorization', 'AfasToken ' + authcode);
+    request.send(null);
+
+    if (request.status === 200) {
+        var data = request.responseText;
+        var response = JSON.parse(data);
+        console.log(response);
+
+        var totalOrder = response.rows.length;
+        console.log(totalOrder);
+        var totalPrice = 0.00;
+        
+        for (var i = 0; i < response.rows.length; i++){
+            totalPrice+= parseFloat(response.rows[i].TotalAmount);
+
+        }
+        console.log(totalPrice);
+        return [totalPrice, totalOrder];
+    }
 }
 
 /*
