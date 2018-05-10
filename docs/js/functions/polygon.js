@@ -26,7 +26,8 @@ function drawMap(data) {
                 strokeWeight: 0.3,
                 fillColor: '#cd0000',
                 fillOpacity: 0,
-                name: rows[i][0]
+                name: rows[i][0],
+                zIndex: 1
 
             });
             google.maps.event.addListener(country, 'mouseover', function () {
@@ -952,12 +953,12 @@ function modal(result) {
  * This function gets all the sales from afas.
  */
 function getSales(iso) {
-
+    // "iso" is the ISO 1366 alpha-2 code of the country clicked on.
     var authcode = btoa("<token><version>1</version><data>BFB2BED0440C49DFBC53C0781B68E47F71ACC7C44C3F7CF69A397ABB3F943B73</data></token>");
 
     var request = new XMLHttpRequest();
-    var apiCall = 'https://83814.afasonlineconnector.nl/ProfitRestServices/connectors/Profit_Salesorders_2?filterfieldids=ISO_Alpha-2&filtervalues='+iso+'&operatortypes=1&take=1000000';
-    request.open('GET', apiCall,false);  // `false` makes the request synchronous
+    var apiCall = 'https://83814.afasonlineconnector.nl/ProfitRestServices/connectors/Profit_Salesorders_2?filterfieldids=ISO_Alpha-2&filtervalues=' + iso + '&operatortypes=1&take=1000000';
+    request.open('GET', apiCall, false);  // `false` makes the request synchronous
     request.setRequestHeader('Authorization', 'AfasToken ' + authcode);
     request.send(null);
 
@@ -967,17 +968,19 @@ function getSales(iso) {
         console.log(response);
 
         var totalOrder = response.rows.length;
-        console.log(totalOrder);
+
         var totalPrice = 0.00;
-        
-        for (var i = 0; i < response.rows.length; i++){
-            totalPrice+= parseFloat(response.rows[i].TotalAmount);
+        for (var i = 0; i < response.rows.length; i++) {
+            totalPrice += parseFloat(response.rows[i].TotalAmount);
+
 
         }
-        console.log(totalPrice);
-        return [totalPrice, totalOrder];
     }
+    //console.log(totalPrice);
+    return [totalPrice, totalOrder];
+
 }
+
 
 /*
  *   The variable "englishName" holds a string containing the name of the country that is clicked on.

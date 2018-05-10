@@ -58,6 +58,32 @@
 
         map = new google.maps.Map(document.getElementById('map'), myOptions);
 
+        map.data.loadGeoJson('./data/test.json');
+
+
+        map.data.setStyle(function (feature) {
+            var percentage = parseFloat(feature.getProperty('percentage'));
+
+            return ({
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    scale: percentage,
+                    fillColor: '#00ff00',
+                    fillOpacity: 0.35,
+                    strokeWeight: 0
+
+
+                }
+            })
+
+        });
+
+        function eqfeed_callback(data) {
+            map.data.addGeoJson(data);
+        }
+
+
+
         // these are the map styles
         var styles = [
             {
