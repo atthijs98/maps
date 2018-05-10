@@ -60,8 +60,7 @@
 
         map.data.loadGeoJson('./data/test.json');
 
-
-        map.data.setStyle(function (feature) {
+        map.data.setStyle(function(feature) {
             var percentage = parseFloat(feature.getProperty('percentage'));
 
             return ({
@@ -71,16 +70,12 @@
                     fillColor: '#00ff00',
                     fillOpacity: 0.35,
                     strokeWeight: 0
-
-
-                }
+                },
+                clickable: false
             })
 
         });
 
-        function eqfeed_callback(data) {
-            map.data.addGeoJson(data);
-        }
 
 
 

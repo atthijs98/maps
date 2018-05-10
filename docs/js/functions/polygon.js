@@ -26,8 +26,7 @@ function drawMap(data) {
                 strokeWeight: 0.3,
                 fillColor: '#cd0000',
                 fillOpacity: 0,
-                name: rows[i][0],
-                zIndex: 1
+                name: rows[i][0]
 
             });
             google.maps.event.addListener(country, 'mouseover', function () {
@@ -42,6 +41,7 @@ function drawMap(data) {
                     var modal = document.querySelector('.modal');
                     var instance = M.Modal.init(modal);
                     instance.open();
+                    console.log("clicked on polygon");
 
             });
 
@@ -965,14 +965,12 @@ function getSales(iso) {
     if (request.status === 200) {
         var data = request.responseText;
         var response = JSON.parse(data);
-        console.log(response);
 
         var totalOrder = response.rows.length;
 
         var totalPrice = 0.00;
         for (var i = 0; i < response.rows.length; i++) {
             totalPrice += parseFloat(response.rows[i].TotalAmount);
-
 
         }
     }
