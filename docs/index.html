@@ -58,12 +58,141 @@
 
         map = new google.maps.Map(document.getElementById('map'), myOptions);
 
-        map.data.loadGeoJson('./data/test.json');
 
-        map.data.setStyle(function(feature) {
+        //### Add a button on Google Maps ...
+        var controlTrashUI = document.createElement('div');
+        controlTrashUI.style.cursor = 'pointer';
+        controlTrashUI.style.backgroundColor = '#fff';
+        controlTrashUI.style.color = '#000';
+        controlTrashUI.style.margin = '10px';
+        controlTrashUI.style.padding = '8px';
+        controlTrashUI.style.borderRadius = '2px';
+        controlTrashUI.style.left = '150px';
+        controlTrashUI.style.zIndex = '1';
+        controlTrashUI.style.textAlign = 'center';
+        controlTrashUI.innerHTML = 'Show ticket sales per country';
+
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(controlTrashUI);
+
+        controlTrashUI.addEventListener('mouseover', function() {
+            controlTrashUI.style.backgroundColor = 'rgba(255,255,255,0.8)';
+        });
+
+        controlTrashUI.addEventListener('mouseout', function() {
+            controlTrashUI.style.backgroundColor = '#fff';
+        });
+
+        controlTrashUI.addEventListener('click', function () {
+            var authcode = btoa("<token><version>1</version><data>BFB2BED0440C49DFBC53C0781B68E47F71ACC7C44C3F7CF69A397ABB3F943B73</data></token>");
+
+            var request = new XMLHttpRequest();
+            var apiCall = 'https://83814.afasonlineconnector.nl/ProfitRestServices/connectors/Profit_Salesorders_2?operatortypes=1&take=1000000';
+            request.open('GET', apiCall, false);  // `false` makes the request synchronous
+            request.setRequestHeader('Authorization', 'AfasToken ' + authcode);
+            request.send(null);
+
+            if (request.status === 200) {
+                var data = request.responseText;
+                var response = JSON.parse(data);
+
+                var totalOrder = response.rows.length;
+
+                var orders = response.rows;
+                getCoordinates(orders, totalOrder);
+
+            }
+
+        });
+
+        function getCoordinates(orders, totalOrder) {
+
+            var dictionary = {};
+
+            var positionData = "./data/test.json";
+
+            var request = new XMLHttpRequest();
+            request.open('GET', positionData, false);
+            request.send(null);
+
+
+            if (request.status === 200) {
+                var data = request.responseText;
+                var response = JSON.parse(data);
+
+                //console.log(orders);
+
+                for (var i = 0; i < orders.length; i++) {
+                    var order = orders[i];
+                    var orderIso = order["ISO_Alpha-2"];
+                    if (orderIso in dictionary) {
+                        dictionary[orderIso] += 1;
+                    } else {
+                        dictionary[orderIso] = 1;
+                    }
+                }
+                var coordinatesArray = {};
+                //console.log(dictionary);
+                for (var orderIso in dictionary) {
+                    for (var j = 0; j < response.length; j++) {
+                        var country = response[j];
+                        var countryIso = country["Alpha-2 code"];
+
+                        if (countryIso === orderIso) {
+                            var coordinates = [country["Longitude (average)"], country["Latitude (average)"]];
+                            coordinatesArray[orderIso] = coordinates;
+                            break;
+                        }
+                    }
+                }
+                makeJsonFile(coordinatesArray, dictionary, totalOrder);
+            }
+    }
+
+    function makeJsonFile(coordinatesArray, dictionary, totalOrder) {
+        var returnValue = "{" +
+            "  \"type\": \"FeatureCollection\"," +
+            "  \"features\": [";
+
+        for (var country in dictionary) {
+            var size = dictionary[country];
+            var location = coordinatesArray[country];
+            console.log(country);
+
+            var percentage = (100 * size) / totalOrder;
+            console.log(percentage);
+            var feature = "{" +
+                "      \"type\": \"Feature\"," +
+                "      \"geometry\": {" +
+                "        \"type\": \"Point\"," +
+                "        \"coordinates\": [" +
+                "          "+location[0]+"," +
+                "          "+location[1]+"" +
+                "        ]" +
+                "      }," +
+                "      \"properties\": {" +
+                "        \"percentage\": "+percentage+"" +
+                "      }" +
+                "    },";
+            returnValue+= feature;
+
+        }
+        returnValue = returnValue.slice(0,-1);
+        returnValue += " ]" +
+            "}";
+        returnValue = JSON.parse(returnValue);
+        createDataLayer(returnValue);
+    }
+
+    function createDataLayer(returnValue) {
+        map.data.addGeoJson(returnValue);
+
+        console.log(returnValue);
+        map.data.setStyle(function(feature){
             var percentage = parseFloat(feature.getProperty('percentage'));
-
-            return ({
+            if (percentage < 1) {
+                percentage = 1;
+            }
+            return({
                 icon: {
                     path: google.maps.SymbolPath.CIRCLE,
                     scale: percentage,
@@ -73,11 +202,8 @@
                 },
                 clickable: false
             })
-
         });
-
-
-
+    }
 
         // these are the map styles
         var styles = [
