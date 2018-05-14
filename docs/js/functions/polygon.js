@@ -679,6 +679,7 @@ function modal(result) {
         var rank = mili[6];
         var totalTickets = sales[1];
         var totalMoney = sales[0];
+        var refund = sales[2];
         var innerHmlNorm =
             "<div class='modal-content'>" +
             "<h4 class='center-align'>" + englishName + "</h4>" +
@@ -777,8 +778,9 @@ function modal(result) {
             "<li><a href='#!' id='verkoop-btn' onclick='showFunction3()'>Show Ticket Sales</a></li>"+
             "<div id='verkopen'>"+
             "<ul>" +
-            "<li><p>Totaal aantal verkochten tickets: " + numeral(totalTickets).format('0,0')+ "</p></li>" +
+            "<li><p>Totaal aantal verkochte tickets: " + numeral(totalTickets).format('0,0')+ "</p></li>" +
             "<li><p>Totale omzet: € " + numeral(totalMoney).format('€0,0[.]00') + "</p></li>"+
+            "<li><p>Totaal bedrag credit nota's: € " + numeral(refund).format('€0,0[.]00') + "</p></li>"+
             "</ul>" +
             "</div>"+
             "</div>" +
@@ -791,6 +793,7 @@ function modal(result) {
     else{
         var totalTickets = sales[1];
         var totalMoney = sales[0];
+        var refund = sales[2];
         var innerHmlNorm = "<div class='modal-content'>" +
             "<h4 class='center-align'>" + englishName + "</h4>" +
             "<h6 class='center-align'>" + nativeName + "</h6>" +
@@ -840,8 +843,9 @@ function modal(result) {
             "<li><a href='#!' id='verkoop-btn' onclick='showFunction3()'>Show Ticket Sales</a></li>"+
             "<div id='verkopen'>"+
             "<ul>" +
-            "<li><p>Totaal aantal verkochten tickets: " + numeral(totalTickets).format('0,0')+ "</p></li>" +
+            "<li><p>Totaal aantal verkochte tickets: " + numeral(totalTickets).format('0,0')+ "</p></li>" +
             "<li><p>Totale omzet: € " + numeral(totalMoney).format('€0,0[.]00') + "</p></li>"+
+            "<li><p>Totaal bedrag credit nota's: € " + numeral(refund).format('€0,0[.]00') + "</p></li>"+
             "</ul>" +
             "</div>"+
             "</div>" +
@@ -908,10 +912,9 @@ function getSales(iso) {
         var response = JSON.parse(data);
 
         var totalOrder = response.rows.length;
-
+        var refund = 0.00;
         var totalPrice = 0.00;
         for (var i = 0; i < response.rows.length; i++) {
-            //console.log(response.rows[i]);
             var orderNr = response.rows[i].OrderNumber;
             var totalAmount = parseFloat(response.rows[i].TotalAmount);
 
@@ -919,13 +922,16 @@ function getSales(iso) {
                 totalPrice += totalAmount;
                 result.push(orderNr);
             }
+            if (JSON.stringify(totalAmount).indexOf("-") != -1) {
+                refund += totalAmount;
+
+            }
         }
         result = [];
         console.log(totalPrice);
 
     }
-
-    return [totalPrice, totalOrder];
+    return [totalPrice, totalOrder, refund];
 
 }
 
