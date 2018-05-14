@@ -896,14 +896,13 @@ function modal(result) {
 function getSales(iso) {
     // "iso" is the ISO 1366 alpha-2 code of the country clicked on.
     var authcode = btoa("<token><version>1</version><data>BFB2BED0440C49DFBC53C0781B68E47F71ACC7C44C3F7CF69A397ABB3F943B73</data></token>");
-    var dictionary ={};
-    var result = [];
+
     var request = new XMLHttpRequest();
     var apiCall = 'https://83814.afasonlineconnector.nl/ProfitRestServices/connectors/Profit_Salesorders_2?filterfieldids=ISO_Alpha-2&filtervalues=' + iso + '&operatortypes=1&take=1000000';
     request.open('GET', apiCall, false);  // `false` makes the request synchronous
     request.setRequestHeader('Authorization', 'AfasToken ' + authcode);
     request.send(null);
-
+    var result = [];
     if (request.status === 200) {
         var data = request.responseText;
         var response = JSON.parse(data);
@@ -912,22 +911,20 @@ function getSales(iso) {
 
         var totalPrice = 0.00;
         for (var i = 0; i < response.rows.length; i++) {
-            totalPrice += parseFloat(response.rows[i].TotalAmount);
-            dictionary[response.rows[i]["OrderNumber"]] = 0;
-            for (i in dictionary) {
-                result.push(i);
-                console.log(result);
-            }
+            //console.log(response.rows[i]);
+            var orderNr = response.rows[i].OrderNumber;
+            var totalAmount = parseFloat(response.rows[i].TotalAmount);
 
-            /*if (orderNr in object) {
-                object[orderNr]+=1;
-            } else {
-                object[orderNr] = 1;
-            }*/
+            if (!(result.includes(orderNr))) {
+                totalPrice += totalAmount;
+                result.push(orderNr);
+            }
         }
+        result = [];
+        console.log(totalPrice);
 
     }
-    //console.log(totalPrice);
+
     return [totalPrice, totalOrder];
 
 }
