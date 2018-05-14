@@ -156,10 +156,10 @@
         for (var country in dictionary) {
             var size = dictionary[country];
             var location = coordinatesArray[country];
-            console.log(country);
+            //console.log(country);
 
             var percentage = (100 * size) / totalOrder;
-            console.log(percentage);
+            //console.log(percentage);
             var feature = "{" +
                 "      \"type\": \"Feature\"," +
                 "      \"geometry\": {" +
@@ -186,11 +186,14 @@
     function createDataLayer(returnValue) {
         map.data.addGeoJson(returnValue);
 
-        console.log(returnValue);
+        //console.log(returnValue);
         map.data.setStyle(function(feature){
             var percentage = parseFloat(feature.getProperty('percentage'));
-            if (percentage < 1) {
-                percentage = 1;
+            var realPercentage = percentage;
+            if (percentage <= 3) {
+                percentage = 4;
+            } else if (percentage === 4) {
+                percentage = 5;
             }
             return({
                 icon: {
