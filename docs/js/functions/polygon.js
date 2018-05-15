@@ -41,7 +41,7 @@ function drawMap(data) {
                     var modal = document.querySelector('.modal');
                     var instance = M.Modal.init(modal);
                     instance.open();
-                    console.log("clicked on polygon");
+                    //console.log("clicked on polygon");
 
             });
 
@@ -611,7 +611,7 @@ function httpGet(url) {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var data = xmlhttp.responseText;
             var result = JSON.parse(data);
-            console.log(result["name"]);
+            //console.log(result["name"]);
             var rows = modal(result); // Calls a function that creates a modal.
 
         }
@@ -919,15 +919,16 @@ function getSales(iso) {
             var totalAmount = parseFloat(response.rows[i].TotalAmount);
             var currency = response.rows[i].CurrencyId;
             var orderDate = response.rows[i].OrderDate;
+            //console.log(response.rows[i]);
             orderDate = orderDate.slice(0,-10);
 
             if (currency !== "EUR") {
-                console.log("before: " + totalAmount);
+                //console.log("before: " + totalAmount);
                 var ConvertRequest = new XMLHttpRequest();
                 var ConvertApiCall = "http://data.fixer.io/api/" + orderDate + "?access_key=9356b1315cce0a5654a1eeb7ea64f9ee";
                 ConvertRequest.open('GET', ConvertApiCall, false);
                 ConvertRequest.send(null);
-                console.log(ConvertApiCall);
+                //console.log(ConvertApiCall);
                 var rows = JSON.parse(ConvertRequest.responseText);
                 var rates = rows.rates;
                 for (var x in rates) {
@@ -938,6 +939,7 @@ function getSales(iso) {
                         } else {
                             totalAmount = totalAmount * rates[x];
                             totalPrice += totalAmount;
+                            //console.log("after: " +totalAmount);
                         }
                     }
                 }
@@ -953,7 +955,7 @@ function getSales(iso) {
             }
         }
         result = [];
-        console.log(totalPrice);
+        //console.log(totalPrice);
 
     }
     return [totalPrice, totalOrder, refund];
@@ -993,7 +995,7 @@ function getHdi(englishName) {
                     var country = result[i]["Country"];
                     if (country.indexOf(englishName) != -1) {
                         hdi = result[i]["2014"];
-                        console.log("found hdi: " + hdi);
+                        //console.log("found hdi: " + hdi);
                         return hdi;
                     }
                 }
@@ -1137,7 +1139,7 @@ function getHappiness(englishName) {
                     var country = result[i]["Country"];
                     if (country.indexOf(englishName) != -1) {
                         happiness = result[i]["Happiness.Rank"];
-                        console.log("found happiness index: " + happiness);
+                        //console.log("found happiness index: " + happiness);
                         return happiness;
                     }
                 }
