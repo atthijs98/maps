@@ -779,8 +779,8 @@ function modal(result) {
             "<div id='verkopen'>"+
             "<ul>" +
             "<li><p>Totaal aantal verkochte tickets: " + numeral(totalTickets).format('0,0')+ "</p></li>" +
-            "<li><p>Totale omzet: € " + numeral(totalMoney).format('€0,0[.]00') + "</p></li>"+
-            "<li><p>Totaal bedrag credit nota's: € " + numeral(refund).format('€0,0[.]00') + "</p></li>"+
+            "<li><p>Totale omzet: " + numeral(totalMoney).format('$0,0[.]00') + "</p></li>"+
+            "<li><p>Totaal bedrag credit nota's: " + numeral(refund).format('$0,0[.]00') + "</p></li>"+
             "</ul>" +
             "</div>"+
             "</div>" +
@@ -844,8 +844,8 @@ function modal(result) {
             "<div id='verkopen'>"+
             "<ul>" +
             "<li><p>Totaal aantal verkochte tickets: " + numeral(totalTickets).format('0,0')+ "</p></li>" +
-            "<li><p>Totale omzet: € " + numeral(totalMoney).format('€0,0[.]00') + "</p></li>"+
-            "<li><p>Totaal bedrag credit nota's: € " + numeral(refund).format('€0,0[.]00') + "</p></li>"+
+            "<li><p>Totale omzet: " + numeral(totalMoney).format('$0,0[.]00') + "</p></li>"+
+            "<li><p>Totaal bedrag credit nota's: " + numeral(refund).format('$0,0[.]00') + "</p></li>"+
             "</ul>" +
             "</div>"+
             "</div>" +
@@ -917,7 +917,32 @@ function getSales(iso) {
         for (var i = 0; i < response.rows.length; i++) {
             var orderNr = response.rows[i].OrderNumber;
             var totalAmount = parseFloat(response.rows[i].TotalAmount);
+            var currency = response.rows[i].CurrencyId;
+            var orderDate = response.rows[i].OrderDate;
+            orderDate = orderDate.slice(0,-10);
 
+            if (currency !== "EUR") {
+                console.log("before: " + totalAmount);
+                var ConvertRequest = new XMLHttpRequest();
+                var ConvertApiCall = "http://data.fixer.io/api/" + orderDate + "?access_key=9356b1315cce0a5654a1eeb7ea64f9ee";
+                ConvertRequest.open('GET', ConvertApiCall, false);
+                ConvertRequest.send(null);
+                console.log(ConvertApiCall);
+                var rows = JSON.parse(ConvertRequest.responseText);
+                var rates = rows.rates;
+                for (var x in rates) {
+                    if (x.indexOf(currency) != -1) {
+                        if(JSON.stringify(totalAmount).indexOf("-") != -1) {
+                            totalAmount = totalAmount * rates[x];
+                            refund += totalAmount;
+                        } else {
+                            totalAmount = totalAmount * rates[x];
+                            totalPrice += totalAmount;
+                        }
+                    }
+                }
+
+            }
             if (!(result.includes(orderNr))) {
                 totalPrice += totalAmount;
                 result.push(orderNr);
@@ -1004,7 +1029,17 @@ function getGdp(englishName) {
                     var country = result[i]["Country Name"];
                     if (country.indexOf(englishName) != -1) {
                         gdp = result[i]["2016 [YR2016]"];
-                        console.log("found gdp: " + gdp);
+                        var ConvertRequest = new XMLHttpRequest();
+                        var ConvertApiCall = "http://data.fixer.io/api/latest?access_key=9356b1315cce0a5654a1eeb7ea64f9ee";
+                        ConvertRequest.open('GET', ConvertApiCall, false);
+                        ConvertRequest.send(null);
+                        var rows = JSON.parse(ConvertRequest.responseText);
+                        var rates = rows.rates;
+                        for (var x in rates) {
+                            if (x.indexOf("USD") != -1) {
+                                gdp = gdp / rates[x];
+                            }
+                        }
                         return gdp;
                     }
                 }
@@ -1042,7 +1077,17 @@ function getPpp(englishName) {
                     var country = result[i]["Country Name"];
                     if (country.indexOf(englishName) != -1) {
                         ppp = result[i]["2016 [YR2016]"];
-                        console.log("found ppp: " + ppp);
+                        var ConvertRequest = new XMLHttpRequest();
+                        var ConvertApiCall = "http://data.fixer.io/api/latest?access_key=9356b1315cce0a5654a1eeb7ea64f9ee";
+                        ConvertRequest.open('GET', ConvertApiCall, false);
+                        ConvertRequest.send(null);
+                        var rows = JSON.parse(ConvertRequest.responseText);
+                        var rates = rows.rates;
+                        for (var x in rates) {
+                            if (x.indexOf("USD") != -1) {
+                                ppp = ppp / rates[x];
+                            }
+                        }
                         return ppp;
                     }
                 }
@@ -1169,6 +1214,19 @@ function getGfp(englishName) {
                 var navy = [result[i]["Total Naval Assets"], result[i]["Aircraft Carriers"], result[i]["Frigates"], result[i]["Destroyers"], result[i]["Corvettes"], result[i]["Submarines"], result[i]["Patrol Craft"], result[i]["Mine Warfare Vessels"]];
                 var geo = [result[i]["Merchant Marine Strength"], result[i]["Major Ports / Terminals"], result[i]["Roadway Coverage (km)"], result[i]["Railway Coverage (km)"], result[i]["Serivecable Airports"], result[i]["Coastline (km)"], result[i]["Shared Borders (km)"], result[i]["Waterways (km)"]];
                 var money = [result[i]["Defense Budget"], result[i]["External Debt"]];
+                for (var k = 0; k < money.length; k++) {
+                    var ConvertRequest = new XMLHttpRequest();
+                    var ConvertApiCall = "http://data.fixer.io/api/latest?access_key=9356b1315cce0a5654a1eeb7ea64f9ee";
+                    ConvertRequest.open('GET', ConvertApiCall, false);
+                    ConvertRequest.send(null);
+                    var rows = JSON.parse(ConvertRequest.responseText);
+                    var rates = rows.rates;
+                    for (var x in rates) {
+                        if (x.indexOf("USD") != -1) {
+                            money[k] = money[k] / rates[x];
+                        }
+                    }
+                }
 
                 return [info, airforce, army, navy, geo, money, rank];
             } else {

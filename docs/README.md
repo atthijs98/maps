@@ -42,5 +42,6 @@ Services and data that helped me a lot:
     <li><a href"http://geojson.org/">GeoJson format</a></li>
     <li><a href="https://www.latlong.net/">Get Latitude and Longitude from locations</a></li>
     <li><a href="http://wiki.geojson.org/GeoJSON_draft_version_6">FeatureCollection Format GeoJson</a></li>
+    <li><a href="https://fixer.io/">Fixer Foreign exchange rates and currency conversion JSON API</a></li>
 </ul>
 

@@ -9,7 +9,7 @@
     <link rel="shortcut icon" type="image/png" href="images/logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<body onload="initMap()">
+<body>
 <script>
     function showFunction() {
         var x = document.getElementById("defensie");
@@ -39,7 +39,6 @@
     }
 </script>
 <div id="map"></div>
-<div id="info-box">?</div>
 <script>
     var map;
 
@@ -84,6 +83,7 @@
         });
 
         controlTrashUI.addEventListener('click', function () {
+
             var authcode = btoa("<token><version>1</version><data>BFB2BED0440C49DFBC53C0781B68E47F71ACC7C44C3F7CF69A397ABB3F943B73</data></token>");
 
             var request = new XMLHttpRequest();
@@ -102,7 +102,6 @@
                 getCoordinates(orders, totalOrder);
 
             }
-
         });
 
         function getCoordinates(orders, totalOrder) {
@@ -423,7 +422,7 @@
 <script src="js/numeral.min.js"></script>
 <script src="locales/nl.js"></script>
 <script src="js/functions/polygon.js"></script>
-<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfpEmZZ_7-cv8yGZc0JS_GNVLYLCuuUKs&libraries=places"
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfpEmZZ_7-cv8yGZc0JS_GNVLYLCuuUKs&libraries=places&callback=initMap"
         type="text/javascript">
 
 </script>
