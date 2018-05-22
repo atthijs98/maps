@@ -875,7 +875,7 @@ function modal(result) {
                         "<div class='progress' style='height: 10px'>" +
                             "<div class='determinate teal lighten-3'  style='width: "+Movement[2]*10+"%'></div> "+
                         "</div>" +
-                        "<b>Women's Freedom of Movement </b>"+
+                        "Women's Freedom of Movement "+
                         + Movement[3]+
                         "<div class='progress' style='height: 10px'>" +
                             "<div class='determinate teal lighten-3'  style='width: "+Movement[3]*10+"%'></div> "+
@@ -1103,12 +1103,12 @@ function modal(result) {
                         "Inflation: Most Recent Year "+
                         +SoundMoney[3]+
                         "<div class='progress' style='height: 10px'>" +
-                            "<div class='determinate'  style='width: "+SoundMoney[3]*10+"%'></div> "+
+                            "<div class='determinate teal lighten-3'  style='width: "+SoundMoney[3]*10+"%'></div> "+
                         "</div>" +
                         "Freedom to Own Frgn. Currency "+
                         +SoundMoney[4]+
                         "<div class='progress' style='height: 10px'>" +
-                            "<div class='determinate'  style='width: "+SoundMoney[4]*10+"%'></div> "+
+                            "<div class='determinate teal lighten-3'  style='width: "+SoundMoney[4]*10+"%'></div> "+
                         "</div>" +
                     "</li>" +
                     "<br><div class='divider'></div><br>" +
@@ -1319,7 +1319,7 @@ function modal(result) {
             "<div class='progress' style='height: 10px'>" +
             "<div class='determinate teal lighten-3'  style='width: "+Movement[2]*10+"%'></div> "+
             "</div>" +
-            "<b>Women's Freedom of Movement </b>"+
+            "Women's Freedom of Movement "+
             + Movement[3]+
             "<div class='progress' style='height: 10px'>" +
             "<div class='determinate teal lighten-3'  style='width: "+Movement[3]*10+"%'></div> "+
@@ -1476,7 +1476,7 @@ function modal(result) {
             "</li>" +
             "<br><div class='divider'></div><br>" +
             "<li>"+
-            "<b>Legal System and Prop. Rights </b>"+
+            "<b>Legal System and Property Rights </b>"+
             +LegalSystemAndPropRights[0]+
             "<div class='progress' style='height: 10px'>"+
             "<div class='determinate'  style='width: "+LegalSystemAndPropRights[0]*10+"%'></div>" +
@@ -1547,17 +1547,17 @@ function modal(result) {
             "Inflation: Most Recent Year "+
             +SoundMoney[3]+
             "<div class='progress' style='height: 10px'>" +
-            "<div class='determinate'  style='width: "+SoundMoney[3]*10+"%'></div> "+
+            "<div class='determinate teal lighten-3'  style='width: "+SoundMoney[3]*10+"%'></div> "+
             "</div>" +
             "Freedom to Own Frgn. Currency "+
             +SoundMoney[4]+
             "<div class='progress' style='height: 10px'>" +
-            "<div class='determinate'  style='width: "+SoundMoney[4]*10+"%'></div> "+
+            "<div class='determinate teal lighten-3'  style='width: "+SoundMoney[4]*10+"%'></div> "+
             "</div>" +
             "</li>" +
             "<br><div class='divider'></div><br>" +
             "<li>"+
-            "<b>Freedom to Trade Int'l </b>"+
+            "<b>Freedom to Trade Internationally </b>"+
             +FreedomToTradeInt[0]+
             "<div class='progress' style='height: 10px'>" +
             "<div class='determinate'  style='width: "+FreedomToTradeInt[0]*10+"%'></div> "+
