@@ -656,7 +656,9 @@ function modal(result) {
     var happiness;
     var mili;
     var sales;
+    var cato;
 
+    cato = getCato(englishName);
     sales = getSales(iso);
     gdp = getGdp(englishName);
     var giniStyle = giniIcon(gini);
@@ -680,109 +682,488 @@ function modal(result) {
         var totalTickets = sales[1];
         var totalMoney = sales[0];
         var refund = sales[2];
+
+        var HumanFreedom = cato[14],
+            PersonalFreedom = cato[0],
+            RuleOfLaw = cato[1],
+            SecurityAndSafety = cato[2],
+            Movement = cato[3],
+            ReligiousFreedom = cato[4],
+            Association = cato[5],
+            ExpressionAndInformation = cato[6],
+            IdentityAndRelationships = cato[7],
+            EconomicFreedom = cato[8],
+            SizeOfGovernment = cato[9],
+            LegalSystemAndPropRights = cato[10],
+            SoundMoney = cato[11],
+            FreedomToTradeInt = cato[12],
+            Regulation = cato[13];
+
         var innerHmlNorm =
             "<div class='modal-content'>" +
-            "<h4 class='center-align'>" + englishName + "</h4>" +
-            "<h6 class='center-align'>" + nativeName + "</h6>" +
-            "<div class='row'>" +
-            "<div class='col s10 push-s1'><div class='center-align'><img style='border: grey 1px solid;' src='" + flag + "' class='responsive-img'></div></div>" +
-            "</div>" +
-            "<div class='row'>" +
-            "<div class='col s10 push-s1'><div class='center-align'><img src='images/coatOfArms/"+iso+".png' class='responsive-img'></div></div>" +
-            "</div>" +
-            "<div class='divider'></div><br>" +
-            "<li><a href='#!' id='info-btn' onclick='showFunction2()'>Show Country Information</a></li>" +
-            "<div id='informatie'>" +
-            "<div>" +
-            "<li><p>Hoofdstad: " + capital + "</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Aantal inwoners: " + numeral(population).format('0,0') + "</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p id='language'>Talen:</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Inwoneraanduiding: " + demonym + "</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Oppervlakte: " + numeral(area).format('0,0') + " km2</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Regio: " + region + " (" + subregion + "),<br>" + "</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p id='regionalBloc'>Regionale Blokken: </p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p id='timezone'>Tijdzones: </p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Landnummer: " + calling + "</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p id='currency'>Munteenheid: </p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Bruto binnenlands product(2016): " + numeral(gdp).format('$ 0,0[.]00') + "</p></li>" +
-            "<div class='divider'></div>" +
-            pppStyle +
-            "<div class='divider'></div>" +
-            giniStyle +
-            "<div class='divider'></div>" +
-            hdiStyle +
-            "<div class='divider'></div>" +
-            happinessStyle +
-            "</div>"+
-            "</div><br>"+
-            "<div class='divider'></div><br>" +
-            "<li><a href='#!' id='mili-btn' onclick='showFunction()'>Show Global Fire Power</a></li>" +
-            "<div id='defensie'>" +
-            "<li><p>Global Firepower Rank(2018): " + numeral(rank).format('0o') + "</p></li>" +
-            "<div class='divider'></div>" +
-            "    <li><p>Mankracht beschikbaar: " + numeral(info[0]).format('0,0') + "</p></li>" +
-            "    <li><p>Geschikt voor militaire dienst: " + numeral(info[1]).format('0,0') + "</p></li>" +
-            "<li><p>Bereikt jaarlijks de militaire leeftijd: " + numeral(info[2]).format('0,0') + "</p></li>" +
-            "<li><p>Totaal militair personeel: " + numeral(info[3]).format('0,0') + "</p></li>" +
-            "<li><p>Actief personeel: " + numeral(info[4]).format('0,0') + "</p></li>" +
-            "<li><p>Nationale reserve: " + numeral(info[5]).format('0,0') + "</p></li>" +
-            "    <div class='divider'></div>" +
-            "    <li><p>Totale sterkte van de luchtmacht: " + airforce[0] + "</p></li>" +
-            "    <li><p>Jachtvliegtuigen: " + airforce[1] + "</p></li>" +
-            "    <li><p>Gevechtsvliegtuigen: " + airforce[2] + "</p></li>" +
-            "    <li><p>Transportvliegtuigen: " + airforce[3] + "</p></li>" +
-            "    <li><p>Opleidingsvliegtuigen: " + airforce[4] + "</p></li>" +
-            "    <div class='divider'></div>" +
-            "<li><p>Totale helicopter kracht: " + army[0] + "</p></li>" +
-            "<li><p>Aanvalshelikopters: " + army[1] + "</p></li>" +
-            "<li><p>Tanks: " + army[2] + "</p></li>" +
-            "<li><p>Pantservoertuigen: " + army[3] + "</p></li>" +
-            "<li><p>Gemechaniseerde artillerie: " + army[4] + "</p></li>" +
-            "<li><p>Artillerie: " + army[5] + "</p></li>" +
-            "<li><p>Raketlanceerprojectoren: " + army[6] + "</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Totaal aantal oorlogschepen: " + navy[0] + "</p></li>" +
-            "<li><p>Vliegdekschepen: " + navy[1] + "</p></li>" +
-            "<li><p>Fregatten: " + navy[2] + "</p></li>" +
-            "<li><p>Torpedobootjagers: " + navy[3] + "</p></li>" +
-            "<li><p>korvetten: " + navy[4] + "</p></li>" +
-            "<li><p>Onderzeeërs: " + navy[5] + "</p></li>" +
-            "<li><p>Patrouillevaartuigen: " + navy[6] + "</p></li>" +
-            "<li><p>Mijnenvegers: " + navy[7] + "</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Totale koopvaardij sterkte: " + numeral(geo[0]).format('0,0') + "</p></li>" +
-            "<li><p>Grote havens / Terminals: " + numeral(geo[1]).format('0,0') + "</p></li>" +
-            "<li><p>Totale grootte van het wegennet (km): " + numeral(geo[2]).format('0,0.00') + " km</p></li>" +
-            "<li><p>Grootte van het spoorwegvervoer (km): " + numeral(geo[3]).format('0,0.00') + " km</p></li>" +
-            "<li><p>Bruikbare vliegvelden: " + numeral(geo[4]).format('0,0') + "</p></li>" +
-            "<li><p>Kustlijn (km): " + numeral(geo[5]).format('0,0.00') + " km</p></li>" +
-            "<li><p>Geldeelde grenzen (km): " + numeral(geo[6]).format('0,0.00') + " km</p></li>" +
-            "<li><p>Waterwegen (km): " + numeral(geo[7]).format('0,0.00') + " km</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Defensie Budget: " + numeral(money[0]).multiply(1000000).format('($0.00a)') + "</p></li>" +
-            "<li><p>Staatschuld: " + numeral(money[1]).multiply(1000000).format('($0.00a)') + "</p></li>" +
-            "<li><p><small>Bron: https://www.globalfirepower.com/</small></p></li>"+
-            "</div>" +
-            "</ul>" +
-            "<br><div class='divider'></div><br>" +
-            "<li><a href='#!' id='verkoop-btn' onclick='showFunction3()'>Show Ticket Sales</a></li>"+
-            "<div id='verkopen'>"+
-            "<ul>" +
-            "<li><p>Totaal aantal verkochte tickets: " + numeral(totalTickets).format('0,0')+ "</p></li>" +
-            "<li><p>Totale omzet: " + numeral(totalMoney).format('$0,0[.]00') + "</p></li>"+
-            "<li><p>Totaal bedrag credit nota's: " + numeral(refund).format('$0,0[.]00') + "</p></li>"+
-            "</ul>" +
-            "</div>"+
+                "<h4 class='center-align'>" + englishName + "</h4>" +
+                "<h6 class='center-align'>" + nativeName + "</h6>" +
+                "<div class='row'>" +
+                    "<div class='col s10 push-s1'><div class='center-align'><img style='border: grey 1px solid;' src='" + flag + "' class='responsive-img'></div></div>" +
+                "</div>" +
+                "<div class='row'>" +
+                    "<div class='col s10 push-s1'><div class='center-align'><img src='images/coatOfArms/"+iso+".png' class='responsive-img'></div></div>" +
+                "</div>" +
+                "<div class='divider'></div><br>" +
+                "<li><a href='#!' id='info-btn' onclick='showFunction2()'>Show Country Information</a></li>" +
+                "<div id='informatie'>" +
+                    "<li><p>Hoofdstad: " + capital + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Aantal inwoners: " + numeral(population).format('0,0') + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p id='language'>Talen:</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Inwoneraanduiding: " + demonym + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Oppervlakte: " + numeral(area).format('0,0') + " km2</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Regio: " + region + " (" + subregion + "),<br>" + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p id='regionalBloc'>Regionale Blokken: </p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p id='timezone'>Tijdzones: </p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Landnummer: " + calling + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p id='currency'>Munteenheid: </p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Bruto binnenlands product(2016): " + numeral(gdp).format('$ 0,0[.]00') + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    pppStyle +
+                    "<div class='divider'></div>" +
+                    giniStyle +
+                    "<div class='divider'></div>" +
+                    hdiStyle +
+                    "<div class='divider'></div>" +
+                    happinessStyle +
+                    "<div class='divider'></div>" +
+                    "<li><p>Human Freedom Ranking(2017): "+HumanFreedom[1]+"/159</p></li>" +
+                "</div>"+
+
+                "<br><div class='divider'></div><br>" +
+                "<li><a href='#!' id='mili-btn' onclick='showFunction()'>Show Global Fire Power</a></li>" +
+                "<div id='defensie'>" +
+                    "<li><p>Global Firepower Rank(2018): " + numeral(rank).format('0o') + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    "    <li><p>Mankracht beschikbaar: " + numeral(info[0]).format('0,0') + "</p></li>" +
+                    "    <li><p>Geschikt voor militaire dienst: " + numeral(info[1]).format('0,0') + "</p></li>" +
+                    "<li><p>Bereikt jaarlijks de militaire leeftijd: " + numeral(info[2]).format('0,0') + "</p></li>" +
+                    "<li><p>Totaal militair personeel: " + numeral(info[3]).format('0,0') + "</p></li>" +
+                    "<li><p>Actief personeel: " + numeral(info[4]).format('0,0') + "</p></li>" +
+                    "<li><p>Nationale reserve: " + numeral(info[5]).format('0,0') + "</p></li>" +
+                    "    <div class='divider'></div>" +
+                    "    <li><p>Totale sterkte van de luchtmacht: " + airforce[0] + "</p></li>" +
+                    "    <li><p>Jachtvliegtuigen: " + airforce[1] + "</p></li>" +
+                    "    <li><p>Gevechtsvliegtuigen: " + airforce[2] + "</p></li>" +
+                    "    <li><p>Transportvliegtuigen: " + airforce[3] + "</p></li>" +
+                    "    <li><p>Opleidingsvliegtuigen: " + airforce[4] + "</p></li>" +
+                    "    <div class='divider'></div>" +
+                    "<li><p>Totale helicopter kracht: " + army[0] + "</p></li>" +
+                    "<li><p>Aanvalshelikopters: " + army[1] + "</p></li>" +
+                    "<li><p>Tanks: " + army[2] + "</p></li>" +
+                    "<li><p>Pantservoertuigen: " + army[3] + "</p></li>" +
+                    "<li><p>Gemechaniseerde artillerie: " + army[4] + "</p></li>" +
+                    "<li><p>Artillerie: " + army[5] + "</p></li>" +
+                    "<li><p>Raketlanceerprojectoren: " + army[6] + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Totaal aantal oorlogschepen: " + navy[0] + "</p></li>" +
+                    "<li><p>Vliegdekschepen: " + navy[1] + "</p></li>" +
+                    "<li><p>Fregatten: " + navy[2] + "</p></li>" +
+                    "<li><p>Torpedobootjagers: " + navy[3] + "</p></li>" +
+                    "<li><p>korvetten: " + navy[4] + "</p></li>" +
+                    "<li><p>Onderzeeërs: " + navy[5] + "</p></li>" +
+                    "<li><p>Patrouillevaartuigen: " + navy[6] + "</p></li>" +
+                    "<li><p>Mijnenvegers: " + navy[7] + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Totale koopvaardij sterkte: " + numeral(geo[0]).format('0,0') + "</p></li>" +
+                    "<li><p>Grote havens / Terminals: " + numeral(geo[1]).format('0,0') + "</p></li>" +
+                    "<li><p>Totale grootte van het wegennet (km): " + numeral(geo[2]).format('0,0.00') + " km</p></li>" +
+                    "<li><p>Grootte van het spoorwegvervoer (km): " + numeral(geo[3]).format('0,0.00') + " km</p></li>" +
+                    "<li><p>Bruikbare vliegvelden: " + numeral(geo[4]).format('0,0') + "</p></li>" +
+                    "<li><p>Kustlijn (km): " + numeral(geo[5]).format('0,0.00') + " km</p></li>" +
+                    "<li><p>Geldeelde grenzen (km): " + numeral(geo[6]).format('0,0.00') + " km</p></li>" +
+                    "<li><p>Waterwegen (km): " + numeral(geo[7]).format('0,0.00') + " km</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Defensie Budget: " + numeral(money[0]).multiply(1000000).format('($0.00a)') + "</p></li>" +
+                    "<li><p>Staatschuld: " + numeral(money[1]).multiply(1000000).format('($0.00a)') + "</p></li>" +
+                    "<li><p><small>Bron: https://www.globalfirepower.com/</small></p></li>"+
+                "</div>" +
+
+                "<br><div class='divider'></div><br>" +
+                "<li><a href='#!' id='verkoop-btn' onclick='showFunction3()'>Show Ticket Sales</a></li>"+
+                "<div id='verkopen'>"+
+                    "<ul>" +
+                    "<li><p>Totaal aantal verkochte tickets: " + numeral(totalTickets).format('0,0')+ "</p></li>" +
+                    "<li><p>Totale omzet: " + numeral(totalMoney).format('$0,0[.]00') + "</p></li>"+
+                    "<li><p>Totaal bedrag credit nota's: " + numeral(refund).format('$0,0[.]00') + "</p></li>"+
+                    "</ul>" +
+                "</div>"+
+
+                "<br><div class='divider'></div><br>"+
+                "<li><a href='#!' id='info-btn' onclick='showFunction4()'>Show Cato Human Freedom Index</a></li><br>" +
+                "<div id='freedom'>" +
+                    "<li>" +
+                        "<b>Rule of Law </b>"+
+                        +RuleOfLaw[0]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate'  style='width: "+RuleOfLaw[0]*10+"%'></div>"+
+                        "</div>" +
+                    "</li>"+
+                    "<li>"+
+                        "Procedural Justice "+
+                        + RuleOfLaw[1]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+RuleOfLaw[1]*10+"%'></div>"+
+                        "</div>" +
+                    "</li>"+
+                    "<li>"+
+                        "Civil Justice "+
+                        + RuleOfLaw[2]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+RuleOfLaw[2]*10+"%'></div>"+
+                        "</div>" +
+                    "</li>"+
+                    "<li>"+
+                        "Criminal Justice "+
+                        + RuleOfLaw[3] +
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+RuleOfLaw[3]*10+"%'></div>"+
+                        "</div>" +
+                    "</li>"+
+                    "<br><div class='divider'></div><br>" +
+                    "<li>"+
+                        "<b>Security and Safety </b>"+
+                        + SecurityAndSafety[0]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate'  style='width: "+SecurityAndSafety[0]*10+"%'></div> "+
+                        "</div>" +
+                        "Homicide "+
+                        + SecurityAndSafety[1]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+SecurityAndSafety[1]*10+"%'></div>"+
+                        "</div>" +
+                        "Disappearance, conflict, Terrorism "+
+                        + SecurityAndSafety[2]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+SecurityAndSafety[2]*10+"%'></div>"+
+                        "</div>" +
+                        "Women Security, Safety "+
+                        + SecurityAndSafety[3]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+SecurityAndSafety[3]*10+"%'></div>"+
+                        "</div>" +
+                    "</li>" +
+                    "<br><div class='divider'></div><br>" +
+                    "<li>"+
+                        "<b>Movement </b>"+
+                        + Movement[0]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate'  style='width: "+Movement[0]*10+"%'></div> "+
+                        "</div>" +
+                        "Freedom of Foreign Movement "+
+                        + Movement[1]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+Movement[1]*10+"%'></div> "+
+                        "</div>" +
+                        "Freedom of Domestic Movement "+
+                        + Movement[2]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+Movement[2]*10+"%'></div> "+
+                        "</div>" +
+                        "<b>Women's Freedom of Movement </b>"+
+                        + Movement[3]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+Movement[3]*10+"%'></div> "+
+                        "</div>" +
+                    "</li>" +
+                    "<br><div class='divider'></div><br>" +
+                    "<li>"+
+                        "<b>Religious Freedom </b>"+
+                        +ReligiousFreedom[0]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate'  style='width: "+ReligiousFreedom[0]*10+"%'></div> "+
+                        "</div>" +
+                        "Freedom to Est. & Operate Rel. Org. "+
+                        +ReligiousFreedom[1]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+ReligiousFreedom[1]*10+"%'></div> "+
+                        "</div>" +
+                        "Harassment and Physical Hostilities "+
+                        +ReligiousFreedom[2]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+ReligiousFreedom[2]*10+"%'></div> "+
+                        "</div>" +
+                        "Legal and Regulatory Restrictions "+
+                        +ReligiousFreedom[3]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+ReligiousFreedom[3]*10+"%'></div> "+
+                        "</div>" +
+                    "</li>" +
+                    "<br><div class='divider'></div><br>" +
+                    "<li>"+
+                        "<b>Association </b>"+
+                        +Association[0]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate'  style='width: "+Association[0]*10+"%'></div> "+
+                        "</div>" +
+                        "Freedom of Association "+
+                        +Association[1]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+Association[1]*10+"%'></div> "+
+                        "</div>" +
+                        "Assembly and Demonstration "+
+                        +Association[2]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+Association[2]*10+"%'></div> "+
+                        "</div>" +
+                        "Freedom to Est. & Operate Org. "+
+                        +Association[3]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+Association[3]*10+"%'></div> "+
+                        "</div>" +
+                    "</li>" +
+                    "<br><div class='divider'></div><br>" +
+                    "<li>"+
+                        "<b>Expression and Information </b>" +
+                        +ExpressionAndInformation[0]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate'  style='width: "+ExpressionAndInformation[0]*10+"%'></div> "+
+                        "</div>" +
+                        "Press Killed " +
+                        +ExpressionAndInformation[1]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+ExpressionAndInformation[1]*10+"%'></div> "+
+                        "</div>" +
+                        "Press Jailed " +
+                        +ExpressionAndInformation[2]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+ExpressionAndInformation[2]*10+"%'></div> "+
+                        "</div>" +
+                        "Laws and Reg. That Influence Media " +
+                        +ExpressionAndInformation[3]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+ExpressionAndInformation[3]*10+"%'></div> "+
+                        "</div>" +
+                        "Political Pressure, Control Media " +
+                        +ExpressionAndInformation[4]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+ExpressionAndInformation[4]*10+"%'></div> "+
+                        "</div>" +
+                        "Access to Cable and Satelite " +
+                        +ExpressionAndInformation[5]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+ExpressionAndInformation[5]*10+"%'></div> "+
+                        "</div>" +
+                        "Freedom of Access to Frgn. Info. " +
+                        +ExpressionAndInformation[6]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+ExpressionAndInformation[6]*10+"%'></div> "+
+                        "</div>" +
+                        "State Control over Internet Access " +
+                        +ExpressionAndInformation[7]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+ExpressionAndInformation[7]*10+"%'></div> "+
+                        "</div>" +
+                    "</li>" +
+                    "<br><div class='divider'></div><br>" +
+                    "<li>"+
+                        "<b>Identity and Relationships </b>"+
+                        +IdentityAndRelationships[0]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate'  style='width: "+IdentityAndRelationships[0]*10+"%'></div> "+
+                        "</div>" +
+                        "Legal Gender "+
+                        +IdentityAndRelationships[1]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+IdentityAndRelationships[1]*10+"%'></div> "+
+                        "</div>" +
+                        "Parental Rights "+
+                        +IdentityAndRelationships[2]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+IdentityAndRelationships[2]*10+"%'></div> "+
+                        "</div>" +
+                        "Same-Sex Relationships "+
+                        +IdentityAndRelationships[3]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+IdentityAndRelationships[3]*10+"%'></div> "+
+                        "</div>" +
+                        "Divorce "+
+                        +IdentityAndRelationships[4]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+IdentityAndRelationships[4]*10+"%'></div> "+
+                        "</div>" +
+                    "</li>" +
+                    "<br><div class='divider'></div><br>" +
+                    "<li>"+
+                        "<b>Size of Government </b>"+
+                        +SizeOfGovernment[0]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate'  style='width: "+SizeOfGovernment[0]*10+"%'></div> "+
+                        "</div>" +
+
+                        "Government Consumption "+
+                        +SizeOfGovernment[1]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+SizeOfGovernment[1]*10+"%'></div> "+
+                        "</div>" +
+
+                        "Transfers and Subsidies "+
+                        +SizeOfGovernment[2]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+SizeOfGovernment[2]*10+"%'></div> "+
+                        "</div>" +
+
+                        "Government Enterprises "+
+                        +SizeOfGovernment[3]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+SizeOfGovernment[3]*10+"%'></div> "+
+                        "</div>" +
+
+                        "Top Marginal Tax Rate "+
+                        +SizeOfGovernment[4]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+SizeOfGovernment[4]*10+"%'></div> "+
+                        "</div>" +
+                    "</li>" +
+                    "<br><div class='divider'></div><br>" +
+                    "<li>"+
+                        "<b>Legal System and Prop. Rights </b>"+
+                        +LegalSystemAndPropRights[0]+
+                        "<div class='progress' style='height: 10px'>"+
+                            "<div class='determinate'  style='width: "+LegalSystemAndPropRights[0]*10+"%'></div>" +
+                        "</div>" +
+                        "Judicial Independence "+
+                        +LegalSystemAndPropRights[1]+
+                        "<div class='progress' style='height: 10px'>"+
+                            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[1]*10+"%'></div>" +
+                        "</div>" +
+                        "Impartial Courts "+
+                        +LegalSystemAndPropRights[2]+
+                        "<div class='progress' style='height: 10px'>"+
+                            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[2]*10+"%'></div>" +
+                        "</div>" +
+                        "Protection of Property Rights "+
+                        +LegalSystemAndPropRights[3]+
+                        "<div class='progress' style='height: 10px'>"+
+                            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[3]*10+"%'></div>" +
+                        "</div>" +
+                        "Military Interference "+
+                        +LegalSystemAndPropRights[4]+
+                        "<div class='progress' style='height: 10px'>"+
+                            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[4]*10+"%'></div>" +
+                        "</div>" +
+                        "Integrity of the Legal System "+
+                        +LegalSystemAndPropRights[5]+
+                        "<div class='progress' style='height: 10px'>"+
+                            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[5]*10+"%'></div>" +
+                        "</div>" +
+                        "Legal Enforcements of Contracts "+
+                        +LegalSystemAndPropRights[6]+
+                        "<div class='progress' style='height: 10px'>"+
+                            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[6]*10+"%'></div>" +
+                        "</div>" +
+                        "Regulatory Restrictions "+
+                        +LegalSystemAndPropRights[7]+
+                        "<div class='progress' style='height: 10px'>"+
+                            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[7]*10+"%'></div>" +
+                        "</div>" +
+                        "Reliability of Police "+
+                        +LegalSystemAndPropRights[8]+
+                        "<div class='progress' style='height: 10px'>"+
+                            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[8]*10+"%'></div>" +
+                        "</div>" +
+                        "Business Cost of Crime "+
+                        +LegalSystemAndPropRights[9]+
+                        "<div class='progress' style='height: 10px'>"+
+                            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[9]*10+"%'></div>" +
+                        "</div>" +
+                    "</li>" +
+                    "<br><div class='divider'></div><br>" +
+                    "<li>"+
+                        "<b>Sound Money </b>"+
+                        +SoundMoney[0]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate'  style='width: "+SoundMoney[0]*10+"%'></div> "+
+                        "</div>" +
+                        "Money Growth "+
+                        +SoundMoney[1]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+SoundMoney[1]*10+"%'></div> "+
+                        "</div>" +
+                        "Standard Deviation of Inflation "+
+                        +SoundMoney[2]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+SoundMoney[2]*10+"%'></div> "+
+                        "</div>" +
+                        "Inflation: Most Recent Year "+
+                        +SoundMoney[3]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate'  style='width: "+SoundMoney[3]*10+"%'></div> "+
+                        "</div>" +
+                        "Freedom to Own Frgn. Currency "+
+                        +SoundMoney[4]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate'  style='width: "+SoundMoney[4]*10+"%'></div> "+
+                        "</div>" +
+                    "</li>" +
+                    "<br><div class='divider'></div><br>" +
+                    "<li>"+
+                        "<b>Freedom to Trade Int'l </b>"+
+                        +FreedomToTradeInt[0]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate'  style='width: "+FreedomToTradeInt[0]*10+"%'></div> "+
+                        "</div>" +
+                        "Tariffs "+
+                        +FreedomToTradeInt[1]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+FreedomToTradeInt[1]*10+"%'></div> "+
+                        "</div>" +
+                        "Regulatory Trade Barriers "+
+                        +FreedomToTradeInt[2]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+FreedomToTradeInt[2]*10+"%'></div> "+
+                        "</div>" +
+                        "Black-Market Exchange Rates "+
+                        +FreedomToTradeInt[3]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+FreedomToTradeInt[3]*10+"%'></div> "+
+                        "</div>" +
+                        "Movement of Capital and People "+
+                        +FreedomToTradeInt[4]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+FreedomToTradeInt[4]*10+"%'></div> "+
+                        "</div>" +
+                    "</li>" +
+                    "<br><div class='divider'></div><br>" +
+                    "<li>"+
+                        "<b>Regulation </b>"+
+                        +Regulation[0]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate'  style='width: "+Regulation[0]*10+"%'></div> "+
+                        "</div>" +
+                        "Credit Market Regulations "+
+                        +Regulation[1]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+Regulation[1]*10+"%'></div> "+
+                        "</div>" +
+                        "Labor Market Regulations "+
+                        +Regulation[2]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+Regulation[2]*10+"%'></div> "+
+                        "</div>" +
+                        "Business Regulations "+
+                        +Regulation[3]+
+                        "<div class='progress' style='height: 10px'>" +
+                            "<div class='determinate teal lighten-3'  style='width: "+Regulation[3]*10+"%'></div> "+
+                        "</div>" +
+                    "</li>" +
+                "</div>" +
+
             "</div>" +
             "<div class='modal-footer'>" +
             "<btn id='modalclose' class='modal-action modal-close waves-effect waves-green btn-flat'>Sluiten</btn>" +
@@ -791,6 +1172,23 @@ function modal(result) {
     }
 
     else{
+        var HumanFreedom = cato[14],
+            PersonalFreedom = cato[0],
+            RuleOfLaw = cato[1],
+            SecurityAndSafety = cato[2],
+            Movement = cato[3],
+            ReligiousFreedom = cato[4],
+            Association = cato[5],
+            ExpressionAndInformation = cato[6],
+            IdentityAndRelationships = cato[7],
+            EconomicFreedom = cato[8],
+            SizeOfGovernment = cato[9],
+            LegalSystemAndPropRights = cato[10],
+            SoundMoney = cato[11],
+            FreedomToTradeInt = cato[12],
+            Regulation = cato[13];
+
+
         var totalTickets = sales[1];
         var totalMoney = sales[0];
         var refund = sales[2];
@@ -805,49 +1203,410 @@ function modal(result) {
             "</div>" +
             "<li><a href='#!' id='info-btn' onclick='showFunction2()'>Show Country Information</a></li>" +
             "<div id='informatie'>" +
-            "<ul>" +
-            "<li><p>Hoofdstad: " + capital + "</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Aantal inwoners: " + numeral(population).format('0,0') + "</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p id='language'>Languages:</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Inwoneraanduiding: " + demonym + "</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Oppervlakte: " + numeral(area).format('0,0') + " km2</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Regio: " + region + " (" + subregion + "),<br>" + "</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p id='regionalBloc'>Regionaal Blok: </p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p id='timezone'>Tijdzones: </p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Landnummer: " + calling + "</p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p id='currency'>Munteenheid: </p></li>" +
-            "<div class='divider'></div>" +
-            "<li><p>Bruto binnenlands product(2016): " + numeral(gdp).format('$ 0,0[.]00') + "</p></li>" +
-            "<div class='divider'></div>" +
-            pppStyle +
-            "<div class='divider'></div>" +
-            giniStyle +
-            "<div class='divider'></div>" +
-            hdiStyle +
-            "<div class='divider'></div>" +
-            happinessStyle +
-            "<div class='divider'></div>" +
-            gfpStyle +
-            "</ul>" +
+                "<ul>" +
+                    "<li><p>Hoofdstad: " + capital + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Aantal inwoners: " + numeral(population).format('0,0') + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p id='language'>Languages:</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Inwoneraanduiding: " + demonym + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Oppervlakte: " + numeral(area).format('0,0') + " km2</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Regio: " + region + " (" + subregion + "),<br>" + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p id='regionalBloc'>Regionaal Blok: </p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p id='timezone'>Tijdzones: </p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Landnummer: " + calling + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p id='currency'>Munteenheid: </p></li>" +
+                    "<div class='divider'></div>" +
+                    "<li><p>Bruto binnenlands product(2016): " + numeral(gdp).format('$ 0,0[.]00') + "</p></li>" +
+                    "<div class='divider'></div>" +
+                    pppStyle +
+                    "<div class='divider'></div>" +
+                    giniStyle +
+                    "<div class='divider'></div>" +
+                    hdiStyle +
+                    "<div class='divider'></div>" +
+                    happinessStyle +
+                    "<div class='divider'></div>" +
+                    gfpStyle +
+                    "<div class='divider'></div> " +
+                    "<li><p>Human Freedom Ranking(2017): "+HumanFreedom[1]+"/159</p></li>" +
+                "</ul>" +
             "</div>" +
             "<br><div class='divider'></div><br>" +
             "<li><a href='#!' id='verkoop-btn' onclick='showFunction3()'>Show Ticket Sales</a></li>"+
             "<div id='verkopen'>"+
-            "<ul>" +
-            "<li><p>Totaal aantal verkochte tickets: " + numeral(totalTickets).format('0,0')+ "</p></li>" +
-            "<li><p>Totale omzet: " + numeral(totalMoney).format('$0,0[.]00') + "</p></li>"+
-            "<li><p>Totaal bedrag credit nota's: " + numeral(refund).format('$0,0[.]00') + "</p></li>"+
-            "</ul>" +
+                "<ul>" +
+                    "<li><p>Totaal aantal verkochte tickets: " + numeral(totalTickets).format('0,0')+ "</p></li>" +
+                    "<li><p>Totale omzet: " + numeral(totalMoney).format('$0,0[.]00') + "</p></li>"+
+                    "<li><p>Totaal bedrag credit nota's: " + numeral(refund).format('$0,0[.]00') + "</p></li>"+
+                "</ul>" +
             "</div>"+
+            "<br><div class='divider'></div><br>" +
+            "<li><a href='#!' id='info-btn' onclick='showFunction4()'>Show Cato Human Freedom Index</a></li><br>" +
+            "<div id='freedom'>" +
+            "<li>" +
+            "<b>Rule of Law </b>"+
+            +RuleOfLaw[0]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate'  style='width: "+RuleOfLaw[0]*10+"%'></div>"+
+            "</div>" +
+            "</li>"+
+            "<li>"+
+            "Procedural Justice "+
+            + RuleOfLaw[1]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+RuleOfLaw[1]*10+"%'></div>"+
+            "</div>" +
+            "</li>"+
+            "<li>"+
+            "Civil Justice "+
+            + RuleOfLaw[2]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+RuleOfLaw[2]*10+"%'></div>"+
+            "</div>" +
+            "</li>"+
+            "<li>"+
+            "Criminal Justice "+
+            + RuleOfLaw[3] +
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+RuleOfLaw[3]*10+"%'></div>"+
+            "</div>" +
+            "</li>"+
+            "<br><div class='divider'></div><br>" +
+            "<li>"+
+            "<b>Security and Safety </b>"+
+            + SecurityAndSafety[0]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate'  style='width: "+SecurityAndSafety[0]*10+"%'></div> "+
+            "</div>" +
+            "Homicide "+
+            + SecurityAndSafety[1]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+SecurityAndSafety[1]*10+"%'></div>"+
+            "</div>" +
+            "Disappearance, conflict, Terrorism "+
+            + SecurityAndSafety[2]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+SecurityAndSafety[2]*10+"%'></div>"+
+            "</div>" +
+            "Women Security, Safety "+
+            + SecurityAndSafety[3]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+SecurityAndSafety[3]*10+"%'></div>"+
+            "</div>" +
+            "</li>" +
+            "<br><div class='divider'></div><br>" +
+            "<li>"+
+            "<b>Movement </b>"+
+            + Movement[0]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate'  style='width: "+Movement[0]*10+"%'></div> "+
+            "</div>" +
+            "Freedom of Foreign Movement "+
+            + Movement[1]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+Movement[1]*10+"%'></div> "+
+            "</div>" +
+            "Freedom of Domestic Movement "+
+            + Movement[2]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+Movement[2]*10+"%'></div> "+
+            "</div>" +
+            "<b>Women's Freedom of Movement </b>"+
+            + Movement[3]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+Movement[3]*10+"%'></div> "+
+            "</div>" +
+            "</li>" +
+            "<br><div class='divider'></div><br>" +
+            "<li>"+
+            "<b>Religious Freedom </b>"+
+            +ReligiousFreedom[0]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate'  style='width: "+ReligiousFreedom[0]*10+"%'></div> "+
+            "</div>" +
+            "Freedom to Est. & Operate Rel. Org. "+
+            +ReligiousFreedom[1]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+ReligiousFreedom[1]*10+"%'></div> "+
+            "</div>" +
+            "Harassment and Physical Hostilities "+
+            +ReligiousFreedom[2]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+ReligiousFreedom[2]*10+"%'></div> "+
+            "</div>" +
+            "Legal and Regulatory Restrictions "+
+            +ReligiousFreedom[3]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+ReligiousFreedom[3]*10+"%'></div> "+
+            "</div>" +
+            "</li>" +
+            "<br><div class='divider'></div><br>" +
+            "<li>"+
+            "<b>Association </b>"+
+            +Association[0]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate'  style='width: "+Association[0]*10+"%'></div> "+
+            "</div>" +
+            "Freedom of Association "+
+            +Association[1]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+Association[1]*10+"%'></div> "+
+            "</div>" +
+            "Assembly and Demonstration "+
+            +Association[2]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+Association[2]*10+"%'></div> "+
+            "</div>" +
+            "Freedom to Est. & Operate Org. "+
+            +Association[3]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+Association[3]*10+"%'></div> "+
+            "</div>" +
+            "</li>" +
+            "<br><div class='divider'></div><br>" +
+            "<li>"+
+            "<b>Expression and Information </b>" +
+            +ExpressionAndInformation[0]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate'  style='width: "+ExpressionAndInformation[0]*10+"%'></div> "+
+            "</div>" +
+            "Press Killed " +
+            +ExpressionAndInformation[1]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+ExpressionAndInformation[1]*10+"%'></div> "+
+            "</div>" +
+            "Press Jailed " +
+            +ExpressionAndInformation[2]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+ExpressionAndInformation[2]*10+"%'></div> "+
+            "</div>" +
+            "Laws and Reg. That Influence Media " +
+            +ExpressionAndInformation[3]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+ExpressionAndInformation[3]*10+"%'></div> "+
+            "</div>" +
+            "Political Pressure, Control Media " +
+            +ExpressionAndInformation[4]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+ExpressionAndInformation[4]*10+"%'></div> "+
+            "</div>" +
+            "Access to Cable and Satelite " +
+            +ExpressionAndInformation[5]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+ExpressionAndInformation[5]*10+"%'></div> "+
+            "</div>" +
+            "Freedom of Access to Frgn. Info. " +
+            +ExpressionAndInformation[6]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+ExpressionAndInformation[6]*10+"%'></div> "+
+            "</div>" +
+            "State Control over Internet Access " +
+            +ExpressionAndInformation[7]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+ExpressionAndInformation[7]*10+"%'></div> "+
+            "</div>" +
+            "</li>" +
+            "<br><div class='divider'></div><br>" +
+            "<li>"+
+            "<b>Identity and Relationships </b>"+
+            +IdentityAndRelationships[0]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate'  style='width: "+IdentityAndRelationships[0]*10+"%'></div> "+
+            "</div>" +
+            "Legal Gender "+
+            +IdentityAndRelationships[1]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+IdentityAndRelationships[1]*10+"%'></div> "+
+            "</div>" +
+            "Parental Rights "+
+            +IdentityAndRelationships[2]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+IdentityAndRelationships[2]*10+"%'></div> "+
+            "</div>" +
+            "Same-Sex Relationships "+
+            +IdentityAndRelationships[3]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+IdentityAndRelationships[3]*10+"%'></div> "+
+            "</div>" +
+            "Divorce "+
+            +IdentityAndRelationships[4]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+IdentityAndRelationships[4]*10+"%'></div> "+
+            "</div>" +
+            "</li>" +
+            "<br><div class='divider'></div><br>" +
+            "<li>"+
+            "<b>Size of Government </b>"+
+            +SizeOfGovernment[0]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate'  style='width: "+SizeOfGovernment[0]*10+"%'></div> "+
+            "</div>" +
+
+            "Government Consumption "+
+            +SizeOfGovernment[1]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+SizeOfGovernment[1]*10+"%'></div> "+
+            "</div>" +
+
+            "Transfers and Subsidies "+
+            +SizeOfGovernment[2]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+SizeOfGovernment[2]*10+"%'></div> "+
+            "</div>" +
+
+            "Government Enterprises "+
+            +SizeOfGovernment[3]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+SizeOfGovernment[3]*10+"%'></div> "+
+            "</div>" +
+
+            "Top Marginal Tax Rate "+
+            +SizeOfGovernment[4]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+SizeOfGovernment[4]*10+"%'></div> "+
+            "</div>" +
+            "</li>" +
+            "<br><div class='divider'></div><br>" +
+            "<li>"+
+            "<b>Legal System and Prop. Rights </b>"+
+            +LegalSystemAndPropRights[0]+
+            "<div class='progress' style='height: 10px'>"+
+            "<div class='determinate'  style='width: "+LegalSystemAndPropRights[0]*10+"%'></div>" +
+            "</div>" +
+            "Judicial Independence "+
+            +LegalSystemAndPropRights[1]+
+            "<div class='progress' style='height: 10px'>"+
+            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[1]*10+"%'></div>" +
+            "</div>" +
+            "Impartial Courts "+
+            +LegalSystemAndPropRights[2]+
+            "<div class='progress' style='height: 10px'>"+
+            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[2]*10+"%'></div>" +
+            "</div>" +
+            "Protection of Property Rights "+
+            +LegalSystemAndPropRights[3]+
+            "<div class='progress' style='height: 10px'>"+
+            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[3]*10+"%'></div>" +
+            "</div>" +
+            "Military Interference "+
+            +LegalSystemAndPropRights[4]+
+            "<div class='progress' style='height: 10px'>"+
+            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[4]*10+"%'></div>" +
+            "</div>" +
+            "Integrity of the Legal System "+
+            +LegalSystemAndPropRights[5]+
+            "<div class='progress' style='height: 10px'>"+
+            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[5]*10+"%'></div>" +
+            "</div>" +
+            "Legal Enforcements of Contracts "+
+            +LegalSystemAndPropRights[6]+
+            "<div class='progress' style='height: 10px'>"+
+            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[6]*10+"%'></div>" +
+            "</div>" +
+            "Regulatory Restrictions "+
+            +LegalSystemAndPropRights[7]+
+            "<div class='progress' style='height: 10px'>"+
+            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[7]*10+"%'></div>" +
+            "</div>" +
+            "Reliability of Police "+
+            +LegalSystemAndPropRights[8]+
+            "<div class='progress' style='height: 10px'>"+
+            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[8]*10+"%'></div>" +
+            "</div>" +
+            "Business Cost of Crime "+
+            +LegalSystemAndPropRights[9]+
+            "<div class='progress' style='height: 10px'>"+
+            "<div class='determinate teal lighten-3'  style='width: "+LegalSystemAndPropRights[9]*10+"%'></div>" +
+            "</div>" +
+            "</li>" +
+            "<br><div class='divider'></div><br>" +
+            "<li>"+
+            "<b>Sound Money </b>"+
+            +SoundMoney[0]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate'  style='width: "+SoundMoney[0]*10+"%'></div> "+
+            "</div>" +
+            "Money Growth "+
+            +SoundMoney[1]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+SoundMoney[1]*10+"%'></div> "+
+            "</div>" +
+            "Standard Deviation of Inflation "+
+            +SoundMoney[2]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+SoundMoney[2]*10+"%'></div> "+
+            "</div>" +
+            "Inflation: Most Recent Year "+
+            +SoundMoney[3]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate'  style='width: "+SoundMoney[3]*10+"%'></div> "+
+            "</div>" +
+            "Freedom to Own Frgn. Currency "+
+            +SoundMoney[4]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate'  style='width: "+SoundMoney[4]*10+"%'></div> "+
+            "</div>" +
+            "</li>" +
+            "<br><div class='divider'></div><br>" +
+            "<li>"+
+            "<b>Freedom to Trade Int'l </b>"+
+            +FreedomToTradeInt[0]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate'  style='width: "+FreedomToTradeInt[0]*10+"%'></div> "+
+            "</div>" +
+            "Tariffs "+
+            +FreedomToTradeInt[1]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+FreedomToTradeInt[1]*10+"%'></div> "+
+            "</div>" +
+            "Regulatory Trade Barriers "+
+            +FreedomToTradeInt[2]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+FreedomToTradeInt[2]*10+"%'></div> "+
+            "</div>" +
+            "Black-Market Exchange Rates "+
+            +FreedomToTradeInt[3]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+FreedomToTradeInt[3]*10+"%'></div> "+
+            "</div>" +
+            "Movement of Capital and People "+
+            +FreedomToTradeInt[4]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+FreedomToTradeInt[4]*10+"%'></div> "+
+            "</div>" +
+            "</li>" +
+            "<br><div class='divider'></div><br>" +
+            "<li>"+
+            "<b>Regulation </b>"+
+            +Regulation[0]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate'  style='width: "+Regulation[0]*10+"%'></div> "+
+            "</div>" +
+            "Credit Market Regulations "+
+            +Regulation[1]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+Regulation[1]*10+"%'></div> "+
+            "</div>" +
+            "Labor Market Regulations "+
+            +Regulation[2]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+Regulation[2]*10+"%'></div> "+
+            "</div>" +
+            "Business Regulations "+
+            +Regulation[3]+
+            "<div class='progress' style='height: 10px'>" +
+            "<div class='determinate teal lighten-3'  style='width: "+Regulation[3]*10+"%'></div> "+
+            "</div>" +
+            "</li>" +
+            "</div>" +
             "</div>" +
             "<div class='modal-footer'>" +
             "<btn id='modalclose' class='modal-action modal-close waves-effect waves-green btn-flat'>Sluiten</btn>" +
@@ -1240,6 +1999,40 @@ function getGfp(englishName) {
                 }
             }
 
+        }
+    }
+}
+
+function getCato(englishName) {
+    var cato;
+    var request = new XMLHttpRequest();
+    request.open('GET', 'data/cato.json', false);  // `false` makes the request synchronous
+    request.send(null);
+
+    if (request.status === 200) {
+        var data = request.responseText;
+        var result = JSON.parse(data);
+        for (var i = 0; i < result.length; i++) {
+            var country = result[i]["Countries"];
+            if (country.indexOf(englishName) != -1 && englishName != null) {
+                var personalFreedom = result[i]["PERSONAL FREEDOM (Score)"];
+                var ruleOfLaw = [result[i]["Rule of Law"], result[i]["Procedural Justice"], result[i]["Civil Justice"], result[i]["Criminal Justice"]];
+                var securityAndSafety = [result[i]["Security & Safety"], result[i]["Homicide"], result[i]["Disapperances  Conflicts and Terrorism"], result[i]["Womens Security & Safety"]];
+                var movement = [result[i]["Movement"], result[i]["Domestic Movement"], result[i]["Foreign Movement"], result[i]["Womens Movement"]];
+                var religiousFreedom = [result[i]["Religion"], result[i]["Establishing and Operating Religious Organizations"], result[i]["Harassment and Physical Hostilities"], result[i]["Legal and Regulatory Restrictions"]];
+                var association = [result[i]["Association"], result[i]["Assembly"], result[i]["Establishing and Operating Organizations"], result[i]["Association Assembly & Civil Society"]];
+                var expressionAndInformation = [result[i]["Expression & Information"], result[i]["Press Killed"], result[i]["Press Jailed"], result[i]["Laws and Regulations that Influence Media Content"], result[i]["Political Pressures and Controls on Media Content"], result[i]["Access to Cable/Satellite"], result[i]["Access to Foreign Newspapers"], result[i]["State Control over Internet Access"]];
+                var identityAndRelationships = [result[i]["Identity & Relationships"], result[i]["Legal Gender"], result[i]["Parental Rights"], result[i]["SameSex Relationships"], result[i]["Divorce"]];
+                var economicFreedom = result[i]["ECONOMIC FREEDOM (Score)"];
+                var sizeOfGovernment = [result[i]["Size of Government"], result[i]["Government Consumption"], result[i]["Transfers and subsidies"], result[i]["Government enterprises and investment"], result[i]["Top marginal tax rate"]];
+                var legalSystemAndPropRights = [result[i]["Legal System & Property Rights"], result[i]["Judicial independence"], result[i]["Impartial courts"], result[i]["Protection of property rights"], result[i]["Military interference in rule of law and politics"], result[i]["Integrity of the legal system"], result[i]["Legal enforcement of contracts"], result[i]["Regulatory restrictions on the sale of real property"], result[i]["Reliability of police"], result[1]["Business costs of crime"]];
+                var soundMoney = [result[i]["Sound Money"], result[i]["Money growth"], result[i]["Standard deviation of inflation"], result[i]["Inflation: Most recent year"], result[i]["Freedom to own foreign currency bank accounts"]];
+                var freedomToTradeInt = [result[i]["Freedom to trade internationally"], result[i]["Tariffs"], result[i]["Regulatory trade barriers"], result[i]["Black market exchange rates"], result[i]["Controls of the movement of capital and people"]];
+                var regulation = [result[i]["Regulation"], result[i]["Ownership of banks"], result[i]["Credit market regulations"], result[i]["Labor market regulations"], result[i]["Business regulations"]];
+                var humanFreedom = [result[i]["HUMAN FREEDOM (Score)"], result[i]["HUMAN FREEDOM (Rank)"]];
+
+                return [personalFreedom, ruleOfLaw, securityAndSafety, movement, religiousFreedom, association, expressionAndInformation, identityAndRelationships, economicFreedom, sizeOfGovernment, legalSystemAndPropRights, soundMoney, freedomToTradeInt, regulation, humanFreedom];
+            }
         }
     }
 }

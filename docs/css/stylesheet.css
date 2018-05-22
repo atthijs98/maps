@@ -47,3 +47,9 @@ html, body {
 li {
     list-style-type: none;
 }
+#freedom {
+    display: none;
+}
+progress {
+    width: 50%!important;
+}
