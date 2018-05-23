@@ -1857,7 +1857,7 @@
   },
   {
     "ISO_Code": "BOL",
-    "Countries": "Bolivia",
+    "Countries": "Bolivia (Plurinational State of)",
     "Procedural Justice": 4.6,
     "Civil Justice": 3.46,
     "Criminal Justice": 2.43,
@@ -3829,7 +3829,7 @@
   },
   {
     "ISO_Code": "COD",
-    "Countries": "Congo, Democratic Republic of",
+    "Countries": "Congo (Democratic Republic of the)",
     "Procedural Justice": "",
     "Civil Justice": "",
     "Criminal Justice": "",
@@ -3945,7 +3945,7 @@
   },
   {
     "ISO_Code": "COG",
-    "Countries": "Congo, Republic of",
+    "Countries": "Congo",
     "Procedural Justice": "",
     "Civil Justice": "",
     "Criminal Justice": "",
@@ -6729,7 +6729,7 @@
   },
   {
     "ISO_Code": "GNB",
-    "Countries": "GuineaBissau",
+    "Countries": "Guinea-Bissau",
     "Procedural Justice": "",
     "Civil Justice": "",
     "Criminal Justice": "",
@@ -7773,7 +7773,7 @@
   },
   {
     "ISO_Code": "IRN",
-    "Countries": "Iran",
+    "Countries": "Iran (Islamic Republic of)",
     "Procedural Justice": 3.08,
     "Civil Justice": 5.5,
     "Criminal Justice": 4.27,
@@ -8817,7 +8817,7 @@
   },
   {
     "ISO_Code": "KOR",
-    "Countries": "Korea, Republic of",
+    "Countries": "Korea (Republic of)",
     "Procedural Justice": 7.57,
     "Civil Justice": 8.1,
     "Criminal Justice": 7.07,
@@ -9049,7 +9049,7 @@
   },
   {
     "ISO_Code": "KGZ",
-    "Countries": "Kyrgyz Republic",
+    "Countries": "Kyrgyzstan",
     "Procedural Justice": 4.32,
     "Civil Justice": 4.26,
     "Criminal Justice": 3.35,
@@ -9165,7 +9165,7 @@
   },
   {
     "ISO_Code": "LAO",
-    "Countries": "Laos",
+    "Countries": "Lao People's Democratic Republic",
     "Procedural Justice": "",
     "Civil Justice": "",
     "Criminal Justice": "",
@@ -10093,7 +10093,7 @@
   },
   {
     "ISO_Code": "MKD",
-    "Countries": "Macedonia",
+    "Countries": "Macedonia (the former Yugoslav Republic of)",
     "Procedural Justice": 4.65,
     "Civil Justice": 5.58,
     "Criminal Justice": 5.14,
@@ -11137,7 +11137,7 @@
   },
   {
     "ISO_Code": "MDA",
-    "Countries": "Moldova",
+    "Countries": "Moldova (Republic of)",
     "Procedural Justice": 5.01,
     "Civil Justice": 4.65,
     "Criminal Justice": 3.82,
@@ -14033,7 +14033,7 @@
   },
   {
     "ISO_Code": "RUS",
-    "Countries": "Russia",
+    "Countries": "Russian Federation",
     "Procedural Justice": 3.08,
     "Civil Justice": 5.17,
     "Criminal Justice": 3.31,
@@ -16005,7 +16005,7 @@
   },
   {
     "ISO_Code": "SYR",
-    "Countries": "Syria",
+    "Countries": "Syrian Arab Republic",
     "Procedural Justice": "",
     "Civil Justice": "",
     "Criminal Justice": "",
@@ -16353,7 +16353,7 @@
   },
   {
     "ISO_Code": "TZA",
-    "Countries": "Tanzania",
+    "Countries": "Tanzania, United Republic of",
     "Procedural Justice": 3.66,
     "Civil Justice": 5.01,
     "Criminal Justice": 4.07,
@@ -16585,7 +16585,7 @@
   },
   {
     "ISO_Code": "TLS",
-    "Countries": "TimorLeste",
+    "Countries": "Timor-Leste",
     "Procedural Justice": "",
     "Civil Justice": "",
     "Criminal Justice": "",
@@ -17513,7 +17513,7 @@
   },
   {
     "ISO_Code": "GBR",
-    "Countries": "United Kingdom",
+    "Countries": "United Kingdom of Great Britain and Northern Ireland",
     "Procedural Justice": 8.22,
     "Civil Justice": 7.54,
     "Criminal Justice": 7.56,
@@ -17629,7 +17629,7 @@
   },
   {
     "ISO_Code": "USA",
-    "Countries": "United States",
+    "Countries": "United States of America",
     "Procedural Justice": 8.09,
     "Civil Justice": 6.53,
     "Criminal Justice": 6.78,
@@ -17861,7 +17861,7 @@
   },
   {
     "ISO_Code": "VEN",
-    "Countries": "Venezuela",
+    "Countries": "Venezuela (Bolivarian Republic of)",
     "Procedural Justice": 1.18,
     "Civil Justice": 2.92,
     "Criminal Justice": 1.35,
@@ -17977,7 +17977,7 @@
   },
   {
     "ISO_Code": "VNM",
-    "Countries": "Vietnam",
+    "Countries": "Viet nam",
     "Procedural Justice": 5.79,
     "Civil Justice": 4.67,
     "Criminal Justice": 5.04,
