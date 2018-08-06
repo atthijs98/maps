@@ -95,7 +95,7 @@
             var authcode = btoa("<token><version>1</version><data>BFB2BED0440C49DFBC53C0781B68E47F71ACC7C44C3F7CF69A397ABB3F943B73</data></token>");
 
             var request = new XMLHttpRequest();
-            var apiCall = 'https://83814.afasonlineconnector.nl/ProfitRestServices/connectors/Profit_Salesorders_2?operatortypes=1&take=1000000';
+            var apiCall = 'https://83814.rest.afas.online/ProfitRestServices/connectors/Profit_Salesorders_2?operatortypes=1&take=1000000';
             request.open('GET', apiCall, false);  // `false` makes the request synchronous
             request.setRequestHeader('Authorization', 'AfasToken ' + authcode);
             request.send(null);
