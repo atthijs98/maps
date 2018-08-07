@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ef000328-ecf0-455b-929d-2d29bc28ab8b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/data/cato.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/data/gfp.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/js/functions/polygon.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/functions/polygon.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,15 +20,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1215">
+            <state relative-caret-position="2370">
               <caret line="158" column="68" selection-start-line="158" selection-start-column="68" selection-end-line="158" selection-end-column="68" />
-              <folding>
-                <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="e#3935#5466#0" />
-                <element signature="e#5536#6685#0" />
-                <element signature="e#6729#7474#0" />
-                <element signature="e#7534#12726#0" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -39,38 +29,20 @@
       <file leaf-file-name="polygon.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/js/functions/polygon.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2820">
-              <caret line="785" column="39" lean-forward="true" selection-start-line="785" selection-start-column="39" selection-end-line="785" selection-end-column="39" />
+            <state relative-caret-position="255">
+              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
               <folding>
-                <element signature="e#1832#1914#0" />
-                <element signature="n#!!block;n#convert#0" />
                 <element signature="e#1971#14093#0" />
-                <element signature="e#14300#14389#0" />
-                <element signature="n#!!block;n#httpGet#0" />
-                <element signature="e#15037#15190#0" />
-                <element signature="e#15837#15913#0" />
-                <element signature="e#15918#15998#0" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#83355#83603#0" />
-                <element signature="e#83652#83890#0" />
-                <element signature="e#83938#84084#0" />
-                <element signature="e#84136#84304#0" />
-                <element signature="e#84310#84363#0" />
-                <element signature="e#87161#87365#0" />
                 <element signature="n#!!block;n#getHdi#0" />
-                <element signature="e#88644#88841#0" />
                 <element signature="n#!!block;n#getGdp#0" />
-                <element signature="e#90542#90777#0" />
                 <element signature="n#!!block;n#getPpp#0" />
-                <element signature="e#92572#92766#0" />
                 <element signature="n#!!block;n#getHappiness#0" />
-                <element signature="e#103886#104108#0" />
                 <element signature="n#!!block;n#hdiIcon#0" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#104971#105224#0" />
                 <element signature="n#!!block;n#giniIcon#0" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
@@ -80,7 +52,6 @@
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#112863#113056#0" />
                 <element signature="n#!!block;n#pppIcon#0" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
@@ -89,9 +60,7 @@
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
-                <element signature="e#114768#114973#0" />
                 <element signature="n#!!block;n#happinessIcon#0" />
-                <element signature="e#115052#115223#0" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
@@ -125,9 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;b&gt;Economic Freedom</find>
-      <find>&lt;b&gt;Rule of Law</find>
-      <find>&lt;br&gt;Rechtsstaat</find>
       <find>Security and Safety</find>
       <find>Disappearance, conflict, Terrorism</find>
       <find>Women Security, Safety</find>
@@ -155,11 +121,11 @@
       <find>Laat land informatie zien.</find>
       <find>strafrecht</find>
       <find>class='progress'</find>
+      <find>currencies</find>
+      <find>timezones</find>
+      <find>regionalBlocs</find>
     </findStrings>
     <replaceStrings>
-      <replace>&lt;br&gt;Economische vrijheid</replace>
-      <replace>&lt;br&gt;Rechtsstaat</replace>
-      <replace>&lt;b&gt;Rechtsstaat</replace>
       <replace>Beveiliging en veiligheid</replace>
       <replace>Verdwijningen, conflicten en terrorisme</replace>
       <replace>Vrouwen veiligheid</replace>
@@ -187,6 +153,9 @@
       <replace>Laat land informatie zien</replace>
       <replace>Strafrecht</replace>
       <replace>class='progress grey lighten-2'</replace>
+      <replace>result[&quot;currencies&quot;]</replace>
+      <replace>result[&quot;timezones&quot;]</replace>
+      <replace>result[&quot;regionalBlocs&quot;]</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -275,6 +244,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -286,9 +256,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -425,34 +394,38 @@
       <workItem from="1526998522230" duration="1561000" />
       <workItem from="1527057646701" duration="9469000" />
       <workItem from="1533561306494" duration="552000" />
+      <workItem from="1533626164708" duration="248000" />
+      <workItem from="1533626461557" duration="3081000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="409022000" />
+    <option name="totallyTimeSpent" value="412351000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="1078" width="1920" height="1082" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info id="Image Layers" />
-      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50208336" side_tool="true" weight="0.3202545" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49791667" weight="0.32934782" />
-      <window_info id="Capture Tool" />
-      <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3390625" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.3390625" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32934782" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -461,7 +434,6 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32934782" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +444,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="71" />
+      <option name="time" value="72" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -564,20 +536,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/data/cato.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1497">
-          <caret line="12067" column="28" selection-start-line="12067" selection-start-column="18" selection-end-line="12067" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/data/gfp.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="240" column="20" selection-start-line="240" selection-start-column="20" selection-end-line="240" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/data/cato.json" />
+    <entry file="file://$PROJECT_DIR$/docs/data/gfp.json" />
     <entry file="file://$PROJECT_DIR$/docs/css/stylesheet.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -594,52 +554,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
+        <state relative-caret-position="2370">
           <caret line="158" column="68" selection-start-line="158" selection-start-column="68" selection-end-line="158" selection-end-column="68" />
-          <folding>
-            <element signature="n#script#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#3935#5466#0" />
-            <element signature="e#5536#6685#0" />
-            <element signature="e#6729#7474#0" />
-            <element signature="e#7534#12726#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/js/functions/polygon.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2820">
-          <caret line="785" column="39" lean-forward="true" selection-start-line="785" selection-start-column="39" selection-end-line="785" selection-end-column="39" />
+        <state relative-caret-position="255">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
           <folding>
-            <element signature="e#1832#1914#0" />
-            <element signature="n#!!block;n#convert#0" />
             <element signature="e#1971#14093#0" />
-            <element signature="e#14300#14389#0" />
-            <element signature="n#!!block;n#httpGet#0" />
-            <element signature="e#15037#15190#0" />
-            <element signature="e#15837#15913#0" />
-            <element signature="e#15918#15998#0" />
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#83355#83603#0" />
-            <element signature="e#83652#83890#0" />
-            <element signature="e#83938#84084#0" />
-            <element signature="e#84136#84304#0" />
-            <element signature="e#84310#84363#0" />
-            <element signature="e#87161#87365#0" />
             <element signature="n#!!block;n#getHdi#0" />
-            <element signature="e#88644#88841#0" />
             <element signature="n#!!block;n#getGdp#0" />
-            <element signature="e#90542#90777#0" />
             <element signature="n#!!block;n#getPpp#0" />
-            <element signature="e#92572#92766#0" />
             <element signature="n#!!block;n#getHappiness#0" />
-            <element signature="e#103886#104108#0" />
             <element signature="n#!!block;n#hdiIcon#0" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#104971#105224#0" />
             <element signature="n#!!block;n#giniIcon#0" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
@@ -649,7 +584,6 @@
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#112863#113056#0" />
             <element signature="n#!!block;n#pppIcon#0" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
@@ -658,9 +592,7 @@
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="e#114768#114973#0" />
             <element signature="n#!!block;n#happinessIcon#0" />
-            <element signature="e#115052#115223#0" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#li#0;n#!!top" expanded="true" />

@@ -611,8 +611,25 @@ function httpGet(url) {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var data = xmlhttp.responseText;
             var result = JSON.parse(data);
-            //console.log(result["name"]);
-            var rows = modal(result); // Calls a function that creates a modal.
+            var iso = result["alpha2Code"];
+            if (result["name"] == "Afghanistan") {
+                iso = result["alpha3Code"];
+                iso = iso.toLowerCase();
+            }else {
+                var iso = result["alpha2Code"];
+                iso = iso.toLowerCase();
+            }
+            var sales = getSales(iso);
+            var gdp = getGdp(result["name"]);
+            var giniStyle = giniIcon(result["gini"]);
+            var hdi = getHdi(result["name"]);
+            var ppp = getPpp(result["name"]);
+            var happiness = getHappiness(result["name"]);
+            var hdiStyle = hdiIcon(hdi);
+            var pppStyle = pppIcon(ppp);
+            var happinessStyle = happinessIcon(happiness);
+
+            modal(result, sales,gdp, giniStyle, hdiStyle, pppStyle, happinessStyle, iso);
 
         }
     };
@@ -625,59 +642,16 @@ function httpGet(url) {
  * The variable "result" contains the response of the XMLHttpRequest.
  * This function creates a modal that shows up when a country is clicked on.
  */
-function modal(result) {
-    var englishName = result["name"];
-    var nativeName = result["nativeName"];
-    var capital = result["capital"];
-    var area = result["area"];
-    var calling = result["callingCodes"];
-    var demonym = result["demonym"];
-    var flag = result["flag"];
-    var gini = result["gini"];
-    var population = result["population"];
-    var region = result["region"];
-    var subregion = result["subregion"];
-    var languages = result["languages"];
-    var currencies = result["currencies"];
-    var timezones = result["timezones"];
-    var regionalBlocs = result["regionalBlocs"];
-    if (englishName == "Afghanistan") {
-        iso = result["alpha3Code"];
-        iso = iso.toLowerCase();
-    }else {
-        var iso = result["alpha2Code"];
-        iso = iso.toLowerCase();
-    }
+function modal(result, sales, gdp, gini, hdi, ppp, happy,iso) {
+    var totalTickets = sales[1];
+    var totalMoney = sales[0];
+    var refund = sales[2];
 
-    var hdi;
-    var gdp;
-    var ppp;
-    var happiness;
-    var sales;
-
-    sales = getSales(iso);
-    gdp = getGdp(englishName);
-    var giniStyle = giniIcon(gini);
-    hdi = getHdi(englishName);
-    ppp = getPpp(englishName);
-    happiness = getHappiness(englishName);
-    var hdiStyle = hdiIcon(hdi);
-    var pppStyle = pppIcon(ppp);
-    var happinessStyle = happinessIcon(happiness);
-
-
-
-
-
-
-        var totalTickets = sales[1];
-        var totalMoney = sales[0];
-        var refund = sales[2];
         var innerHmlNorm = "<div class='modal-content'>" +
-            "<h4 class='center-align'>" + englishName + "</h4>" +
-            "<h6 class='center-align'>" + nativeName + "</h6>" +
+            "<h4 class='center-align'>" + result["name"] + "</h4>" +
+            "<h6 class='center-align'>" + result["nativeName"] + "</h6>" +
             "<div class='row'>" +
-            "<div class='col s10 push-s1'><div class='center-align'><img style='border: grey 1px solid;' src='" + flag + "' class='responsive-img'></div></div>" +
+            "<div class='col s10 push-s1'><div class='center-align'><img style='border: grey 1px solid;' src='" + result["flag"] + "' class='responsive-img'></div></div>" +
             "</div>" +
             "<div class='row'>" +
             "<div class='col s10 push-s1'><div class='center-align'><img src='images/coatOfArms/"+iso+".png' class='responsive-img'></div></div>" +
@@ -685,35 +659,35 @@ function modal(result) {
             "<li><a href='#!' id='info-btn' onclick='showFunction2()'>Laat land informatie zien</a></li>" +
             "<div id='informatie'>" +
                 "<ul>" +
-                    "<li><p>Hoofdstad: " + capital + "</p></li>" +
+                    "<li><p>Hoofdstad: " + result["capital"] + "</p></li>" +
                     "<div class='divider'></div>" +
-                    "<li><p>Aantal inwoners: " + numeral(population).format('0,0') + "</p></li>" +
+                    "<li><p>Aantal inwoners: " + numeral(result["population"]).format('0,0') + "</p></li>" +
                     "<div class='divider'></div>" +
                     "<li><p id='language'>Languages:</p></li>" +
                     "<div class='divider'></div>" +
-                    "<li><p>Inwoneraanduiding: " + demonym + "</p></li>" +
+                    "<li><p>Inwoneraanduiding: " + result["demonym"] + "</p></li>" +
                     "<div class='divider'></div>" +
-                    "<li><p>Oppervlakte: " + numeral(area).format('0,0') + " km2</p></li>" +
+                    "<li><p>Oppervlakte: " + numeral(result["area"]).format('0,0') + " km2</p></li>" +
                     "<div class='divider'></div>" +
-                    "<li><p>Regio: " + region + " (" + subregion + "),<br>" + "</p></li>" +
+                    "<li><p>Regio: " + result["region"] + " (" + result["subregion"] + "),<br>" + "</p></li>" +
                     "<div class='divider'></div>" +
                     "<li><p id='regionalBloc'>Regionaal Blok: </p></li>" +
                     "<div class='divider'></div>" +
                     "<li><p id='timezone'>Tijdzones: </p></li>" +
                     "<div class='divider'></div>" +
-                    "<li><p>Landnummer: " + calling + "</p></li>" +
+                    "<li><p>Landnummer: " + result["callingCodes"] + "</p></li>" +
                     "<div class='divider'></div>" +
                     "<li><p id='currency'>Munteenheid: </p></li>" +
                     "<div class='divider'></div>" +
                     "<li><p>Bruto binnenlands product(2016): " + numeral(gdp).format('$ 0,0[.]00') + "</p></li>" +
                     "<div class='divider'></div>" +
-                    pppStyle +
+                    ppp +
                     "<div class='divider'></div>" +
-                    giniStyle +
+                    gini +
                     "<div class='divider'></div>" +
-                    hdiStyle +
+                    hdi +
                     "<div class='divider'></div>" +
-                    happinessStyle +
+                    happy +
 
 
                 "</ul>" +
@@ -727,7 +701,7 @@ function modal(result) {
                     "<li><p>Totaal bedrag credit nota's: " + numeral(refund).format('$0,0[.]00') + "</p></li>"+
                 "</ul>" +
             "</div>"+
-            "<br><div class='divider'></div><br>" +
+            "<br><div class='divider'></div>" +
             "</div>" +
             "<div class='modal-footer'>" +
             "<btn id='modalclose' class='modal-action modal-close waves-effect waves-green btn-flat'>Sluiten</btn>" +
@@ -744,30 +718,30 @@ function modal(result) {
 
     /* The following "for loops" loop through json objects that came back as arrays and adds the results to the modal.
      */
-    for (var i = 0; i < languages.length; i++) {
-        var languageEnglish = languages[i]["name"];
-        var languageNative = languages[i]["nativeName"];
+    for (var i = 0; i < result["languages"].length; i++) {
+        var languageEnglish = result["languages"][i]["name"];
+        var languageNative = result["languages"][i]["nativeName"];
         var a = document.getElementById("language");
 
         a.innerHTML += " " + languageEnglish + " (" + languageNative + "), ";
     }
-    for (var j = 0; j < currencies.length; j++) {
-        var currencyName = currencies[j]["name"];
-        var currencySymbol = currencies[j]["symbol"];
+    for (var j = 0; j < result["currencies"].length; j++) {
+        var currencyName = result["currencies"][j]["name"];
+        var currencySymbol = result["currencies"][j]["symbol"];
         var b = document.getElementById("currency");
 
         b.innerHTML += " " + currencyName + " (" + currencySymbol + ")";
     }
-    for (var k = 0; k < timezones.length; k++) {
-        var timezone = timezones[k];
+    for (var k = 0; k < result["timezones"].length; k++) {
+        var timezone = result["timezones"][k];
         var c = document.getElementById("timezone");
 
         c.innerHTML += " " + timezone + ", ";
 
 
     }
-    for (var l = 0; l < regionalBlocs.length; l++) {
-        var regionalBloc = regionalBlocs[l]["name"];
+    for (var l = 0; l < result["regionalBlocs"].length; l++) {
+        var regionalBloc = result["regionalBlocs"][l]["name"];
         var d = document.getElementById("regionalBloc");
 
         d.innerHTML += " " + regionalBloc + ", ";
